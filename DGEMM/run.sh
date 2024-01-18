@@ -1,0 +1,99 @@
+#!/bin/bash
+
+# List of SIMD flags to use
+SIMD_FLAGS="-mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq"
+# SIMD_FLAGS="-mssse3 -mavx"
+GROUPS=(
+    "-msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2"
+)
+
+# Compiler
+CC=gcc
+
+# Makefile
+MAKEFILE=Makefile
+
+# Target
+TARGET=dgemmbench.mkl
+
+# Source file
+SOURCE_FILE=gemmbench.c
+
+# Clean previous build and output files
+rm -f ./output/*txt
+rm -f *.txt
+make clean -f $MAKEFILE
+
+# Loop through SIMD flags and compile
+for SIMD_FLAG in $SIMD_FLAGS; do
+    echo "--------------------------------------------------------------------------------------------------------------------------------------------"
+    echo "Compiling with SIMD flag: $SIMD_FLAG"
+    echo ""
+    make CC=$CC CFLAGS="-O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I${MKLROOT}/include $SIMD_FLAG" LDFLAGS="-L${MKLROOT}/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl" $TARGET -f $MAKEFILE
+    mv $TARGET ${TARGET%.*}$SIMD_FLAG
+    echo ""
+
+    # run the executable 5 times
+    for i in {1..5}; do
+        ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+
+    done
+
+    python compute.py $SIMD_FLAG
+
+done
+
+echo "--------------------------------------------------------------------------------------------------------------------------------------------"
+echo "Compiling with SIMD flag: -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2"
+echo ""
+make CC=$CC CFLAGS="-O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I${MKLROOT}/include -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2" LDFLAGS="-L${MKLROOT}/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl" $TARGET -f $MAKEFILE
+mv $TARGET ${TARGET%.*}__group_sse
+echo ""
+
+# run the executable 5 times
+for i in {1..5}; do
+    ./${TARGET%.*}__group_sse 3600 __group_sse
+
+done
+
+python compute.py __group_sse
+
+echo "--------------------------------------------------------------------------------------------------------------------------------------------"
+echo "Compiling with SIMD flag: -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq"
+echo ""
+make CC=$CC CFLAGS="-O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I${MKLROOT}/include -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq" LDFLAGS="-L${MKLROOT}/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl" $TARGET -f $MAKEFILE
+mv $TARGET ${TARGET%.*}__group_avx
+echo ""
+
+# run the executable 5 times
+for i in {1..5}; do
+    ./${TARGET%.*}__group_sse 3600 __group_avx
+
+done
+
+python compute.py __group_avx
+
+# for group in "${GROUPS[@]}"; do
+#     echo "--------------------------------------------------------------------------------------------------------------------------------------------"
+#     echo "Compiling with SIMD flags: $group"
+#     echo ""
+
+#     make_flags=()
+#     for flag in $group; do
+#         make_flags+=("CFLAGS+=${flag}")
+#     done
+
+#     make CC=$CC "${make_flags[@]}" LDFLAGS="-O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I${MKLROOT}/include" $TARGET -f $MAKEFILE
+
+#     mv $TARGET ${TARGET%.*}$group
+#     echo ""
+#     echo ${make_flags[@]}
+
+#     # Run the executable 10 times
+#     for i in {1..2}; do
+#         ./${TARGET%.*}$group 3600 $group
+#     done
+
+#     python compute.py $group
+
+# done
