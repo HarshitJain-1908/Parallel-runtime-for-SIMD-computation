@@ -23,7 +23,7 @@
 
 CC	= gcc
 
-CFLAGS=-O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I${MKLROOT}/include
+CFLAGS=-O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I${MKLROOT}/include -mavx2
 LDFLAGS=-L${MKLROOT}/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 dgemmbench.mkl  : gemmbench.c

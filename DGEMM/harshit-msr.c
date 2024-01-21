@@ -214,13 +214,10 @@ void perfcounters_start(){
 	}
 }
 
-double perfcounters_finalize(){
-  double res = perfcounters_dump();
-
+void perfcounters_finalize(){
+  //perfcounters_dump();
   free(energyWrap);
   free(energySave);
-
-  return res;
 }
 
 void perfcounters_read(){
@@ -270,11 +267,11 @@ void perfcounters_stop(){
 
 double perfcounters_dump(){
   int i;
-    fprintf(stdout,"\n============================ Tabulate Statistics ============================\n");
+    //fprintf(stdout,"\n============================ Tabulate Statistics ============================\n");
     // print all events
-    fprintf(stdout,"%s\t","PWR_PKG_ENERGY");
+    fprintf(stdout,"%s","PWR_PKG_ENERGY = ");
 	//fprintf(stdout,"%s\t","INST_RETIRED");
-    fprintf(stdout,"\n");
+    //fprintf(stdout,"\n");
     
     //printf("power %f \n", LAST_PWR_PKG_ENERGY[0]*JOULE_UNIT);
     double res=0;
@@ -287,7 +284,7 @@ double perfcounters_dump(){
 	//	res += ((double)TOTAL_INST_RETIRED[i]);
 	//}
     //fprintf(stdout,"%f\t",res);
-    fprintf(stdout,"\n=============================================================================\n");
+    //fprintf(stdout,"\n=============================================================================\n");
     fflush(stdout);
 
  return res;

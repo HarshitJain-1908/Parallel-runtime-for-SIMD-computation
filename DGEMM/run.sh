@@ -2,7 +2,7 @@
 
 # List of SIMD flags to use
 SIMD_FLAGS="-mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq"
-# SIMD_FLAGS="-mssse3 -mavx"
+#SIMD_FLAGS="-mavx512f"
 GROUPS=(
     "-msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2"
 )
@@ -67,7 +67,7 @@ echo ""
 
 # run the executable 5 times
 for i in {1..5}; do
-    ./${TARGET%.*}__group_sse 3600 __group_avx
+    ./${TARGET%.*}__group_avx 3600 __group_avx
 
 done
 

@@ -5,51 +5,41 @@ Compiling with SIMD flag: -mmmx
 gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 
 
+============================ Tabulate Statistics ============================
+DGEMM Performance N =   3600 :   633.1968 GF
+DGEMM Execution time =    29.4733 s
+PWR_PKG_ENERGY = 6732.154236	
+=============================================================================
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6768.391785	
+DGEMM Performance N =   3600 :   603.4560 GF
+DGEMM Execution time =    30.9259 s
+PWR_PKG_ENERGY = 6561.222900	
 =============================================================================
-DGEMM Performance N =   3600 :   629.2700 GF
-DGEMM Execution time =    29.6572 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6568.995117	
+DGEMM Performance N =   3600 :   598.0580 GF
+DGEMM Execution time =    31.2050 s
+PWR_PKG_ENERGY = 6618.143860	
 =============================================================================
-DGEMM Performance N =   3600 :   602.6422 GF
-DGEMM Execution time =    30.9676 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-7187.371399	
+DGEMM Performance N =   3600 :   583.2906 GF
+DGEMM Execution time =    31.9950 s
+PWR_PKG_ENERGY = 6779.067627	
 =============================================================================
-DGEMM Performance N =   3600 :   549.8472 GF
-DGEMM Execution time =    33.9411 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6735.926147	
+DGEMM Performance N =   3600 :   586.7625 GF
+DGEMM Execution time =    31.8057 s
+PWR_PKG_ENERGY = 6741.113159	
 =============================================================================
-DGEMM Performance N =   3600 :   587.2985 GF
-DGEMM Execution time =    31.7767 s
-
-
-============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6824.206299	
-=============================================================================
-DGEMM Performance N =   3600 :   579.3403 GF
-DGEMM Execution time =    32.2132 s
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 589.6796 GF
-Average execution time = 31.7112 s
-Average energy = 6816.9781494 PWR_PKG_ENERGY
+Average GFLOPS = 600.9528 GF
+Average execution time = 31.081 s
+Average PWR_PKG_ENERGY =  6686.3403564
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -msse
@@ -57,51 +47,41 @@ Compiling with SIMD flag: -msse
 gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 
 
+============================ Tabulate Statistics ============================
+DGEMM Performance N =   3600 :   547.2523 GF
+DGEMM Execution time =    34.1020 s
+PWR_PKG_ENERGY = 7258.103027	
+=============================================================================
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6863.255310	
+DGEMM Performance N =   3600 :   584.2370 GF
+DGEMM Execution time =    31.9432 s
+PWR_PKG_ENERGY = 6769.710999	
 =============================================================================
-DGEMM Performance N =   3600 :   579.3045 GF
-DGEMM Execution time =    32.2152 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6886.506531	
+DGEMM Performance N =   3600 :   549.4400 GF
+DGEMM Execution time =    33.9662 s
+PWR_PKG_ENERGY = 7193.263306	
 =============================================================================
-DGEMM Performance N =   3600 :   574.2060 GF
-DGEMM Execution time =    32.5012 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6792.090210	
+DGEMM Performance N =   3600 :   585.8208 GF
+DGEMM Execution time =    31.8568 s
+PWR_PKG_ENERGY = 6751.666138	
 =============================================================================
-DGEMM Performance N =   3600 :   582.2945 GF
-DGEMM Execution time =    32.0498 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6790.492065	
+DGEMM Performance N =   3600 :   587.5269 GF
+DGEMM Execution time =    31.7643 s
+PWR_PKG_ENERGY = 6732.720520	
 =============================================================================
-DGEMM Performance N =   3600 :   582.4329 GF
-DGEMM Execution time =    32.0421 s
-
-
-============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6913.984070	
-=============================================================================
-DGEMM Performance N =   3600 :   571.9311 GF
-DGEMM Execution time =    32.6305 s
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 578.0338 GF
-Average execution time = 32.2878 s
-Average energy = 6849.2656372 PWR_PKG_ENERGY
+Average GFLOPS = 570.8554 GF
+Average execution time = 32.7265 s
+Average PWR_PKG_ENERGY =  6941.092798
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -msse2
@@ -109,51 +89,41 @@ Compiling with SIMD flag: -msse2
 gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse2 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 
 
+============================ Tabulate Statistics ============================
+DGEMM Performance N =   3600 :   589.9705 GF
+DGEMM Execution time =    31.6328 s
+PWR_PKG_ENERGY = 6742.500244	
+=============================================================================
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6769.386841	
+DGEMM Performance N =   3600 :   588.4390 GF
+DGEMM Execution time =    31.7151 s
+PWR_PKG_ENERGY = 6722.460571	
 =============================================================================
-DGEMM Performance N =   3600 :   587.7392 GF
-DGEMM Execution time =    31.7529 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6754.718018	
+DGEMM Performance N =   3600 :   594.0181 GF
+DGEMM Execution time =    31.4172 s
+PWR_PKG_ENERGY = 6660.489014	
 =============================================================================
-DGEMM Performance N =   3600 :   585.5658 GF
-DGEMM Execution time =    31.8707 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6703.922607	
+DGEMM Performance N =   3600 :   596.0330 GF
+DGEMM Execution time =    31.3110 s
+PWR_PKG_ENERGY = 6638.172668	
 =============================================================================
-DGEMM Performance N =   3600 :   590.1947 GF
-DGEMM Execution time =    31.6207 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6676.518921	
+DGEMM Performance N =   3600 :   587.4474 GF
+DGEMM Execution time =    31.7686 s
+PWR_PKG_ENERGY = 6733.470459	
 =============================================================================
-DGEMM Performance N =   3600 :   592.5843 GF
-DGEMM Execution time =    31.4932 s
-
-
-============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-7131.645142	
-=============================================================================
-DGEMM Performance N =   3600 :   554.2645 GF
-DGEMM Execution time =    33.6706 s
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 582.0697 GF
-Average execution time = 32.0816 s
-Average energy = 6807.2383058 PWR_PKG_ENERGY
+Average GFLOPS = 591.1816 GF
+Average execution time = 31.5689 s
+Average PWR_PKG_ENERGY =  6699.4185912
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -msse3
@@ -161,51 +131,41 @@ Compiling with SIMD flag: -msse3
 gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse3 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 
 
+============================ Tabulate Statistics ============================
+DGEMM Performance N =   3600 :   595.9707 GF
+DGEMM Execution time =    31.3143 s
+PWR_PKG_ENERGY = 6675.900818	
+=============================================================================
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6766.306274	
+DGEMM Performance N =   3600 :   581.9814 GF
+DGEMM Execution time =    32.0670 s
+PWR_PKG_ENERGY = 6796.651550	
 =============================================================================
-DGEMM Performance N =   3600 :   587.7740 GF
-DGEMM Execution time =    31.7510 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6643.499939	
+DGEMM Performance N =   3600 :   577.9825 GF
+DGEMM Execution time =    32.2889 s
+PWR_PKG_ENERGY = 6842.132446	
 =============================================================================
-DGEMM Performance N =   3600 :   595.6395 GF
-DGEMM Execution time =    31.3317 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6662.868408	
+DGEMM Performance N =   3600 :   593.4634 GF
+DGEMM Execution time =    31.4466 s
+PWR_PKG_ENERGY = 6667.511169	
 =============================================================================
-DGEMM Performance N =   3600 :   593.9396 GF
-DGEMM Execution time =    31.4214 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6663.023987	
+DGEMM Performance N =   3600 :   594.0783 GF
+DGEMM Execution time =    31.4140 s
+PWR_PKG_ENERGY = 6660.484436	
 =============================================================================
-DGEMM Performance N =   3600 :   593.8198 GF
-DGEMM Execution time =    31.4277 s
-
-
-============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6685.097839	
-=============================================================================
-DGEMM Performance N =   3600 :   591.8534 GF
-DGEMM Execution time =    31.5321 s
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 592.6053 GF
-Average execution time = 31.4928 s
-Average energy = 6684.1592894 PWR_PKG_ENERGY
+Average GFLOPS = 588.6953 GF
+Average execution time = 31.7062 s
+Average PWR_PKG_ENERGY =  6728.5360838
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mssse3
@@ -213,51 +173,41 @@ Compiling with SIMD flag: -mssse3
 gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mssse3 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 
 
+============================ Tabulate Statistics ============================
+DGEMM Performance N =   3600 :   591.2767 GF
+DGEMM Execution time =    31.5629 s
+PWR_PKG_ENERGY = 6723.902954	
+=============================================================================
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6763.274658	
+DGEMM Performance N =   3600 :   554.1007 GF
+DGEMM Execution time =    33.6805 s
+PWR_PKG_ENERGY = 7134.449890	
 =============================================================================
-DGEMM Performance N =   3600 :   588.1993 GF
-DGEMM Execution time =    31.7280 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6690.640076	
+DGEMM Performance N =   3600 :   587.0548 GF
+DGEMM Execution time =    31.7899 s
+PWR_PKG_ENERGY = 6737.524719	
 =============================================================================
-DGEMM Performance N =   3600 :   591.3742 GF
-DGEMM Execution time =    31.5577 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6684.008362	
+DGEMM Performance N =   3600 :   594.0126 GF
+DGEMM Execution time =    31.4175 s
+PWR_PKG_ENERGY = 6660.868835	
 =============================================================================
-DGEMM Performance N =   3600 :   591.9837 GF
-DGEMM Execution time =    31.5252 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6797.530579	
+DGEMM Performance N =   3600 :   553.0284 GF
+DGEMM Execution time =    33.7458 s
+PWR_PKG_ENERGY = 7147.678833	
 =============================================================================
-DGEMM Performance N =   3600 :   581.7241 GF
-DGEMM Execution time =    32.0812 s
-
-
-============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6711.637695	
-=============================================================================
-DGEMM Performance N =   3600 :   589.3937 GF
-DGEMM Execution time =    31.6637 s
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 588.535 GF
-Average execution time = 31.7112 s
-Average energy = 6729.418274 PWR_PKG_ENERGY
+Average GFLOPS = 575.8946 GF
+Average execution time = 32.4393 s
+Average PWR_PKG_ENERGY =  6880.8850462
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -msse4.1
@@ -265,51 +215,41 @@ Compiling with SIMD flag: -msse4.1
 gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse4.1 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 
 
+============================ Tabulate Statistics ============================
+DGEMM Performance N =   3600 :   594.7303 GF
+DGEMM Execution time =    31.3796 s
+PWR_PKG_ENERGY = 6691.406250	
+=============================================================================
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6735.483521	
+DGEMM Performance N =   3600 :   592.1118 GF
+DGEMM Execution time =    31.5184 s
+PWR_PKG_ENERGY = 6680.444275	
 =============================================================================
-DGEMM Performance N =   3600 :   590.5817 GF
-DGEMM Execution time =    31.6000 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6749.351624	
+DGEMM Performance N =   3600 :   559.1641 GF
+DGEMM Execution time =    33.3755 s
+PWR_PKG_ENERGY = 7071.239258	
 =============================================================================
-DGEMM Performance N =   3600 :   586.0869 GF
-DGEMM Execution time =    31.8424 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6784.794678	
+DGEMM Performance N =   3600 :   556.0256 GF
+DGEMM Execution time =    33.5639 s
+PWR_PKG_ENERGY = 7109.367615	
 =============================================================================
-DGEMM Performance N =   3600 :   582.9794 GF
-DGEMM Execution time =    32.0121 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6693.768127	
+DGEMM Performance N =   3600 :   596.6863 GF
+DGEMM Execution time =    31.2767 s
+PWR_PKG_ENERGY = 6632.132019	
 =============================================================================
-DGEMM Performance N =   3600 :   591.1050 GF
-DGEMM Execution time =    31.5721 s
-
-
-============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-7179.337280	
-=============================================================================
-DGEMM Performance N =   3600 :   550.6145 GF
-DGEMM Execution time =    33.8938 s
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 580.2735 GF
-Average execution time = 32.1841 s
-Average energy = 6828.547046 PWR_PKG_ENERGY
+Average GFLOPS = 579.7436 GF
+Average execution time = 32.2228 s
+Average PWR_PKG_ENERGY =  6836.9178834
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -msse4.2
@@ -317,51 +257,41 @@ Compiling with SIMD flag: -msse4.2
 gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse4.2 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 
 
+============================ Tabulate Statistics ============================
+DGEMM Performance N =   3600 :   597.2178 GF
+DGEMM Execution time =    31.2489 s
+PWR_PKG_ENERGY = 6664.630371	
+=============================================================================
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6674.665344	
+DGEMM Performance N =   3600 :   582.3798 GF
+DGEMM Execution time =    32.0451 s
+PWR_PKG_ENERGY = 6791.756836	
 =============================================================================
-DGEMM Performance N =   3600 :   596.1662 GF
-DGEMM Execution time =    31.3040 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-7155.169067	
+DGEMM Performance N =   3600 :   593.0765 GF
+DGEMM Execution time =    31.4671 s
+PWR_PKG_ENERGY = 6671.520935	
 =============================================================================
-DGEMM Performance N =   3600 :   552.4705 GF
-DGEMM Execution time =    33.7799 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6669.112976	
+DGEMM Performance N =   3600 :   593.3018 GF
+DGEMM Execution time =    31.4552 s
+PWR_PKG_ENERGY = 6668.508362	
 =============================================================================
-DGEMM Performance N =   3600 :   593.2902 GF
-DGEMM Execution time =    31.4558 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6741.399109	
+DGEMM Performance N =   3600 :   591.5770 GF
+DGEMM Execution time =    31.5469 s
+PWR_PKG_ENERGY = 6687.397095	
 =============================================================================
-DGEMM Performance N =   3600 :   586.7987 GF
-DGEMM Execution time =    31.8038 s
-
-
-============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6711.414429	
-=============================================================================
-DGEMM Performance N =   3600 :   589.4754 GF
-DGEMM Execution time =    31.6593 s
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 583.6402 GF
-Average execution time = 32.0006 s
-Average energy = 6790.352185 PWR_PKG_ENERGY
+Average GFLOPS = 591.5106 GF
+Average execution time = 31.5526 s
+Average PWR_PKG_ENERGY =  6696.7627198
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -maes
@@ -369,51 +299,41 @@ Compiling with SIMD flag: -maes
 gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -maes -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 
 
+============================ Tabulate Statistics ============================
+DGEMM Performance N =   3600 :   592.3529 GF
+DGEMM Execution time =    31.5055 s
+PWR_PKG_ENERGY = 6717.143372	
+=============================================================================
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6711.991089	
+DGEMM Performance N =   3600 :   591.2958 GF
+DGEMM Execution time =    31.5619 s
+PWR_PKG_ENERGY = 6690.496887	
 =============================================================================
-DGEMM Performance N =   3600 :   592.9267 GF
-DGEMM Execution time =    31.4751 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6697.421692	
+DGEMM Performance N =   3600 :   568.6603 GF
+DGEMM Execution time =    32.8182 s
+PWR_PKG_ENERGY = 6953.353760	
 =============================================================================
-DGEMM Performance N =   3600 :   590.8409 GF
-DGEMM Execution time =    31.5862 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6863.192566	
+DGEMM Performance N =   3600 :   578.8086 GF
+DGEMM Execution time =    32.2428 s
+PWR_PKG_ENERGY = 6832.551514	
 =============================================================================
-DGEMM Performance N =   3600 :   576.2506 GF
-DGEMM Execution time =    32.3859 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6689.535889	
+DGEMM Performance N =   3600 :   589.2687 GF
+DGEMM Execution time =    31.6704 s
+PWR_PKG_ENERGY = 6714.031433	
 =============================================================================
-DGEMM Performance N =   3600 :   591.4446 GF
-DGEMM Execution time =    31.5539 s
-
-
-============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6670.823425	
-=============================================================================
-DGEMM Performance N =   3600 :   593.1346 GF
-DGEMM Execution time =    31.4640 s
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 588.9195 GF
-Average execution time = 31.693 s
-Average energy = 6726.5929322 PWR_PKG_ENERGY
+Average GFLOPS = 584.0773 GF
+Average execution time = 31.9598 s
+Average PWR_PKG_ENERGY =  6781.5153932
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx
@@ -421,51 +341,41 @@ Compiling with SIMD flag: -mavx
 gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 
 
+============================ Tabulate Statistics ============================
+DGEMM Performance N =   3600 :   594.9986 GF
+DGEMM Execution time =    31.3655 s
+PWR_PKG_ENERGY = 6687.009644	
+=============================================================================
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6777.945068	
+DGEMM Performance N =   3600 :   592.4331 GF
+DGEMM Execution time =    31.5013 s
+PWR_PKG_ENERGY = 6678.352905	
 =============================================================================
-DGEMM Performance N =   3600 :   586.7360 GF
-DGEMM Execution time =    31.8072 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6679.495178	
+DGEMM Performance N =   3600 :   577.5272 GF
+DGEMM Execution time =    32.3143 s
+PWR_PKG_ENERGY = 6847.560425	
 =============================================================================
-DGEMM Performance N =   3600 :   592.3610 GF
-DGEMM Execution time =    31.5051 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6708.693054	
+DGEMM Performance N =   3600 :   593.6402 GF
+DGEMM Execution time =    31.4372 s
+PWR_PKG_ENERGY = 6665.698730	
 =============================================================================
-DGEMM Performance N =   3600 :   589.7080 GF
-DGEMM Execution time =    31.6469 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-7122.998535	
+DGEMM Performance N =   3600 :   594.1718 GF
+DGEMM Execution time =    31.4091 s
+PWR_PKG_ENERGY = 6659.364868	
 =============================================================================
-DGEMM Performance N =   3600 :   554.9481 GF
-DGEMM Execution time =    33.6291 s
-
-
-============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-7152.306519	
-=============================================================================
-DGEMM Performance N =   3600 :   552.7132 GF
-DGEMM Execution time =    33.7651 s
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 575.2933 GF
-Average execution time = 32.4707 s
-Average energy = 6888.2876708 PWR_PKG_ENERGY
+Average GFLOPS = 590.5542 GF
+Average execution time = 31.6055 s
+Average PWR_PKG_ENERGY =  6707.5973144
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mfma
@@ -473,51 +383,41 @@ Compiling with SIMD flag: -mfma
 gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mfma -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 
 
+============================ Tabulate Statistics ============================
+DGEMM Performance N =   3600 :   595.6272 GF
+DGEMM Execution time =    31.3323 s
+PWR_PKG_ENERGY = 6681.176758	
+=============================================================================
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6691.023071	
+DGEMM Performance N =   3600 :   592.5750 GF
+DGEMM Execution time =    31.4937 s
+PWR_PKG_ENERGY = 6676.948792	
 =============================================================================
-DGEMM Performance N =   3600 :   594.7519 GF
-DGEMM Execution time =    31.3785 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6672.343628	
+DGEMM Performance N =   3600 :   583.2435 GF
+DGEMM Execution time =    31.9976 s
+PWR_PKG_ENERGY = 6781.474365	
 =============================================================================
-DGEMM Performance N =   3600 :   592.9624 GF
-DGEMM Execution time =    31.4732 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6731.026733	
+DGEMM Performance N =   3600 :   595.1172 GF
+DGEMM Execution time =    31.3592 s
+PWR_PKG_ENERGY = 6649.052673	
 =============================================================================
-DGEMM Performance N =   3600 :   587.7197 GF
-DGEMM Execution time =    31.7539 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6738.203857	
+DGEMM Performance N =   3600 :   579.6544 GF
+DGEMM Execution time =    32.1957 s
+PWR_PKG_ENERGY = 6823.833130	
 =============================================================================
-DGEMM Performance N =   3600 :   586.9954 GF
-DGEMM Execution time =    31.7931 s
-
-
-============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6754.029175	
-=============================================================================
-DGEMM Performance N =   3600 :   585.5465 GF
-DGEMM Execution time =    31.8718 s
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 589.5952 GF
-Average execution time = 31.6541 s
-Average energy = 6717.3252928 PWR_PKG_ENERGY
+Average GFLOPS = 589.2435 GF
+Average execution time = 31.6757 s
+Average PWR_PKG_ENERGY =  6722.4971436
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx2
@@ -525,223 +425,183 @@ Compiling with SIMD flag: -mavx2
 gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx2 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 
 
+============================ Tabulate Statistics ============================
+DGEMM Performance N =   3600 :   574.7868 GF
+DGEMM Execution time =    32.4684 s
+PWR_PKG_ENERGY = 6916.806519	
+=============================================================================
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6712.008972	
+DGEMM Performance N =   3600 :   593.4288 GF
+DGEMM Execution time =    31.4484 s
+PWR_PKG_ENERGY = 6668.005249	
 =============================================================================
-DGEMM Performance N =   3600 :   592.7987 GF
-DGEMM Execution time =    31.4819 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6687.955566	
+DGEMM Performance N =   3600 :   595.3945 GF
+DGEMM Execution time =    31.3446 s
+PWR_PKG_ENERGY = 6646.462402	
 =============================================================================
-DGEMM Performance N =   3600 :   591.5188 GF
-DGEMM Execution time =    31.5500 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6674.393250	
+DGEMM Performance N =   3600 :   592.7997 GF
+DGEMM Execution time =    31.4818 s
+PWR_PKG_ENERGY = 6674.821594	
 =============================================================================
-DGEMM Performance N =   3600 :   592.7888 GF
-DGEMM Execution time =    31.4824 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6725.672424	
+DGEMM Performance N =   3600 :   585.4816 GF
+DGEMM Execution time =    31.8753 s
+PWR_PKG_ENERGY = 6756.218689	
 =============================================================================
-DGEMM Performance N =   3600 :   588.1517 GF
-DGEMM Execution time =    31.7306 s
-
-
-============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6666.544739	
-=============================================================================
-DGEMM Performance N =   3600 :   593.4710 GF
-DGEMM Execution time =    31.4462 s
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 591.7458 GF
-Average execution time = 31.5382 s
-Average energy = 6693.3149902 PWR_PKG_ENERGY
+Average GFLOPS = 588.3783 GF
+Average execution time = 31.7237 s
+Average PWR_PKG_ENERGY =  6732.4628906
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx512f
 
 gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512f -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 
-./run.sh: line 37: 37286 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37307 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37448 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37472 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37493 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-Traceback (most recent call last):
-  File "compute.py", line 38, in <module>
-    fout.write("Average GFLOPS = " + str(round(sum1 / len, 4)) + "GF\n")
-ZeroDivisionError: float division by zero
+./run.sh: line 37: 58662 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 58686 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 58707 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 58728 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 58749 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 579.7348 GF
+Average execution time = 32.2116 s
+Average PWR_PKG_ENERGY =  0.0
+
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx512cd
 
 gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512cd -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 
-./run.sh: line 37: 37522 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37543 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37565 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37586 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37608 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-Traceback (most recent call last):
-  File "compute.py", line 38, in <module>
-    fout.write("Average GFLOPS = " + str(round(sum1 / len, 4)) + "GF\n")
-ZeroDivisionError: float division by zero
+./run.sh: line 37: 58778 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 58799 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 58820 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 58842 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 58863 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 588.7445 GF
+Average execution time = 31.7162 s
+Average PWR_PKG_ENERGY =  0.0
+
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx512vl
 
 gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512vl -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 
-./run.sh: line 37: 37637 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37658 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37679 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37700 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37721 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-Traceback (most recent call last):
-  File "compute.py", line 38, in <module>
-    fout.write("Average GFLOPS = " + str(round(sum1 / len, 4)) + "GF\n")
-ZeroDivisionError: float division by zero
+./run.sh: line 37: 58893 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 58914 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 58935 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 58956 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 58977 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 594.3208 GF
+Average execution time = 31.4016 s
+Average PWR_PKG_ENERGY =  0.0
+
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx512bw
 
 gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512bw -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 
-./run.sh: line 37: 37750 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37771 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37792 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37816 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37838 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-Traceback (most recent call last):
-  File "compute.py", line 38, in <module>
-    fout.write("Average GFLOPS = " + str(round(sum1 / len, 4)) + "GF\n")
-ZeroDivisionError: float division by zero
+./run.sh: line 37: 59006 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 59027 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 59048 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 59069 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 59093 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 586.2181 GF
+Average execution time = 31.8672 s
+Average PWR_PKG_ENERGY =  0.0
+
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx512dq
 
 gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512dq -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 
-./run.sh: line 37: 37867 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37888 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37909 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37930 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-./run.sh: line 37: 37951 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
-Traceback (most recent call last):
-  File "compute.py", line 38, in <module>
-    fout.write("Average GFLOPS = " + str(round(sum1 / len, 4)) + "GF\n")
-ZeroDivisionError: float division by zero
+./run.sh: line 37: 59123 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 59144 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 59165 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 59186 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+./run.sh: line 37: 59207 Illegal instruction     (core dumped) ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 586.5122 GF
+Average execution time = 31.8463 s
+Average PWR_PKG_ENERGY =  0.0
+
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2
 
 gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 
 
+============================ Tabulate Statistics ============================
+DGEMM Performance N =   3600 :   598.6389 GF
+DGEMM Execution time =    31.1747 s
+PWR_PKG_ENERGY = 6668.502563	
+=============================================================================
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6737.262878	
+DGEMM Performance N =   3600 :   588.6058 GF
+DGEMM Execution time =    31.7061 s
+PWR_PKG_ENERGY = 6719.901428	
 =============================================================================
-DGEMM Performance N =   3600 :   592.1943 GF
-DGEMM Execution time =    31.5140 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6864.565186	
+DGEMM Performance N =   3600 :   592.8339 GF
+DGEMM Execution time =    31.4800 s
+PWR_PKG_ENERGY = 6673.626099	
 =============================================================================
-DGEMM Performance N =   3600 :   576.0786 GF
-DGEMM Execution time =    32.3956 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6729.337463	
+DGEMM Performance N =   3600 :   555.1344 GF
+DGEMM Execution time =    33.6178 s
+PWR_PKG_ENERGY = 7121.102661	
 =============================================================================
-DGEMM Performance N =   3600 :   587.9765 GF
-DGEMM Execution time =    31.7400 s
-
 
 ============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-7184.755432	
+DGEMM Performance N =   3600 :   589.8939 GF
+DGEMM Execution time =    31.6369 s
+PWR_PKG_ENERGY = 6707.180725	
 =============================================================================
-DGEMM Performance N =   3600 :   550.0894 GF
-DGEMM Execution time =    33.9261 s
-
-
-============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6730.303833	
-=============================================================================
-DGEMM Performance N =   3600 :   587.8073 GF
-DGEMM Execution time =    31.7492 s
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 578.8292 GF
-Average execution time = 32.265 s
-Average energy = 6849.2449584 PWR_PKG_ENERGY
+Average GFLOPS = 585.0214 GF
+Average execution time = 31.9231 s
+Average PWR_PKG_ENERGY =  6778.0626952
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq
 
 gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl
 
-
-
-============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6786.914551	
-=============================================================================
-DGEMM Performance N =   3600 :   586.0804 GF
-DGEMM Execution time =    31.8427 s
-
-
-============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-7071.004883	
-=============================================================================
-DGEMM Performance N =   3600 :   559.1365 GF
-DGEMM Execution time =    33.3772 s
-
-
-============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6738.236938	
-=============================================================================
-DGEMM Performance N =   3600 :   587.1019 GF
-DGEMM Execution time =    31.7873 s
-
-
-============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6717.884460	
-=============================================================================
-DGEMM Performance N =   3600 :   588.8687 GF
-DGEMM Execution time =    31.6920 s
-
-
-============================ Tabulate Statistics ============================
-PWR_PKG_ENERGY	
-6787.380066	
-=============================================================================
-DGEMM Performance N =   3600 :   582.5481 GF
-DGEMM Execution time =    32.0358 s
+./run.sh: line 69: 59346 Illegal instruction     (core dumped) ./${TARGET%.*}__group_avx 3600 __group_avx
+./run.sh: line 69: 59367 Illegal instruction     (core dumped) ./${TARGET%.*}__group_avx 3600 __group_avx
+./run.sh: line 69: 59388 Illegal instruction     (core dumped) ./${TARGET%.*}__group_avx 3600 __group_avx
+./run.sh: line 69: 59409 Illegal instruction     (core dumped) ./${TARGET%.*}__group_avx 3600 __group_avx
+./run.sh: line 69: 59430 Illegal instruction     (core dumped) ./${TARGET%.*}__group_avx 3600 __group_avx
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 580.7471 GF
-Average execution time = 32.147 s
-Average energy = 6820.2841796 PWR_PKG_ENERGY
+Average GFLOPS = 591.1337 GF
+Average execution time = 31.5709 s
+Average PWR_PKG_ENERGY =  0.0
 

@@ -68,7 +68,8 @@ int main(int argc, char **argv) {
   fout2 = fopen(f2, "a"); 
   fout3 = fopen(f3, "a");
 
-  printf("\n");
+  //printf("\n");
+  printf("\n============================ Tabulate Statistics ============================\n");
 
   int m, i, j;
   FLOAT *a, *b, *c;
@@ -123,7 +124,6 @@ int main(int argc, char **argv) {
 
  dstop = omp_get_wtime();
  
-double energy = perfcounters_finalize();
 
 #ifndef USE_DOUBLE
   printf("SGEMM Performance N = %6d : %10.4f GF\n", m, gflops / (dstop - dstart) * (double)LOOP * 1.e-9);
@@ -132,7 +132,7 @@ double energy = perfcounters_finalize();
   printf("DGEMM Execution time = %10.4f s\n", dstop - dstart);
   fprintf(fout1, "%10.4f \n", gflops / (dstop - dstart) * (double)LOOP * 1.e-9);
   fprintf(fout2, "%10.4f \n", dstop - dstart);
-  fprintf(fout3, "%f \n", energy);
+
 #endif
 
   free(a);
@@ -141,7 +141,17 @@ double energy = perfcounters_finalize();
   
   fclose(fout1);
   fclose(fout2);
+
+#ifdef USE_DOUBLE
+  double energy = perfcounters_dump();
+  fprintf(fout3, "%f \n", energy);
+
+#endif
+  
   fclose(fout3);
+
+  printf("\n=============================================================================\n");
+  perfcounters_finalize();
 
   return 0;
 }

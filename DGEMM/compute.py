@@ -35,9 +35,9 @@ fout.write("\n")
 # fout.write("DGEMM performance\n")
 fout.write("DGEMM performance for " + sys.argv[1][2:] + "\n")
 fout.write("-----------------------------------------------\n")
-fout.write("Average GFLOPS = " + str(round(sum1 / len, 4)) + "GF\n")
-fout.write("Average execution time = " + str(round(sum2 / len, 4)) + "s\n")
-fout.write("Average energy = " + str(sum3/ len) + "PWR_PKG_ENERGY\n")
+fout.write("Average GFLOPS = " + str(round(sum1 / len, 4)) + " GF\n")
+fout.write("Average execution time = " + str(round(sum2 / len, 4)) + " s\n")
+fout.write("Average PWR_PKG_ENERGY = " + str(sum3/ len) + "\n")
 
 fout.close()
 
@@ -46,6 +46,6 @@ print "DGEMM performance"
 print "-----------------------------------------------"
 print "Average GFLOPS =", round(sum1 / len, 4), "GF"
 print "Average execution time =", round(sum2 / len, 4), "s"
-print "Average energy =", str(sum3/ len), "PWR_PKG_ENERGY"
+print "Average PWR_PKG_ENERGY = ", str(sum3/ len)
 print
 
