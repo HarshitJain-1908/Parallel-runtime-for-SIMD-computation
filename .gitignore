@@ -7,7 +7,4 @@
 .viminfo
 .vscode-server/
 .wget-hsts
-GEMM_benchmark/
-old_DGEMM/
-gemm-benchmark.zip
 harshit-msr.c
