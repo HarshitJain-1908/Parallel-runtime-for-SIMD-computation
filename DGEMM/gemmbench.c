@@ -28,7 +28,7 @@ licensors in any way.
 #include <stdlib.h>
 #include <malloc.h>
 #include <omp.h>
-#include "harshit-msr.h"
+#include "harshit-msr.c"
 #include <string.h>
 
 #ifndef	USE_DOUBLE
@@ -47,8 +47,8 @@ int main(int argc, char **argv) {
 
   perfcounters_init();
 
-  FILE *fout1, *fout2;
-  char f1[50] = "", f2[50] = "";
+  FILE *fout1, *fout2, *fout3;
+  char f1[50] = "", f2[50] = "", f3[50] = "";
 
   strcat(f1, "./output/gflops");
   strcat(f1, argv[2]);
@@ -58,10 +58,15 @@ int main(int argc, char **argv) {
   strcat(f2, argv[2]);
   strcat(f2, ".txt");
 
+  strcat(f3, "./output/energy");
+  strcat(f3, argv[2]);
+  strcat(f3, ".txt");
+   
   // printf("f1: %s f2: %s\n", f1, f2);
 
   fout1 = fopen(f1, "a");
   fout2 = fopen(f2, "a"); 
+  fout3 = fopen(f3, "a");
 
   printf("\n");
 
@@ -110,13 +115,15 @@ int main(int argc, char **argv) {
   
   perfcounters_start();
 
-    for (i = 0; i < LOOP; i ++) {
+  for (i = 0; i < LOOP; i ++) {
     GEMM("N", "N", &m, &m, &m, &alpha, a, &m, b, &m, &beta, c, &m);
   }
   
  perfcounters_stop(); 
 
-  dstop = omp_get_wtime();
+ dstop = omp_get_wtime();
+ 
+double energy = perfcounters_finalize();
 
 #ifndef USE_DOUBLE
   printf("SGEMM Performance N = %6d : %10.4f GF\n", m, gflops / (dstop - dstart) * (double)LOOP * 1.e-9);
@@ -125,6 +132,7 @@ int main(int argc, char **argv) {
   printf("DGEMM Execution time = %10.4f s\n", dstop - dstart);
   fprintf(fout1, "%10.4f \n", gflops / (dstop - dstart) * (double)LOOP * 1.e-9);
   fprintf(fout2, "%10.4f \n", dstop - dstart);
+  fprintf(fout3, "%f \n", energy);
 #endif
 
   free(a);
@@ -133,8 +141,7 @@ int main(int argc, char **argv) {
   
   fclose(fout1);
   fclose(fout2);
-
-  perfcounters_finalize();
+  fclose(fout3);
 
   return 0;
 }

@@ -19,7 +19,6 @@
 #include <assert.h>
 #include <fcntl.h>
 #include <errno.h>
-#include "harshit-msr.h"
 
 /* Haswell Power MSR register addresses  (change according to your machine) */
 // register value for different scope
@@ -148,7 +147,7 @@ int get_physical_package_id (int cpu)
 }
 
 
-void perfcounters_dump();
+double perfcounters_dump();
 void perfcounters_read();
 
 void perfcounters_init(){
@@ -215,10 +214,13 @@ void perfcounters_start(){
 	}
 }
 
-void perfcounters_finalize(){
-  perfcounters_dump();
+double perfcounters_finalize(){
+  double res = perfcounters_dump();
+
   free(energyWrap);
   free(energySave);
+
+  return res;
 }
 
 void perfcounters_read(){
@@ -266,7 +268,7 @@ void perfcounters_stop(){
     perfcounters_read();
 }
 
-void perfcounters_dump(){
+double perfcounters_dump(){
   int i;
     fprintf(stdout,"\n============================ Tabulate Statistics ============================\n");
     // print all events
@@ -288,4 +290,5 @@ void perfcounters_dump(){
     fprintf(stdout,"\n=============================================================================\n");
     fflush(stdout);
 
+ return res;
 }
