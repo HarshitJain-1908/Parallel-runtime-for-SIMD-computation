@@ -29,6 +29,7 @@ def parse_performance_data(file_content):
         energy_match = re.match(r"Average PWR_PKG_ENERGY = ([\d.]+)", line)
         if energy_match and current_simd_flag:
             energy_value = float(energy_match.group(1))
+            #print("energy for", energy_value, current_simd_flag)
             simd_data[current_simd_flag]['energy'] = energy_value if energy_value > 0 else None
 
     return simd_data
@@ -36,7 +37,8 @@ def parse_performance_data(file_content):
 def find_min_max_values(simd_data):
     max_gflops_simd = max(simd_data, key=lambda x: simd_data[x]['GFLOPS'])
     min_execution_time_simd = min(simd_data, key=lambda x: simd_data[x]['execution_time'])
-    min_energy_simd = min(simd_data, key=lambda x: simd_data[x]['energy']) if any(simd_data[x]['energy'] > 0 for x in simd_data) else None
+    #min_energy_simd = min(simd_data, key=lambda x: simd_data[x]['energy']) #if any(simd_data[x]['energy'] != None for x in simd_data) else None
+    min_energy_simd = min((key for key, value in simd_data.items() if value['energy'] is not None and value['energy'] > 0), key=lambda x: simd_data[x]['energy'])
 
     return max_gflops_simd, min_execution_time_simd, min_energy_simd
 
