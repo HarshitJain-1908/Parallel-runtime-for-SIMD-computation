@@ -73,6 +73,10 @@ done
 
 python compute.py __group_avx
 
+#run python script for analyzing the measurements
+python analyzer.py
+
+
 # for group in "${GROUPS[@]}"; do
 #     echo "--------------------------------------------------------------------------------------------------------------------------------------------"
 #     echo "Compiling with SIMD flags: $group"
