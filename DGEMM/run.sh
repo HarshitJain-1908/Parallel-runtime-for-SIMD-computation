@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # List of SIMD flags to use
-SIMD_FLAGS="-mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq"
+# SIMD_FLAGS="-mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq"
 
-# SIMD_FLAGS="-mmmx"
+SIMD_FLAGS="-mmmx"
 
 GROUPS=(
     "-msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2"
@@ -24,7 +24,8 @@ TARGET=dgemmbench.mkl
 SOURCE_FILE=gemmbench.c
 
 # Clean previous build and output files
-rm -f ./output/*txt
+rm -f ./output/*.txt
+rm -rf ./assembly/*.asm
 rm -f *.txt
 make clean -f $MAKEFILE
 
@@ -60,7 +61,7 @@ echo "--------------------------------------------------------------------------
 echo "Compiling with SIMD flag: -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2"
 echo ""
 # make CC=$CC CFLAGS="-fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I${MKLROOT}/include -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2" LDFLAGS="-L${MKLROOT}/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl" $TARGET -f $MAKEFILE
-export EXTRA_CFLAGS=$SIMD_FLAG
+export EXTRA_CFLAGS=-msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2
 make all
 unset EXTRA_CFLAGS
 mv $TARGET ${TARGET%.*}__group_sse
@@ -81,7 +82,7 @@ echo "--------------------------------------------------------------------------
 echo "Compiling with SIMD flag: -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq"
 echo ""
 # make CC=$CC CFLAGS="-O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I${MKLROOT}/include -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq" LDFLAGS="-L${MKLROOT}/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl" $TARGET -f $MAKEFILE
-export EXTRA_CFLAGS=$SIMD_FLAG
+export EXTRA_CFLAGS=-mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq
 make all
 unset EXTRA_CFLAGS
 mv $TARGET ${TARGET%.*}__group_avx
