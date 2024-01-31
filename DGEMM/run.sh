@@ -33,7 +33,12 @@ for SIMD_FLAG in $SIMD_FLAGS; do
     echo "--------------------------------------------------------------------------------------------------------------------------------------------"
     echo "Compiling with SIMD flag: $SIMD_FLAG"
     echo ""
-    make CC=$CC CFLAGS="-O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I${MKLROOT}/include $SIMD_FLAG" LDFLAGS="-L${MKLROOT}/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl" $TARGET -f $MAKEFILE
+    # make CC=$CC CFLAGS="-fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I${MKLROOT}/include $SIMD_FLAG" LDFLAGS="-L${MKLROOT}/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl" $TARGET -f $MAKEFILE
+    # make CFLAGS+="$SIMD_FLAG" all
+    # echo $CFLAGS
+    export EXTRA_CFLAGS=$SIMD_FLAG
+    make all
+    unset EXTRA_CFLAGS
     mv $TARGET ${TARGET%.*}$SIMD_FLAG
     echo ""
 
@@ -54,7 +59,10 @@ done
 echo "--------------------------------------------------------------------------------------------------------------------------------------------"
 echo "Compiling with SIMD flag: -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2"
 echo ""
-make CC=$CC CFLAGS="-O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I${MKLROOT}/include -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2" LDFLAGS="-L${MKLROOT}/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl" $TARGET -f $MAKEFILE
+# make CC=$CC CFLAGS="-fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I${MKLROOT}/include -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2" LDFLAGS="-L${MKLROOT}/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl" $TARGET -f $MAKEFILE
+export EXTRA_CFLAGS=$SIMD_FLAG
+make all
+unset EXTRA_CFLAGS
 mv $TARGET ${TARGET%.*}__group_sse
 echo ""
 
@@ -72,7 +80,10 @@ objdump -d ${TARGET%.*}__group_sse > ./assembly/${TARGET%.*}__group_sse$d.asm
 echo "--------------------------------------------------------------------------------------------------------------------------------------------"
 echo "Compiling with SIMD flag: -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq"
 echo ""
-make CC=$CC CFLAGS="-O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I${MKLROOT}/include -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq" LDFLAGS="-L${MKLROOT}/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl" $TARGET -f $MAKEFILE
+# make CC=$CC CFLAGS="-O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I${MKLROOT}/include -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq" LDFLAGS="-L${MKLROOT}/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl" $TARGET -f $MAKEFILE
+export EXTRA_CFLAGS=$SIMD_FLAG
+make all
+unset EXTRA_CFLAGS
 mv $TARGET ${TARGET%.*}__group_avx
 echo ""
 

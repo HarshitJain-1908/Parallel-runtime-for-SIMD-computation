@@ -1,90 +1,86 @@
 
 DGEMM performance for mmx
 -----------------------------------------------
-Average GFLOPS = 1424.7709 GF
-Average execution time = 13.1029 s
+Average GFLOPS = 1397.0222 GF
+Average execution time = 13.3598 s
 
 DGEMM performance for sse
 -----------------------------------------------
-Average GFLOPS = 1405.0883 GF
-Average execution time = 13.2827 s
+Average GFLOPS = 1396.1729 GF
+Average execution time = 13.367 s
 
 DGEMM performance for sse2
 -----------------------------------------------
-Average GFLOPS = 1398.5154 GF
-Average execution time = 13.3445 s
+Average GFLOPS = 1402.4823 GF
+Average execution time = 13.3072 s
 
 DGEMM performance for sse3
 -----------------------------------------------
-Average GFLOPS = 1422.4674 GF
-Average execution time = 13.1197 s
+Average GFLOPS = 1399.9244 GF
+Average execution time = 13.331 s
 
 DGEMM performance for ssse3
 -----------------------------------------------
-Average GFLOPS = 1398.7212 GF
-Average execution time = 13.3428 s
+Average GFLOPS = 1416.1318 GF
+Average execution time = 13.1809 s
 
 DGEMM performance for sse4.1
 -----------------------------------------------
-Average GFLOPS = 1405.0675 GF
-Average execution time = 13.2822 s
+Average GFLOPS = 1399.5566 GF
+Average execution time = 13.3346 s
 
 DGEMM performance for sse4.2
 -----------------------------------------------
-Average GFLOPS = 1415.4533 GF
-Average execution time = 13.1849 s
+Average GFLOPS = 1402.2338 GF
+Average execution time = 13.3099 s
 
 DGEMM performance for aes
 -----------------------------------------------
-Average GFLOPS = 1402.1773 GF
-Average execution time = 13.3104 s
+Average GFLOPS = 1402.5714 GF
+Average execution time = 13.3083 s
 
 DGEMM performance for avx
 -----------------------------------------------
-Average GFLOPS = 1410.2191 GF
-Average execution time = 13.2343 s
+Average GFLOPS = 1401.4317 GF
+Average execution time = 13.3172 s
 
 DGEMM performance for fma
 -----------------------------------------------
-Average GFLOPS = 1395.8224 GF
-Average execution time = 13.3703 s
+Average GFLOPS = 1402.9889 GF
+Average execution time = 13.3024 s
 
 DGEMM performance for avx2
 -----------------------------------------------
-Average GFLOPS = 1391.2409 GF
-Average execution time = 13.4145 s
+Average GFLOPS = 1395.0207 GF
+Average execution time = 13.378 s
 
 DGEMM performance for avx512f
 -----------------------------------------------
-Average GFLOPS = 1379.0921 GF
-Average execution time = 13.5325 s
+Average GFLOPS = 1400.8755 GF
+Average execution time = 13.3228 s
 
 DGEMM performance for avx512cd
 -----------------------------------------------
-Average GFLOPS = 1409.787 GF
-Average execution time = 13.2381 s
+Average GFLOPS = 1411.0806 GF
+Average execution time = 13.2264 s
 
 DGEMM performance for avx512vl
 -----------------------------------------------
-Average GFLOPS = 1405.1179 GF
-Average execution time = 13.282 s
+Average GFLOPS = 1397.9139 GF
+Average execution time = 13.3502 s
 
 DGEMM performance for avx512bw
 -----------------------------------------------
-Average GFLOPS = 1410.2636 GF
-Average execution time = 13.2341 s
+Average GFLOPS = 1411.3133 GF
+Average execution time = 13.2249 s
 
 DGEMM performance for avx512dq
 -----------------------------------------------
-Average GFLOPS = 1404.2534 GF
-Average execution time = 13.29 s
+Average GFLOPS = 1403.6546 GF
+Average execution time = 13.2965 s
 
 DGEMM performance for group_sse
 -----------------------------------------------
-Average GFLOPS = 1401.6301 GF
-Average execution time = 13.3149 s
 
 DGEMM performance for group_avx
 -----------------------------------------------
-Average GFLOPS = 1396.1624 GF
-Average execution time = 13.3676 s
