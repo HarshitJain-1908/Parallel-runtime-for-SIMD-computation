@@ -1,108 +1,18 @@
 
 DGEMM performance for mmx
 -----------------------------------------------
-Average GFLOPS = 596.2207 GF
-Average execution time = 31.3427 s
-Average PWR_PKG_ENERGY = 6740.888208
-
-DGEMM performance for sse
------------------------------------------------
-Average GFLOPS = 577.0803 GF
-Average execution time = 32.3406 s
-Average PWR_PKG_ENERGY = 6859.1197632
-
-DGEMM performance for sse2
------------------------------------------------
-Average GFLOPS = 586.5748 GF
-Average execution time = 31.8166 s
-Average PWR_PKG_ENERGY = 6750.71615
-
-DGEMM performance for sse3
------------------------------------------------
-Average GFLOPS = 583.6354 GF
-Average execution time = 31.9928 s
-Average PWR_PKG_ENERGY = 6788.2656494
-
-DGEMM performance for ssse3
------------------------------------------------
-Average GFLOPS = 584.0522 GF
-Average execution time = 31.9618 s
-Average PWR_PKG_ENERGY = 6780.921985
-
-DGEMM performance for sse4.1
------------------------------------------------
-Average GFLOPS = 579.9033 GF
-Average execution time = 32.201 s
-Average PWR_PKG_ENERGY = 6831.2960818
-
-DGEMM performance for sse4.2
------------------------------------------------
-Average GFLOPS = 584.584 GF
-Average execution time = 31.9334 s
-Average PWR_PKG_ENERGY = 6775.5487914
-
-DGEMM performance for aes
------------------------------------------------
-Average GFLOPS = 577.8562 GF
-Average execution time = 32.313 s
-Average PWR_PKG_ENERGY = 6854.0962278
-
-DGEMM performance for avx
------------------------------------------------
-Average GFLOPS = 580.2953 GF
-Average execution time = 32.1689 s
-Average PWR_PKG_ENERGY = 6825.7434326
-
-DGEMM performance for fma
------------------------------------------------
-Average GFLOPS = 582.7555 GF
-Average execution time = 32.0327 s
-Average PWR_PKG_ENERGY = 6795.6859742
-
-DGEMM performance for avx2
------------------------------------------------
-Average GFLOPS = 587.9699 GF
-Average execution time = 31.7428 s
-Average PWR_PKG_ENERGY = 6735.410315
-
-DGEMM performance for avx512f
------------------------------------------------
-Average GFLOPS = 575.485 GF
-Average execution time = 32.4432 s
-Average PWR_PKG_ENERGY = 0.0
-
-DGEMM performance for avx512cd
------------------------------------------------
-Average GFLOPS = 591.9514 GF
-Average execution time = 31.5274 s
-Average PWR_PKG_ENERGY = 0.0
-
-DGEMM performance for avx512vl
------------------------------------------------
-Average GFLOPS = 587.1579 GF
-Average execution time = 31.7887 s
-Average PWR_PKG_ENERGY = 0.0
-
-DGEMM performance for avx512bw
------------------------------------------------
-Average GFLOPS = 585.3887 GF
-Average execution time = 31.8903 s
-Average PWR_PKG_ENERGY = 0.0
-
-DGEMM performance for avx512dq
------------------------------------------------
-Average GFLOPS = 586.8945 GF
-Average execution time = 31.8049 s
-Average PWR_PKG_ENERGY = 0.0
+Average GFLOPS = 612.1257 GF
+Average execution time = 30.4934 s
+Average PWR_PKG_ENERGY = 6674.9239195
 
 DGEMM performance for group_sse
 -----------------------------------------------
-Average GFLOPS = 573.7727 GF
-Average execution time = 32.5538 s
-Average PWR_PKG_ENERGY = 6908.5880616
+Average GFLOPS = 591.8534 GF
+Average execution time = 31.5343 s
+Average PWR_PKG_ENERGY = 6708.585205
 
 DGEMM performance for group_avx
 -----------------------------------------------
-Average GFLOPS = 586.0479 GF
-Average execution time = 31.8469 s
+Average GFLOPS = 579.3664 GF
+Average execution time = 32.2125 s
 Average PWR_PKG_ENERGY = 0.0

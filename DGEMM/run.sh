@@ -1,11 +1,15 @@
 #!/bin/bash
 
 # List of SIMD flags to use
-SIMD_FLAGS="-mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq"
-#SIMD_FLAGS="-mavx512f"
+#SIMD_FLAGS="-mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -maes -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq"
+
+SIMD_FLAGS="-mmmx"
+
 GROUPS=(
     "-msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2"
 )
+
+d="_d"
 
 # Compiler
 CC=gcc
@@ -42,7 +46,8 @@ for SIMD_FLAG in $SIMD_FLAGS; do
     python compute.py $SIMD_FLAG
 
     #get the assembly from above executable
-    objdump -S --disassemble ${TARGET%.*}$SIMD_FLAG > ${TARGET%.*}$SIMD_FLAG.asm
+    objdump -S --disassemble ${TARGET%.*}$SIMD_FLAG > ./assembly/${TARGET%.*}$SIMD_FLAG.asm
+    objdump -d ${TARGET%.*}$SIMD_FLAG > ./assembly/${TARGET%.*}$SIMD_FLAG$d.asm
 
 done
 
@@ -61,6 +66,9 @@ done
 
 python compute.py __group_sse
 
+objdump -S --disassemble ${TARGET%.*}__group_sse > ./assembly/${TARGET%.*}__group_sse.asm
+objdump -d ${TARGET%.*}__group_sse > ./assembly/${TARGET%.*}__group_sse$d.asm
+
 echo "--------------------------------------------------------------------------------------------------------------------------------------------"
 echo "Compiling with SIMD flag: -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq"
 echo ""
@@ -75,6 +83,9 @@ for i in {1..2}; do
 done
 
 python compute.py __group_avx
+
+objdump -S --disassemble ${TARGET%.*}__group_avx > ./assembly/${TARGET%.*}__group_avx.asm
+objdump -d ${TARGET%.*}__group_avx > ./assembly/${TARGET%.*}__group_avx$d.asm
 
 #run python script for analyzing the measurements
 python analyzer.py
