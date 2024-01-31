@@ -34,12 +34,15 @@ for SIMD_FLAG in $SIMD_FLAGS; do
     echo ""
 
     # run the executable 5 times
-    for i in {1..5}; do
+    for i in {1..2}; do
         ./${TARGET%.*}$SIMD_FLAG 3600 $SIMD_FLAG
 
     done
 
     python compute.py $SIMD_FLAG
+
+    #get the assembly from above executable
+    objdump -S --disassemble ${TARGET%.*}$SIMD_FLAG > ${TARGET%.*}$SIMD_FLAG.asm
 
 done
 
@@ -51,7 +54,7 @@ mv $TARGET ${TARGET%.*}__group_sse
 echo ""
 
 # run the executable 5 times
-for i in {1..5}; do
+for i in {1..2}; do
     ./${TARGET%.*}__group_sse 3600 __group_sse
 
 done
@@ -66,7 +69,7 @@ mv $TARGET ${TARGET%.*}__group_avx
 echo ""
 
 # run the executable 5 times
-for i in {1..5}; do
+for i in {1..2}; do
     ./${TARGET%.*}__group_avx 3600 __group_avx
 
 done

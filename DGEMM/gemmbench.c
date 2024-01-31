@@ -23,6 +23,10 @@ licensors in any way.
 // software.
 
 
+// #pragma GCC optimize("O3","unroll-loops","omit-frame-pointer","inline") //Optimization flags
+// #pragma GCC option("arch=native","tune=native","no-zero-upper") //Enable AVX
+// #pragma GCC target("avx")  //Enable AVX
+// #include <x86intrin.h>
 
 #include <stdio.h>
 #include <stdlib.h>
