@@ -44,7 +44,7 @@ for SIMD_FLAG in $SIMD_FLAGS; do
     echo ""
 
     # run the executable 5 times
-    for i in {1..2}; do
+    for i in {1..10}; do
         ./${TARGET%.*}$SIMD_FLAG 3600 200 $SIMD_FLAG
 
     done
@@ -69,7 +69,7 @@ mv $TARGET ${TARGET%.*}__group_sse
 echo ""
 
 # run the executable 5 times
-for i in {1..2}; do
+for i in {1..10}; do
     ./${TARGET%.*}__group_sse 3600 200 __group_sse
 
 done
@@ -91,7 +91,7 @@ mv $TARGET ${TARGET%.*}__group_avx
 echo ""
 
 # run the executable 5 times
-for i in {1..2}; do
+for i in {1..10}; do
     ./${TARGET%.*}__group_avx 3600 200 __group_avx
 
 done
