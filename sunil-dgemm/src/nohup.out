@@ -1,0 +1,887 @@
+rm -f dgemm *.o
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mmmx
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        13.550949 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1377.584984 GF/s
+===============================================================
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        13.098849 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1425.131648 GF/s
+===============================================================
+
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1401.3583 GF
+Average execution time = 13.3249 s
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -msse
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.923028 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1444.520898 GF/s
+===============================================================
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.597038 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1481.902675 GF/s
+===============================================================
+
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1463.2118 GF
+Average execution time = 12.76 s
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -msse2
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        13.190545 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1415.224634 GF/s
+===============================================================
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.539877 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1488.657643 GF/s
+===============================================================
+
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1451.9411 GF
+Average execution time = 12.8652 s
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -msse3
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.999259 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1436.049855 GF/s
+===============================================================
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.594913 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1482.152675 GF/s
+===============================================================
+
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1459.1013 GF
+Average execution time = 12.7971 s
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mssse3
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        13.080947 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1427.082008 GF/s
+===============================================================
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.772625 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1461.530738 GF/s
+===============================================================
+
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1444.3064 GF
+Average execution time = 12.9268 s
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -msse4.1
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        13.281956 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1405.484558 GF/s
+===============================================================
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.720789 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1467.486338 GF/s
+===============================================================
+
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1436.4855 GF
+Average execution time = 13.0014 s
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -msse4.2
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.720026 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1467.574357 GF/s
+===============================================================
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.880518 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1449.288302 GF/s
+===============================================================
+
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1458.4313 GF
+Average execution time = 12.8003 s
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -maes
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        13.332789 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1400.125966 GF/s
+===============================================================
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.664380 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1474.022723 GF/s
+===============================================================
+
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1437.0743 GF
+Average execution time = 12.9986 s
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.705939 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1469.201471 GF/s
+===============================================================
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.881699 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1449.155416 GF/s
+===============================================================
+
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1459.1784 GF
+Average execution time = 12.7938 s
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mfma
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.652772 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1475.375046 GF/s
+===============================================================
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.716816 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1467.944812 GF/s
+===============================================================
+
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1471.6599 GF
+Average execution time = 12.6848 s
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx2
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.588832 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1482.868637 GF/s
+===============================================================
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        13.364747 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1396.777976 GF/s
+===============================================================
+
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1439.8233 GF
+Average execution time = 12.9767 s
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx512f
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.808504 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1457.436704 GF/s
+===============================================================
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.827479 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1455.280821 GF/s
+===============================================================
+
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1456.3587 GF
+Average execution time = 12.818 s
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx512cd
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.786545 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1459.939670 GF/s
+===============================================================
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.725475 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1466.945968 GF/s
+===============================================================
+
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1463.4428 GF
+Average execution time = 12.756 s
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx512vl
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.631335 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1477.878939 GF/s
+===============================================================
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.929201 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1443.831202 GF/s
+===============================================================
+
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1460.8551 GF
+Average execution time = 12.7802 s
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx512bw
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        13.134735 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1421.237976 GF/s
+===============================================================
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.910191 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1445.957249 GF/s
+===============================================================
+
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1433.5976 GF
+Average execution time = 13.0224 s
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx512dq
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        13.125119 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1422.279222 GF/s
+===============================================================
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.632435 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1477.750242 GF/s
+===============================================================
+
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1450.0147 GF
+Average execution time = 12.8788 s
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        13.270429 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1406.705376 GF/s
+===============================================================
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.583310 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1483.519345 GF/s
+===============================================================
+
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1445.1123 GF
+Average execution time = 12.9268 s
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.848479 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1452.902243 GF/s
+===============================================================
+
+Matrix size input by command line: 3600
+Repeat multiply 200 times.
+Alpha =    0.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         0.005000
+Memory for Matrices:  296.630859 MB
+Multiply time:        12.958906 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       18667584000000.000000
+GFLOP/s rate:         1440.521607 GF/s
+===============================================================
+
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1446.7119 GF
+Average execution time = 12.9037 s
+
+
+SIMD flag with maximum GFLOPS: fma
+SIMD flag with minimum execution time: fma
+

@@ -1,0 +1,90 @@
+
+DGEMM performance for mmx
+-----------------------------------------------
+Average GFLOPS = 1401.3583 GF
+Average execution time = 13.3249 s
+
+DGEMM performance for sse
+-----------------------------------------------
+Average GFLOPS = 1463.2118 GF
+Average execution time = 12.76 s
+
+DGEMM performance for sse2
+-----------------------------------------------
+Average GFLOPS = 1451.9411 GF
+Average execution time = 12.8652 s
+
+DGEMM performance for sse3
+-----------------------------------------------
+Average GFLOPS = 1459.1013 GF
+Average execution time = 12.7971 s
+
+DGEMM performance for ssse3
+-----------------------------------------------
+Average GFLOPS = 1444.3064 GF
+Average execution time = 12.9268 s
+
+DGEMM performance for sse4.1
+-----------------------------------------------
+Average GFLOPS = 1436.4855 GF
+Average execution time = 13.0014 s
+
+DGEMM performance for sse4.2
+-----------------------------------------------
+Average GFLOPS = 1458.4313 GF
+Average execution time = 12.8003 s
+
+DGEMM performance for aes
+-----------------------------------------------
+Average GFLOPS = 1437.0743 GF
+Average execution time = 12.9986 s
+
+DGEMM performance for avx
+-----------------------------------------------
+Average GFLOPS = 1459.1784 GF
+Average execution time = 12.7938 s
+
+DGEMM performance for fma
+-----------------------------------------------
+Average GFLOPS = 1471.6599 GF
+Average execution time = 12.6848 s
+
+DGEMM performance for avx2
+-----------------------------------------------
+Average GFLOPS = 1439.8233 GF
+Average execution time = 12.9767 s
+
+DGEMM performance for avx512f
+-----------------------------------------------
+Average GFLOPS = 1456.3587 GF
+Average execution time = 12.818 s
+
+DGEMM performance for avx512cd
+-----------------------------------------------
+Average GFLOPS = 1463.4428 GF
+Average execution time = 12.756 s
+
+DGEMM performance for avx512vl
+-----------------------------------------------
+Average GFLOPS = 1460.8551 GF
+Average execution time = 12.7802 s
+
+DGEMM performance for avx512bw
+-----------------------------------------------
+Average GFLOPS = 1433.5976 GF
+Average execution time = 13.0224 s
+
+DGEMM performance for avx512dq
+-----------------------------------------------
+Average GFLOPS = 1450.0147 GF
+Average execution time = 12.8788 s
+
+DGEMM performance for group_sse
+-----------------------------------------------
+Average GFLOPS = 1445.1123 GF
+Average execution time = 12.9268 s
+
+DGEMM performance for group_avx
+-----------------------------------------------
+Average GFLOPS = 1446.7119 GF
+Average execution time = 12.9037 s
