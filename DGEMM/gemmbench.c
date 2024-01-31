@@ -32,7 +32,7 @@ licensors in any way.
 #include <stdlib.h>
 #include <malloc.h>
 #include <omp.h>
-#include "harshit-msr.c"
+// #include "harshit-msr.c"
 #include <string.h>
 
 #ifndef	USE_DOUBLE
@@ -49,7 +49,7 @@ void GEMM(char *, char *, int *, int *, int *, FLOAT *, FLOAT *, int *, FLOAT *,
 
 int main(int argc, char **argv) {
 
-  perfcounters_init();
+  // perfcounters_init();
 
   FILE *fout1, *fout2, *fout3;
   char f1[50] = "", f2[50] = "", f3[50] = "";
@@ -62,15 +62,15 @@ int main(int argc, char **argv) {
   strcat(f2, argv[2]);
   strcat(f2, ".txt");
 
-  strcat(f3, "./output/energy");
-  strcat(f3, argv[2]);
-  strcat(f3, ".txt");
+  // strcat(f3, "./output/energy");
+  // strcat(f3, argv[2]);
+  // strcat(f3, ".txt");
    
   // printf("f1: %s f2: %s\n", f1, f2);
 
   fout1 = fopen(f1, "a");
   fout2 = fopen(f2, "a"); 
-  fout3 = fopen(f3, "a");
+  // fout3 = fopen(f3, "a");
 
   //printf("\n");
   printf("\n============================ Tabulate Statistics ============================\n");
@@ -118,13 +118,13 @@ int main(int argc, char **argv) {
 
   dstart = omp_get_wtime();
   
-  perfcounters_start();
+  // perfcounters_start();
 
   for (i = 0; i < LOOP; i ++) {
     GEMM("N", "N", &m, &m, &m, &alpha, a, &m, b, &m, &beta, c, &m);
   }
   
- perfcounters_stop(); 
+//  perfcounters_stop(); 
 
  dstop = omp_get_wtime();
  
@@ -146,16 +146,16 @@ int main(int argc, char **argv) {
   fclose(fout1);
   fclose(fout2);
 
-#ifdef USE_DOUBLE
-  double energy = perfcounters_dump();
-  fprintf(fout3, "%f \n", energy);
+// #ifdef USE_DOUBLE
+//   double energy = perfcounters_dump();
+//   fprintf(fout3, "%f \n", energy);
 
-#endif
+// #endif
   
-  fclose(fout3);
+//   fclose(fout3);
 
   printf("\n=============================================================================\n");
-  perfcounters_finalize();
+  // perfcounters_finalize();
 
   return 0;
 }

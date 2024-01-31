@@ -12,7 +12,7 @@ def parse_performance_data(file_content):
             simd_data[current_simd_flag] = {
                 'GFLOPS': None,
                 'execution_time': None,
-                'energy': None
+                # 'energy': None
             }
 
         # Check if the line contains GFLOPS information
@@ -25,12 +25,12 @@ def parse_performance_data(file_content):
         if time_match and current_simd_flag:
             simd_data[current_simd_flag]['execution_time'] = float(time_match.group(1))
 
-        # Check if the line contains energy information
-        energy_match = re.match(r"Average PWR_PKG_ENERGY = ([\d.]+)", line)
-        if energy_match and current_simd_flag:
-            energy_value = float(energy_match.group(1))
-            #print("energy for", energy_value, current_simd_flag)
-            simd_data[current_simd_flag]['energy'] = energy_value if energy_value > 0 else None
+        # # Check if the line contains energy information
+        # energy_match = re.match(r"Average PWR_PKG_ENERGY = ([\d.]+)", line)
+        # if energy_match and current_simd_flag:
+        #     energy_value = float(energy_match.group(1))
+        #     #print("energy for", energy_value, current_simd_flag)
+        #     simd_data[current_simd_flag]['energy'] = energy_value if energy_value > 0 else None
 
     return simd_data
 
@@ -38,9 +38,10 @@ def find_min_max_values(simd_data):
     max_gflops_simd = max(simd_data, key=lambda x: simd_data[x]['GFLOPS'])
     min_execution_time_simd = min(simd_data, key=lambda x: simd_data[x]['execution_time'])
     #min_energy_simd = min(simd_data, key=lambda x: simd_data[x]['energy']) #if any(simd_data[x]['energy'] != None for x in simd_data) else None
-    min_energy_simd = min((key for key, value in simd_data.items() if value['energy'] is not None and value['energy'] > 0), key=lambda x: simd_data[x]['energy'])
+    # min_energy_simd = min((key for key, value in simd_data.items() if value['energy'] is not None and value['energy'] > 0), key=lambda x: simd_data[x]['energy'])
 
-    return max_gflops_simd, min_execution_time_simd, min_energy_simd
+    # return max_gflops_simd, min_execution_time_simd, min_energy_simd
+    return max_gflops_simd, min_execution_time_simd
 
 if __name__ == "__main__":
     # Replace 'file_path' with the actual path to your file
@@ -51,10 +52,11 @@ if __name__ == "__main__":
 
     simd_data = parse_performance_data(file_content)
 
-    max_gflops_simd, min_execution_time_simd, min_energy_simd = find_min_max_values(simd_data)
+    # max_gflops_simd, min_execution_time_simd, min_energy_simd = find_min_max_values(simd_data)
+    max_gflops_simd, min_execution_time_simd = find_min_max_values(simd_data)
 
-    print
-    print "SIMD flag with maximum GFLOPS:", max_gflops_simd
-    print "SIMD flag with minimum execution time:", min_execution_time_simd
-    print "SIMD flag with minimum energy consumption:", min_energy_simd
-    print
+    print()
+    print("SIMD flag with maximum GFLOPS:", max_gflops_simd)
+    print("SIMD flag with minimum execution time:", min_execution_time_simd)
+    # print("SIMD flag with minimum energy consumption:", min_energy_simd)
+    print()
