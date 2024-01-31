@@ -16,11 +16,11 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        13.550949 seconds
+Multiply time:        12.984109 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1377.584984 GF/s
+GFLOP/s rate:         1437.725435 GF/s
 ===============================================================
 
 Matrix size input by command line: 3600
@@ -35,23 +35,23 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        13.098849 seconds
+Multiply time:        12.753095 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1425.131648 GF/s
+GFLOP/s rate:         1463.768923 GF/s
 ===============================================================
 
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1401.3583 GF
-Average execution time = 13.3249 s
+Average GFLOPS = 1450.7472 GF
+Average execution time = 12.8686 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -msse
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 Matrix size input by command line: 3600
 Repeat multiply 200 times.
@@ -65,11 +65,11 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.923028 seconds
+Multiply time:        12.641451 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1444.520898 GF/s
+GFLOP/s rate:         1476.696320 GF/s
 ===============================================================
 
 Matrix size input by command line: 3600
@@ -84,23 +84,23 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.597038 seconds
+Multiply time:        13.070939 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1481.902675 GF/s
+GFLOP/s rate:         1428.174664 GF/s
 ===============================================================
 
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1463.2118 GF
-Average execution time = 12.76 s
+Average GFLOPS = 1452.4355 GF
+Average execution time = 12.8562 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -msse2
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse2 -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 Matrix size input by command line: 3600
 Repeat multiply 200 times.
@@ -114,11 +114,11 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        13.190545 seconds
+Multiply time:        12.963831 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1415.224634 GF/s
+GFLOP/s rate:         1439.974347 GF/s
 ===============================================================
 
 Matrix size input by command line: 3600
@@ -133,23 +133,23 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.539877 seconds
+Multiply time:        13.378200 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1488.657643 GF/s
+GFLOP/s rate:         1395.373363 GF/s
 ===============================================================
 
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1451.9411 GF
-Average execution time = 12.8652 s
+Average GFLOPS = 1417.6739 GF
+Average execution time = 13.171 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -msse3
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse3 -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 Matrix size input by command line: 3600
 Repeat multiply 200 times.
@@ -163,11 +163,11 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.999259 seconds
+Multiply time:        13.017459 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1436.049855 GF/s
+GFLOP/s rate:         1434.042091 GF/s
 ===============================================================
 
 Matrix size input by command line: 3600
@@ -182,23 +182,23 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.594913 seconds
+Multiply time:        12.657245 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1482.152675 GF/s
+GFLOP/s rate:         1474.853660 GF/s
 ===============================================================
 
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1459.1013 GF
-Average execution time = 12.7971 s
+Average GFLOPS = 1454.4479 GF
+Average execution time = 12.8374 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mssse3
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mssse3 -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 Matrix size input by command line: 3600
 Repeat multiply 200 times.
@@ -212,11 +212,11 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        13.080947 seconds
+Multiply time:        12.747014 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1427.082008 GF/s
+GFLOP/s rate:         1464.467203 GF/s
 ===============================================================
 
 Matrix size input by command line: 3600
@@ -231,23 +231,23 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.772625 seconds
+Multiply time:        12.782926 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1461.530738 GF/s
+GFLOP/s rate:         1460.352965 GF/s
 ===============================================================
 
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1444.3064 GF
-Average execution time = 12.9268 s
+Average GFLOPS = 1462.4101 GF
+Average execution time = 12.7649 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -msse4.1
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse4.1 -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 Matrix size input by command line: 3600
 Repeat multiply 200 times.
@@ -261,11 +261,11 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        13.281956 seconds
+Multiply time:        13.143951 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1405.484558 GF/s
+GFLOP/s rate:         1420.241455 GF/s
 ===============================================================
 
 Matrix size input by command line: 3600
@@ -280,23 +280,23 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.720789 seconds
+Multiply time:        12.518039 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1467.486338 GF/s
+GFLOP/s rate:         1491.254662 GF/s
 ===============================================================
 
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1436.4855 GF
-Average execution time = 13.0014 s
+Average GFLOPS = 1455.7481 GF
+Average execution time = 12.831 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -msse4.2
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse4.2 -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 Matrix size input by command line: 3600
 Repeat multiply 200 times.
@@ -310,11 +310,11 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.720026 seconds
+Multiply time:        13.135731 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1467.574357 GF/s
+GFLOP/s rate:         1421.130200 GF/s
 ===============================================================
 
 Matrix size input by command line: 3600
@@ -329,23 +329,23 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.880518 seconds
+Multiply time:        12.953490 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1449.288302 GF/s
+GFLOP/s rate:         1441.123922 GF/s
 ===============================================================
 
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1458.4313 GF
-Average execution time = 12.8003 s
+Average GFLOPS = 1431.1271 GF
+Average execution time = 13.0446 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -maes
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -maes -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 Matrix size input by command line: 3600
 Repeat multiply 200 times.
@@ -359,11 +359,11 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        13.332789 seconds
+Multiply time:        13.082530 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1400.125966 GF/s
+GFLOP/s rate:         1426.909319 GF/s
 ===============================================================
 
 Matrix size input by command line: 3600
@@ -378,23 +378,23 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.664380 seconds
+Multiply time:        12.813975 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1474.022723 GF/s
+GFLOP/s rate:         1456.814444 GF/s
 ===============================================================
 
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1437.0743 GF
-Average execution time = 12.9986 s
+Average GFLOPS = 1441.8619 GF
+Average execution time = 12.9482 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 Matrix size input by command line: 3600
 Repeat multiply 200 times.
@@ -408,11 +408,11 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.705939 seconds
+Multiply time:        12.822374 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1469.201471 GF/s
+GFLOP/s rate:         1455.860217 GF/s
 ===============================================================
 
 Matrix size input by command line: 3600
@@ -427,23 +427,23 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.881699 seconds
+Multiply time:        12.574677 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1449.155416 GF/s
+GFLOP/s rate:         1484.537854 GF/s
 ===============================================================
 
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1459.1784 GF
-Average execution time = 12.7938 s
+Average GFLOPS = 1470.1991 GF
+Average execution time = 12.6986 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mfma
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mfma -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 Matrix size input by command line: 3600
 Repeat multiply 200 times.
@@ -457,11 +457,11 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.652772 seconds
+Multiply time:        12.878560 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1475.375046 GF/s
+GFLOP/s rate:         1449.508660 GF/s
 ===============================================================
 
 Matrix size input by command line: 3600
@@ -476,23 +476,23 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.716816 seconds
+Multiply time:        12.719545 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1467.944812 GF/s
+GFLOP/s rate:         1467.629869 GF/s
 ===============================================================
 
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1471.6599 GF
-Average execution time = 12.6848 s
+Average GFLOPS = 1458.5693 GF
+Average execution time = 12.7991 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx2
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx2 -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 Matrix size input by command line: 3600
 Repeat multiply 200 times.
@@ -506,11 +506,11 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.588832 seconds
+Multiply time:        12.569479 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1482.868637 GF/s
+GFLOP/s rate:         1485.151773 GF/s
 ===============================================================
 
 Matrix size input by command line: 3600
@@ -525,23 +525,23 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        13.364747 seconds
+Multiply time:        12.644275 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1396.777976 GF/s
+GFLOP/s rate:         1476.366504 GF/s
 ===============================================================
 
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1439.8233 GF
-Average execution time = 12.9767 s
+Average GFLOPS = 1480.7592 GF
+Average execution time = 12.6069 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx512f
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512f -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 Matrix size input by command line: 3600
 Repeat multiply 200 times.
@@ -555,11 +555,11 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.808504 seconds
+Multiply time:        13.195243 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1457.436704 GF/s
+GFLOP/s rate:         1414.720757 GF/s
 ===============================================================
 
 Matrix size input by command line: 3600
@@ -574,23 +574,23 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.827479 seconds
+Multiply time:        12.652034 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1455.280821 GF/s
+GFLOP/s rate:         1475.461095 GF/s
 ===============================================================
 
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1456.3587 GF
-Average execution time = 12.818 s
+Average GFLOPS = 1445.091 GF
+Average execution time = 12.9236 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx512cd
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512cd -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 Matrix size input by command line: 3600
 Repeat multiply 200 times.
@@ -604,11 +604,11 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.786545 seconds
+Multiply time:        12.825716 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1459.939670 GF/s
+GFLOP/s rate:         1455.480846 GF/s
 ===============================================================
 
 Matrix size input by command line: 3600
@@ -623,23 +623,23 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.725475 seconds
+Multiply time:        12.559725 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1466.945968 GF/s
+GFLOP/s rate:         1486.305149 GF/s
 ===============================================================
 
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1463.4428 GF
-Average execution time = 12.756 s
+Average GFLOPS = 1470.8929 GF
+Average execution time = 12.6927 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx512vl
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512vl -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 Matrix size input by command line: 3600
 Repeat multiply 200 times.
@@ -653,11 +653,11 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.631335 seconds
+Multiply time:        12.788035 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1477.878939 GF/s
+GFLOP/s rate:         1459.769552 GF/s
 ===============================================================
 
 Matrix size input by command line: 3600
@@ -672,23 +672,23 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.929201 seconds
+Multiply time:        12.615183 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1443.831202 GF/s
+GFLOP/s rate:         1479.771148 GF/s
 ===============================================================
 
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1460.8551 GF
-Average execution time = 12.7802 s
+Average GFLOPS = 1469.7704 GF
+Average execution time = 12.7016 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx512bw
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512bw -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 Matrix size input by command line: 3600
 Repeat multiply 200 times.
@@ -702,11 +702,11 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        13.134735 seconds
+Multiply time:        12.934844 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1421.237976 GF/s
+GFLOP/s rate:         1443.201323 GF/s
 ===============================================================
 
 Matrix size input by command line: 3600
@@ -721,23 +721,23 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.910191 seconds
+Multiply time:        12.868763 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1445.957249 GF/s
+GFLOP/s rate:         1450.612129 GF/s
 ===============================================================
 
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1433.5976 GF
-Average execution time = 13.0224 s
+Average GFLOPS = 1446.9067 GF
+Average execution time = 12.9018 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx512dq
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512dq -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 Matrix size input by command line: 3600
 Repeat multiply 200 times.
@@ -751,11 +751,11 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        13.125119 seconds
+Multiply time:        12.816899 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1422.279222 GF/s
+GFLOP/s rate:         1456.482122 GF/s
 ===============================================================
 
 Matrix size input by command line: 3600
@@ -770,23 +770,23 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.632435 seconds
+Multiply time:        12.650954 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1477.750242 GF/s
+GFLOP/s rate:         1475.587058 GF/s
 ===============================================================
 
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1450.0147 GF
-Average execution time = 12.8788 s
+Average GFLOPS = 1466.0346 GF
+Average execution time = 12.734 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 Matrix size input by command line: 3600
 Repeat multiply 200 times.
@@ -800,11 +800,11 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        13.270429 seconds
+Multiply time:        12.979039 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1406.705376 GF/s
+GFLOP/s rate:         1438.287077 GF/s
 ===============================================================
 
 Matrix size input by command line: 3600
@@ -819,23 +819,23 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.583310 seconds
+Multiply time:        13.041083 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1483.519345 GF/s
+GFLOP/s rate:         1431.444295 GF/s
 ===============================================================
 
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1445.1123 GF
-Average execution time = 12.9268 s
+Average GFLOPS = 1434.8657 GF
+Average execution time = 13.01 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 Matrix size input by command line: 3600
 Repeat multiply 200 times.
@@ -849,11 +849,11 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.848479 seconds
+Multiply time:        13.177368 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1452.902243 GF/s
+GFLOP/s rate:         1416.639810 GF/s
 ===============================================================
 
 Matrix size input by command line: 3600
@@ -868,20 +868,20 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         0.005000
 Memory for Matrices:  296.630859 MB
-Multiply time:        12.958906 seconds
+Multiply time:        12.758509 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       18667584000000.000000
-GFLOP/s rate:         1440.521607 GF/s
+GFLOP/s rate:         1463.147780 GF/s
 ===============================================================
 
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1446.7119 GF
-Average execution time = 12.9037 s
+Average GFLOPS = 1439.8938 GF
+Average execution time = 12.968 s
 
 
-SIMD flag with maximum GFLOPS: fma
-SIMD flag with minimum execution time: fma
+SIMD flag with maximum GFLOPS: avx2
+SIMD flag with minimum execution time: avx2
 
