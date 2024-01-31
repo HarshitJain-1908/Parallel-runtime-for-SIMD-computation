@@ -2,418 +2,418 @@ rm -f *.o *~ dgemmbench*
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mmmx
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -march=haswell -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -march=skylake-avx512 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1425.3310 GF
-DGEMM Execution time =    13.0934 s
+DGEMM Performance N =   3600 :  1410.3153 GF
+DGEMM Execution time =    13.2328 s
 
 =============================================================================
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1390.8964 GF
-DGEMM Execution time =    13.4175 s
+DGEMM Performance N =   3600 :  1405.3916 GF
+DGEMM Execution time =    13.2791 s
 
 =============================================================================
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1408.1137 GF
-Average execution time = 13.2554 s
+Average GFLOPS = 1407.8535 GF
+Average execution time = 13.2559 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -msse
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse -march=haswell -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse -march=skylake-avx512 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1420.1012 GF
-DGEMM Execution time =    13.1416 s
+DGEMM Performance N =   3600 :  1413.5797 GF
+DGEMM Execution time =    13.2022 s
 
 =============================================================================
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1411.8070 GF
-DGEMM Execution time =    13.2188 s
+DGEMM Performance N =   3600 :  1382.8871 GF
+DGEMM Execution time =    13.4952 s
 
 =============================================================================
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1415.9541 GF
-Average execution time = 13.1802 s
+Average GFLOPS = 1398.2334 GF
+Average execution time = 13.3487 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -msse2
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse2 -march=haswell -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse2 -march=skylake-avx512 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1411.7636 GF
-DGEMM Execution time =    13.2192 s
+DGEMM Performance N =   3600 :  1417.2145 GF
+DGEMM Execution time =    13.1684 s
 
 =============================================================================
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1414.9867 GF
-DGEMM Execution time =    13.1891 s
+DGEMM Performance N =   3600 :  1396.4132 GF
+DGEMM Execution time =    13.3645 s
 
 =============================================================================
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1413.3751 GF
-Average execution time = 13.2042 s
+Average GFLOPS = 1406.8139 GF
+Average execution time = 13.2664 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -msse3
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse3 -march=haswell -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse3 -march=skylake-avx512 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1412.2205 GF
-DGEMM Execution time =    13.2149 s
+DGEMM Performance N =   3600 :  1422.6564 GF
+DGEMM Execution time =    13.1180 s
 
 =============================================================================
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1435.1788 GF
-DGEMM Execution time =    13.0035 s
+DGEMM Performance N =   3600 :  1399.6684 GF
+DGEMM Execution time =    13.3334 s
 
 =============================================================================
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1423.6997 GF
-Average execution time = 13.1092 s
+Average GFLOPS = 1411.1624 GF
+Average execution time = 13.2257 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mssse3
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mssse3 -march=haswell -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mssse3 -march=skylake-avx512 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1401.7983 GF
-DGEMM Execution time =    13.3132 s
+DGEMM Performance N =   3600 :  1400.0114 GF
+DGEMM Execution time =    13.3302 s
 
 =============================================================================
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1397.0267 GF
-DGEMM Execution time =    13.3587 s
+DGEMM Performance N =   3600 :  1401.3789 GF
+DGEMM Execution time =    13.3172 s
 
 =============================================================================
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1399.4125 GF
-Average execution time = 13.336 s
+Average GFLOPS = 1400.6952 GF
+Average execution time = 13.3237 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -msse4.1
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse4.1 -march=haswell -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse4.1 -march=skylake-avx512 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1401.6526 GF
-DGEMM Execution time =    13.3146 s
+DGEMM Performance N =   3600 :  1410.8449 GF
+DGEMM Execution time =    13.2278 s
 
 =============================================================================
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1420.5753 GF
-DGEMM Execution time =    13.1372 s
+DGEMM Performance N =   3600 :  1413.0965 GF
+DGEMM Execution time =    13.2067 s
 
 =============================================================================
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1411.1139 GF
-Average execution time = 13.2259 s
+Average GFLOPS = 1411.9707 GF
+Average execution time = 13.2172 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -msse4.2
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse4.2 -march=haswell -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse4.2 -march=skylake-avx512 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1416.4721 GF
-DGEMM Execution time =    13.1753 s
+DGEMM Performance N =   3600 :  1402.1621 GF
+DGEMM Execution time =    13.3097 s
 
 =============================================================================
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1393.4171 GF
-DGEMM Execution time =    13.3933 s
+DGEMM Performance N =   3600 :  1416.8778 GF
+DGEMM Execution time =    13.1715 s
 
 =============================================================================
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1404.9446 GF
-Average execution time = 13.2843 s
+Average GFLOPS = 1409.5199 GF
+Average execution time = 13.2406 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -maes
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -maes -march=haswell -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -maes -march=skylake-avx512 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1423.4452 GF
-DGEMM Execution time =    13.1107 s
+DGEMM Performance N =   3600 :  1427.6097 GF
+DGEMM Execution time =    13.0725 s
 
 =============================================================================
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1402.7497 GF
-DGEMM Execution time =    13.3042 s
+DGEMM Performance N =   3600 :  1420.1038 GF
+DGEMM Execution time =    13.1416 s
 
 =============================================================================
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1413.0975 GF
-Average execution time = 13.2074 s
+Average GFLOPS = 1423.8567 GF
+Average execution time = 13.1071 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx -march=haswell -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx -march=skylake-avx512 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1424.4504 GF
-DGEMM Execution time =    13.1015 s
+DGEMM Performance N =   3600 :  1408.0989 GF
+DGEMM Execution time =    13.2536 s
 
 =============================================================================
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1402.5270 GF
-DGEMM Execution time =    13.3063 s
+DGEMM Performance N =   3600 :  1413.5290 GF
+DGEMM Execution time =    13.2027 s
 
 =============================================================================
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1413.4887 GF
-Average execution time = 13.2039 s
+Average GFLOPS = 1410.8139 GF
+Average execution time = 13.2281 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mfma
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mfma -march=haswell -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mfma -march=skylake-avx512 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1426.7461 GF
-DGEMM Execution time =    13.0804 s
+DGEMM Performance N =   3600 :  1408.2110 GF
+DGEMM Execution time =    13.2526 s
 
 =============================================================================
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1434.1767 GF
-DGEMM Execution time =    13.0126 s
+DGEMM Performance N =   3600 :  1377.3736 GF
+DGEMM Execution time =    13.5493 s
 
 =============================================================================
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1430.4614 GF
-Average execution time = 13.0465 s
+Average GFLOPS = 1392.7923 GF
+Average execution time = 13.4009 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx2
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx2 -march=haswell -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx2 -march=skylake-avx512 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1412.9539 GF
-DGEMM Execution time =    13.2081 s
+DGEMM Performance N =   3600 :  1401.8489 GF
+DGEMM Execution time =    13.3127 s
 
 =============================================================================
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1410.8115 GF
-DGEMM Execution time =    13.2281 s
+DGEMM Performance N =   3600 :  1428.9968 GF
+DGEMM Execution time =    13.0598 s
 
 =============================================================================
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1411.8827 GF
-Average execution time = 13.2181 s
+Average GFLOPS = 1415.4228 GF
+Average execution time = 13.1862 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx512f
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512f -march=haswell -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512f -march=skylake-avx512 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1410.4170 GF
-DGEMM Execution time =    13.2318 s
+DGEMM Performance N =   3600 :  1426.9863 GF
+DGEMM Execution time =    13.0782 s
 
 =============================================================================
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1405.0157 GF
-DGEMM Execution time =    13.2827 s
+DGEMM Performance N =   3600 :  1404.0194 GF
+DGEMM Execution time =    13.2921 s
 
 =============================================================================
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1407.7163 GF
-Average execution time = 13.2572 s
+Average GFLOPS = 1415.5028 GF
+Average execution time = 13.1852 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx512cd
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512cd -march=haswell -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512cd -march=skylake-avx512 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1407.4705 GF
-DGEMM Execution time =    13.2595 s
+DGEMM Performance N =   3600 :  1400.9594 GF
+DGEMM Execution time =    13.3212 s
 
 =============================================================================
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1399.4493 GF
-DGEMM Execution time =    13.3355 s
+DGEMM Performance N =   3600 :  1417.0207 GF
+DGEMM Execution time =    13.1702 s
 
 =============================================================================
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1403.4599 GF
-Average execution time = 13.2975 s
+Average GFLOPS = 1408.99 GF
+Average execution time = 13.2457 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx512vl
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512vl -march=haswell -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512vl -march=skylake-avx512 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1398.1299 GF
-DGEMM Execution time =    13.3481 s
+DGEMM Performance N =   3600 :  1395.6363 GF
+DGEMM Execution time =    13.3720 s
 
 =============================================================================
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1402.2756 GF
-DGEMM Execution time =    13.3087 s
+DGEMM Performance N =   3600 :  1377.0160 GF
+DGEMM Execution time =    13.5528 s
 
 =============================================================================
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1400.2027 GF
-Average execution time = 13.3284 s
+Average GFLOPS = 1386.3261 GF
+Average execution time = 13.4624 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx512bw
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512bw -march=haswell -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512bw -march=skylake-avx512 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1395.2978 GF
-DGEMM Execution time =    13.3752 s
+DGEMM Performance N =   3600 :  1405.9287 GF
+DGEMM Execution time =    13.2741 s
 
 =============================================================================
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1412.0253 GF
-DGEMM Execution time =    13.2168 s
+DGEMM Performance N =   3600 :  1438.3262 GF
+DGEMM Execution time =    12.9751 s
 
 =============================================================================
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1403.6616 GF
-Average execution time = 13.296 s
+Average GFLOPS = 1422.1274 GF
+Average execution time = 13.1246 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx512dq
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512dq -march=haswell -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512dq -march=skylake-avx512 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1407.7262 GF
-DGEMM Execution time =    13.2571 s
+DGEMM Performance N =   3600 :  1408.4925 GF
+DGEMM Execution time =    13.2499 s
 
 =============================================================================
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1404.1453 GF
-DGEMM Execution time =    13.2909 s
+DGEMM Performance N =   3600 :  1400.6799 GF
+DGEMM Execution time =    13.3238 s
 
 =============================================================================
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1405.9358 GF
-Average execution time = 13.274 s
+Average GFLOPS = 1404.5862 GF
+Average execution time = 13.2869 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -march=haswell -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -march=skylake-avx512 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1399.6329 GF
-DGEMM Execution time =    13.3338 s
+DGEMM Performance N =   3600 :  1411.2660 GF
+DGEMM Execution time =    13.2239 s
 
 =============================================================================
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1399.2907 GF
-DGEMM Execution time =    13.3370 s
+DGEMM Performance N =   3600 :  1404.7211 GF
+DGEMM Execution time =    13.2855 s
 
 =============================================================================
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1399.4618 GF
-Average execution time = 13.3354 s
+Average GFLOPS = 1407.9936 GF
+Average execution time = 13.2547 s
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 Compiling with SIMD flag: -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq
 
-gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -march=haswell -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -march=skylake-avx512 -DUSE_DOUBLE -o dgemmbench.mkl gemmbench.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
 
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1398.3523 GF
-DGEMM Execution time =    13.3460 s
+DGEMM Performance N =   3600 :  1413.7876 GF
+DGEMM Execution time =    13.2003 s
 
 =============================================================================
 
 ============================ Tabulate Statistics ============================
-DGEMM Performance N =   3600 :  1396.3581 GF
-DGEMM Execution time =    13.3651 s
+DGEMM Performance N =   3600 :  1412.3332 GF
+DGEMM Execution time =    13.2139 s
 
 =============================================================================
 
 DGEMM performance
 -----------------------------------------------
-Average GFLOPS = 1397.3552 GF
-Average execution time = 13.3556 s
+Average GFLOPS = 1413.0604 GF
+Average execution time = 13.2071 s
 
 
-SIMD flag with maximum GFLOPS: fma
-SIMD flag with minimum execution time: fma
+SIMD flag with maximum GFLOPS: aes
+SIMD flag with minimum execution time: aes
 
