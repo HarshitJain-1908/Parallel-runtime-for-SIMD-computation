@@ -6,50 +6,14 @@ Performing multiplication...
 Calculating matrix check...
 
 ===============================================================
-Final Sum is:         3829.807470
-Memory for Matrices:  1853.942871 MB
-Multiply time:        46.845833 seconds
-
-============================ Tabulate Statistics ============================
-FLOPs computed:       74366262000000.000000
-GFLOP/s rate:         1587.468023 GF/s
-PWR_PKG_ENERGY:	 11208.583191	
-===============================================================
-
-PWR_PKG_ENERGY:	 11208.583191	Alpha =    1.000000
-Beta  =    1.000000
-Allocating Matrices...
-Allocation complete, populating with values...
-Performing multiplication...
-Calculating matrix check...
-
-===============================================================
 Final Sum is:         9000.019608
 Memory for Matrices:  1853.942871 MB
-Multiply time:        47.078451 seconds
+Multiply time:        46.758824 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       74366262000000.000000
-GFLOP/s rate:         1579.624235 GF/s
-PWR_PKG_ENERGY:	 10978.305176	
+GFLOP/s rate:         1590.421996 GF/s
+PWR_PKG_ENERGY:	 10939.243164	
 ===============================================================
 
-PWR_PKG_ENERGY:	 10978.305176	Alpha =    1.000000
-Beta  =    1.000000
-Allocating Matrices...
-Allocation complete, populating with values...
-Performing multiplication...
-Calculating matrix check...
-
-===============================================================
-Final Sum is:         9000.019608
-Memory for Matrices:  1853.942871 MB
-Multiply time:        46.788456 seconds
-
-============================ Tabulate Statistics ============================
-FLOPs computed:       74366262000000.000000
-GFLOP/s rate:         1589.414749 GF/s
-PWR_PKG_ENERGY:	 10926.256897	
-===============================================================
-
-PWR_PKG_ENERGY:	 10926.256897	
+PWR_PKG_ENERGY:	 10939.243164	
