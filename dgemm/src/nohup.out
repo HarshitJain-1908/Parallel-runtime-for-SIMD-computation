@@ -8,12 +8,12 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         9000.019608
 Memory for Matrices:  1853.942871 MB
-Multiply time:        46.758824 seconds
+Multiply time:        46.609381 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       74366262000000.000000
-GFLOP/s rate:         1590.421996 GF/s
-PWR_PKG_ENERGY:	 10939.243164	
+GFLOP/s rate:         1595.521341 GF/s
+PWR_PKG_ENERGY:	 10901.634705	
 ===============================================================
 
-PWR_PKG_ENERGY:	 10939.243164	
+PWR_PKG_ENERGY:	 10901.634705	
