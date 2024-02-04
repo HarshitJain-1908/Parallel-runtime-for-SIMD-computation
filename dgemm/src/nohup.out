@@ -1,3 +1,350 @@
+rm -f dgemm *.o
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mmmx
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/include -mmmx -o dgemm dgemm.c -L/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+dgemm.c:10:10: fatal error: mkl.h: No such file or directory
+   10 | #include "mkl.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Makefile:8: dgemm] Error 1
+mv: cannot stat 'dgemm': No such file or directory
+
+./run.sh: line 36: ./bin/dgemm-mmmx: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mmmx: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mmmx: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mmmx: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mmmx: No such file or directory
+Traceback (most recent call last):
+  File "./scripts/compute.py", line 10, in <module>
+    f1 = open(fname1, "r")
+FileNotFoundError: [Errno 2] No such file or directory: './output/gflops-mmmx.txt'
+objdump: './bin/dgemm-mmmx': No such file
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -msse
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/include -msse -o dgemm dgemm.c -L/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+dgemm.c:10:10: fatal error: mkl.h: No such file or directory
+   10 | #include "mkl.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Makefile:8: dgemm] Error 1
+mv: cannot stat 'dgemm': No such file or directory
+
+./run.sh: line 36: ./bin/dgemm-msse: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse: No such file or directory
+Traceback (most recent call last):
+  File "./scripts/compute.py", line 10, in <module>
+    f1 = open(fname1, "r")
+FileNotFoundError: [Errno 2] No such file or directory: './output/gflops-msse.txt'
+objdump: './bin/dgemm-msse': No such file
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -msse2
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/include -msse2 -o dgemm dgemm.c -L/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+dgemm.c:10:10: fatal error: mkl.h: No such file or directory
+   10 | #include "mkl.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Makefile:8: dgemm] Error 1
+mv: cannot stat 'dgemm': No such file or directory
+
+./run.sh: line 36: ./bin/dgemm-msse2: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse2: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse2: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse2: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse2: No such file or directory
+Traceback (most recent call last):
+  File "./scripts/compute.py", line 10, in <module>
+    f1 = open(fname1, "r")
+FileNotFoundError: [Errno 2] No such file or directory: './output/gflops-msse2.txt'
+objdump: './bin/dgemm-msse2': No such file
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -msse3
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/include -msse3 -o dgemm dgemm.c -L/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+dgemm.c:10:10: fatal error: mkl.h: No such file or directory
+   10 | #include "mkl.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Makefile:8: dgemm] Error 1
+mv: cannot stat 'dgemm': No such file or directory
+
+./run.sh: line 36: ./bin/dgemm-msse3: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse3: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse3: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse3: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse3: No such file or directory
+Traceback (most recent call last):
+  File "./scripts/compute.py", line 10, in <module>
+    f1 = open(fname1, "r")
+FileNotFoundError: [Errno 2] No such file or directory: './output/gflops-msse3.txt'
+objdump: './bin/dgemm-msse3': No such file
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mssse3
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/include -mssse3 -o dgemm dgemm.c -L/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+dgemm.c:10:10: fatal error: mkl.h: No such file or directory
+   10 | #include "mkl.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Makefile:8: dgemm] Error 1
+mv: cannot stat 'dgemm': No such file or directory
+
+./run.sh: line 36: ./bin/dgemm-mssse3: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mssse3: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mssse3: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mssse3: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mssse3: No such file or directory
+Traceback (most recent call last):
+  File "./scripts/compute.py", line 10, in <module>
+    f1 = open(fname1, "r")
+FileNotFoundError: [Errno 2] No such file or directory: './output/gflops-mssse3.txt'
+objdump: './bin/dgemm-mssse3': No such file
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -msse4.1
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/include -msse4.1 -o dgemm dgemm.c -L/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+dgemm.c:10:10: fatal error: mkl.h: No such file or directory
+   10 | #include "mkl.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Makefile:8: dgemm] Error 1
+mv: cannot stat 'dgemm': No such file or directory
+
+./run.sh: line 36: ./bin/dgemm-msse4.1: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse4.1: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse4.1: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse4.1: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse4.1: No such file or directory
+Traceback (most recent call last):
+  File "./scripts/compute.py", line 10, in <module>
+    f1 = open(fname1, "r")
+FileNotFoundError: [Errno 2] No such file or directory: './output/gflops-msse4.1.txt'
+objdump: './bin/dgemm-msse4.1': No such file
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -msse4.2
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/include -msse4.2 -o dgemm dgemm.c -L/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+dgemm.c:10:10: fatal error: mkl.h: No such file or directory
+   10 | #include "mkl.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Makefile:8: dgemm] Error 1
+mv: cannot stat 'dgemm': No such file or directory
+
+./run.sh: line 36: ./bin/dgemm-msse4.2: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse4.2: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse4.2: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse4.2: No such file or directory
+./run.sh: line 36: ./bin/dgemm-msse4.2: No such file or directory
+Traceback (most recent call last):
+  File "./scripts/compute.py", line 10, in <module>
+    f1 = open(fname1, "r")
+FileNotFoundError: [Errno 2] No such file or directory: './output/gflops-msse4.2.txt'
+objdump: './bin/dgemm-msse4.2': No such file
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -maes
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/include -maes -o dgemm dgemm.c -L/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+dgemm.c:10:10: fatal error: mkl.h: No such file or directory
+   10 | #include "mkl.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Makefile:8: dgemm] Error 1
+mv: cannot stat 'dgemm': No such file or directory
+
+./run.sh: line 36: ./bin/dgemm-maes: No such file or directory
+./run.sh: line 36: ./bin/dgemm-maes: No such file or directory
+./run.sh: line 36: ./bin/dgemm-maes: No such file or directory
+./run.sh: line 36: ./bin/dgemm-maes: No such file or directory
+./run.sh: line 36: ./bin/dgemm-maes: No such file or directory
+Traceback (most recent call last):
+  File "./scripts/compute.py", line 10, in <module>
+    f1 = open(fname1, "r")
+FileNotFoundError: [Errno 2] No such file or directory: './output/gflops-maes.txt'
+objdump: './bin/dgemm-maes': No such file
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mfma
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/include -mfma -o dgemm dgemm.c -L/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+dgemm.c:10:10: fatal error: mkl.h: No such file or directory
+   10 | #include "mkl.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Makefile:8: dgemm] Error 1
+mv: cannot stat 'dgemm': No such file or directory
+
+./run.sh: line 36: ./bin/dgemm-mfma: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mfma: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mfma: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mfma: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mfma: No such file or directory
+Traceback (most recent call last):
+  File "./scripts/compute.py", line 10, in <module>
+    f1 = open(fname1, "r")
+FileNotFoundError: [Errno 2] No such file or directory: './output/gflops-mfma.txt'
+objdump: './bin/dgemm-mfma': No such file
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/include -mavx -o dgemm dgemm.c -L/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+dgemm.c:10:10: fatal error: mkl.h: No such file or directory
+   10 | #include "mkl.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Makefile:8: dgemm] Error 1
+mv: cannot stat 'dgemm': No such file or directory
+
+./run.sh: line 36: ./bin/dgemm-mavx: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx: No such file or directory
+Traceback (most recent call last):
+  File "./scripts/compute.py", line 10, in <module>
+    f1 = open(fname1, "r")
+FileNotFoundError: [Errno 2] No such file or directory: './output/gflops-mavx.txt'
+objdump: './bin/dgemm-mavx': No such file
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx2
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/include -mavx2 -o dgemm dgemm.c -L/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+dgemm.c:10:10: fatal error: mkl.h: No such file or directory
+   10 | #include "mkl.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Makefile:8: dgemm] Error 1
+mv: cannot stat 'dgemm': No such file or directory
+
+./run.sh: line 36: ./bin/dgemm-mavx2: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx2: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx2: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx2: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx2: No such file or directory
+Traceback (most recent call last):
+  File "./scripts/compute.py", line 10, in <module>
+    f1 = open(fname1, "r")
+FileNotFoundError: [Errno 2] No such file or directory: './output/gflops-mavx2.txt'
+objdump: './bin/dgemm-mavx2': No such file
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx512f
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/include -mavx512f -o dgemm dgemm.c -L/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+dgemm.c:10:10: fatal error: mkl.h: No such file or directory
+   10 | #include "mkl.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Makefile:8: dgemm] Error 1
+mv: cannot stat 'dgemm': No such file or directory
+
+./run.sh: line 36: ./bin/dgemm-mavx512f: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512f: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512f: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512f: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512f: No such file or directory
+Traceback (most recent call last):
+  File "./scripts/compute.py", line 10, in <module>
+    f1 = open(fname1, "r")
+FileNotFoundError: [Errno 2] No such file or directory: './output/gflops-mavx512f.txt'
+objdump: './bin/dgemm-mavx512f': No such file
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx512cd
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/include -mavx512cd -o dgemm dgemm.c -L/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+dgemm.c:10:10: fatal error: mkl.h: No such file or directory
+   10 | #include "mkl.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Makefile:8: dgemm] Error 1
+mv: cannot stat 'dgemm': No such file or directory
+
+./run.sh: line 36: ./bin/dgemm-mavx512cd: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512cd: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512cd: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512cd: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512cd: No such file or directory
+Traceback (most recent call last):
+  File "./scripts/compute.py", line 10, in <module>
+    f1 = open(fname1, "r")
+FileNotFoundError: [Errno 2] No such file or directory: './output/gflops-mavx512cd.txt'
+objdump: './bin/dgemm-mavx512cd': No such file
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx512vl
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/include -mavx512vl -o dgemm dgemm.c -L/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+dgemm.c:10:10: fatal error: mkl.h: No such file or directory
+   10 | #include "mkl.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Makefile:8: dgemm] Error 1
+mv: cannot stat 'dgemm': No such file or directory
+
+./run.sh: line 36: ./bin/dgemm-mavx512vl: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512vl: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512vl: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512vl: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512vl: No such file or directory
+Traceback (most recent call last):
+  File "./scripts/compute.py", line 10, in <module>
+    f1 = open(fname1, "r")
+FileNotFoundError: [Errno 2] No such file or directory: './output/gflops-mavx512vl.txt'
+objdump: './bin/dgemm-mavx512vl': No such file
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx512bw
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/include -mavx512bw -o dgemm dgemm.c -L/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+dgemm.c:10:10: fatal error: mkl.h: No such file or directory
+   10 | #include "mkl.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Makefile:8: dgemm] Error 1
+mv: cannot stat 'dgemm': No such file or directory
+
+./run.sh: line 36: ./bin/dgemm-mavx512bw: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512bw: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512bw: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512bw: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512bw: No such file or directory
+Traceback (most recent call last):
+  File "./scripts/compute.py", line 10, in <module>
+    f1 = open(fname1, "r")
+FileNotFoundError: [Errno 2] No such file or directory: './output/gflops-mavx512bw.txt'
+objdump: './bin/dgemm-mavx512bw': No such file
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx512dq
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/include -mavx512dq -o dgemm dgemm.c -L/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+dgemm.c:10:10: fatal error: mkl.h: No such file or directory
+   10 | #include "mkl.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Makefile:8: dgemm] Error 1
+mv: cannot stat 'dgemm': No such file or directory
+
+./run.sh: line 36: ./bin/dgemm-mavx512dq: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512dq: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512dq: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512dq: No such file or directory
+./run.sh: line 36: ./bin/dgemm-mavx512dq: No such file or directory
+Traceback (most recent call last):
+  File "./scripts/compute.py", line 10, in <module>
+    f1 = open(fname1, "r")
+FileNotFoundError: [Errno 2] No such file or directory: './output/gflops-mavx512dq.txt'
+objdump: './bin/dgemm-mavx512dq': No such file
+Traceback (most recent call last):
+  File "./scripts/analyzer.py", line 50, in <module>
+    with open(file_path, 'r') as file:
+FileNotFoundError: [Errno 2] No such file or directory: './avg_measure.txt'
+rm -f dgemm *.o
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mmmx
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mmmx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
 Alpha =    1.000000
 Beta  =    1.000000
 Allocating Matrices...
@@ -8,12 +355,1847 @@ Calculating matrix check...
 ===============================================================
 Final Sum is:         9000.019608
 Memory for Matrices:  1853.942871 MB
-Multiply time:        46.938777 seconds
+Multiply time:        46.751448 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       74366262000000.000000
-GFLOP/s rate:         1584.324655 GF/s
-PWR_PKG_ENERGY:	 10960.238586	
+GFLOP/s rate:         1590.672908 GF/s
+PWR_PKG_ENERGY:	 10924.311096	
 ===============================================================
 
-PWR_PKG_ENERGY:	 10960.238586	
+PWR_PKG_ENERGY:	 10924.311096	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.733295 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1591.290793 GF/s
+PWR_PKG_ENERGY:	 10971.888611	
+===============================================================
+
+PWR_PKG_ENERGY:	 10971.888611	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.909947 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1585.298362 GF/s
+PWR_PKG_ENERGY:	 11057.728149	
+===============================================================
+
+PWR_PKG_ENERGY:	 11057.728149	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.685952 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1592.904480 GF/s
+PWR_PKG_ENERGY:	 11077.623291	
+===============================================================
+
+PWR_PKG_ENERGY:	 11077.623291	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.636567 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1594.591253 GF/s
+PWR_PKG_ENERGY:	 11101.259399	
+===============================================================
+
+PWR_PKG_ENERGY:	 11101.259399	
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1590.9516 GF
+Average execution time = 46.7434 s
+Average PWR_PKG_ENERGY =  11026.562109200002
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -msse
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.560455 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1597.197920 GF/s
+PWR_PKG_ENERGY:	 11108.326965	
+===============================================================
+
+PWR_PKG_ENERGY:	 11108.326965	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.777505 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1589.786846 GF/s
+PWR_PKG_ENERGY:	 11153.835815	
+===============================================================
+
+PWR_PKG_ENERGY:	 11153.835815	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.637325 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1594.565338 GF/s
+PWR_PKG_ENERGY:	 11140.478210	
+===============================================================
+
+PWR_PKG_ENERGY:	 11140.478210	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.919251 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1584.983998 GF/s
+PWR_PKG_ENERGY:	 11187.963928	
+===============================================================
+
+PWR_PKG_ENERGY:	 11187.963928	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.876972 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1586.413510 GF/s
+PWR_PKG_ENERGY:	 11172.696594	
+===============================================================
+
+PWR_PKG_ENERGY:	 11172.696594	
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1590.5895 GF
+Average execution time = 46.7543 s
+Average PWR_PKG_ENERGY =  11152.6603024
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -msse2
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse2 -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.609828 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1595.506038 GF/s
+PWR_PKG_ENERGY:	 11139.743652	
+===============================================================
+
+PWR_PKG_ENERGY:	 11139.743652	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        47.124587 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1578.077751 GF/s
+PWR_PKG_ENERGY:	 11183.286072	
+===============================================================
+
+PWR_PKG_ENERGY:	 11183.286072	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.700383 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1592.412244 GF/s
+PWR_PKG_ENERGY:	 11164.581848	
+===============================================================
+
+PWR_PKG_ENERGY:	 11164.581848	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.908289 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1585.354394 GF/s
+PWR_PKG_ENERGY:	 11173.443909	
+===============================================================
+
+PWR_PKG_ENERGY:	 11173.443909	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.617445 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1595.245334 GF/s
+PWR_PKG_ENERGY:	 11139.775818	
+===============================================================
+
+PWR_PKG_ENERGY:	 11139.775818	
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1589.3191 GF
+Average execution time = 46.7921 s
+Average PWR_PKG_ENERGY =  11160.1662598
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -msse3
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse3 -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.988891 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1582.634964 GF/s
+PWR_PKG_ENERGY:	 11203.925232	
+===============================================================
+
+PWR_PKG_ENERGY:	 11203.925232	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.771700 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1589.984152 GF/s
+PWR_PKG_ENERGY:	 11155.678284	
+===============================================================
+
+PWR_PKG_ENERGY:	 11155.678284	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.831040 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1587.969470 GF/s
+PWR_PKG_ENERGY:	 11190.872314	
+===============================================================
+
+PWR_PKG_ENERGY:	 11190.872314	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        47.466328 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1566.716131 GF/s
+PWR_PKG_ENERGY:	 11281.019592	
+===============================================================
+
+PWR_PKG_ENERGY:	 11281.019592	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.931524 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1584.569509 GF/s
+PWR_PKG_ENERGY:	 11183.432800	
+===============================================================
+
+PWR_PKG_ENERGY:	 11183.432800	
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1582.3749 GF
+Average execution time = 46.9979 s
+Average PWR_PKG_ENERGY =  11202.9856444
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mssse3
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mssse3 -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.833675 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1587.880126 GF/s
+PWR_PKG_ENERGY:	 11185.175659	
+===============================================================
+
+PWR_PKG_ENERGY:	 11185.175659	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        47.534224 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1564.478300 GF/s
+PWR_PKG_ENERGY:	 11274.067078	
+===============================================================
+
+PWR_PKG_ENERGY:	 11274.067078	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.747313 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1590.813615 GF/s
+PWR_PKG_ENERGY:	 11162.450806	
+===============================================================
+
+PWR_PKG_ENERGY:	 11162.450806	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.642738 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1594.380283 GF/s
+PWR_PKG_ENERGY:	 11144.186157	
+===============================================================
+
+PWR_PKG_ENERGY:	 11144.186157	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        47.074531 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1579.755768 GF/s
+PWR_PKG_ENERGY:	 11200.087341	
+===============================================================
+
+PWR_PKG_ENERGY:	 11200.087341	
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1583.4616 GF
+Average execution time = 46.9665 s
+Average PWR_PKG_ENERGY =  11193.1934082
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -msse4.1
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse4.1 -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.695162 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1592.590297 GF/s
+PWR_PKG_ENERGY:	 11155.859436	
+===============================================================
+
+PWR_PKG_ENERGY:	 11155.859436	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.863908 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1586.855751 GF/s
+PWR_PKG_ENERGY:	 11176.072510	
+===============================================================
+
+PWR_PKG_ENERGY:	 11176.072510	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        47.899523 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1552.547026 GF/s
+PWR_PKG_ENERGY:	 11362.217651	
+===============================================================
+
+PWR_PKG_ENERGY:	 11362.217651	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        47.026538 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1581.367996 GF/s
+PWR_PKG_ENERGY:	 11213.123779	
+===============================================================
+
+PWR_PKG_ENERGY:	 11213.123779	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.918152 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1585.021128 GF/s
+PWR_PKG_ENERGY:	 11188.644043	
+===============================================================
+
+PWR_PKG_ENERGY:	 11188.644043	
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1579.6764 GF
+Average execution time = 47.0807 s
+Average PWR_PKG_ENERGY =  11219.183483800001
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -msse4.2
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse4.2 -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.686449 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1592.887519 GF/s
+PWR_PKG_ENERGY:	 11155.076233	
+===============================================================
+
+PWR_PKG_ENERGY:	 11155.076233	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.829513 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1588.021252 GF/s
+PWR_PKG_ENERGY:	 11177.289673	
+===============================================================
+
+PWR_PKG_ENERGY:	 11177.289673	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.981475 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1582.884782 GF/s
+PWR_PKG_ENERGY:	 11199.782471	
+===============================================================
+
+PWR_PKG_ENERGY:	 11199.782471	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.774487 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1589.889419 GF/s
+PWR_PKG_ENERGY:	 11165.438721	
+===============================================================
+
+PWR_PKG_ENERGY:	 11165.438721	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.737852 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1591.135636 GF/s
+PWR_PKG_ENERGY:	 11172.958008	
+===============================================================
+
+PWR_PKG_ENERGY:	 11172.958008	
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1588.9637 GF
+Average execution time = 46.802 s
+Average PWR_PKG_ENERGY =  11174.1090212
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -maes
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -maes -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.616850 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1595.265707 GF/s
+PWR_PKG_ENERGY:	 11137.261963	
+===============================================================
+
+PWR_PKG_ENERGY:	 11137.261963	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        47.194950 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1575.724992 GF/s
+PWR_PKG_ENERGY:	 11217.956665	
+===============================================================
+
+PWR_PKG_ENERGY:	 11217.956665	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.867568 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1586.731831 GF/s
+PWR_PKG_ENERGY:	 11179.937256	
+===============================================================
+
+PWR_PKG_ENERGY:	 11179.937256	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.812161 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1588.609892 GF/s
+PWR_PKG_ENERGY:	 11166.760376	
+===============================================================
+
+PWR_PKG_ENERGY:	 11166.760376	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.520418 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1598.572518 GF/s
+PWR_PKG_ENERGY:	 11136.724731	
+===============================================================
+
+PWR_PKG_ENERGY:	 11136.724731	
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1588.981 GF
+Average execution time = 46.8024 s
+Average PWR_PKG_ENERGY =  11167.7281982
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mfma
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mfma -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.757235 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1590.476047 GF/s
+PWR_PKG_ENERGY:	 11172.572632	
+===============================================================
+
+PWR_PKG_ENERGY:	 11172.572632	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        47.007406 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1582.011609 GF/s
+PWR_PKG_ENERGY:	 11189.860107	
+===============================================================
+
+PWR_PKG_ENERGY:	 11189.860107	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.686894 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1592.872340 GF/s
+PWR_PKG_ENERGY:	 11157.668640	
+===============================================================
+
+PWR_PKG_ENERGY:	 11157.668640	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.913894 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1585.164985 GF/s
+PWR_PKG_ENERGY:	 11182.848633	
+===============================================================
+
+PWR_PKG_ENERGY:	 11182.848633	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        47.029369 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1581.272804 GF/s
+PWR_PKG_ENERGY:	 11211.728699	
+===============================================================
+
+PWR_PKG_ENERGY:	 11211.728699	
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1586.3595 GF
+Average execution time = 46.879 s
+Average PWR_PKG_ENERGY =  11182.9357422
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.847596 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1587.408287 GF/s
+PWR_PKG_ENERGY:	 11187.659912	
+===============================================================
+
+PWR_PKG_ENERGY:	 11187.659912	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.616440 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1595.279732 GF/s
+PWR_PKG_ENERGY:	 11152.543518	
+===============================================================
+
+PWR_PKG_ENERGY:	 11152.543518	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        47.046712 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1580.689892 GF/s
+PWR_PKG_ENERGY:	 11191.542725	
+===============================================================
+
+PWR_PKG_ENERGY:	 11191.542725	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        47.390620 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1569.219014 GF/s
+PWR_PKG_ENERGY:	 11247.547607	
+===============================================================
+
+PWR_PKG_ENERGY:	 11247.547607	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.703060 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1592.320969 GF/s
+PWR_PKG_ENERGY:	 11162.847778	
+===============================================================
+
+PWR_PKG_ENERGY:	 11162.847778	
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1584.9836 GF
+Average execution time = 46.9209 s
+Average PWR_PKG_ENERGY =  11188.428307999999
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx2
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx2 -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.666708 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1593.561346 GF/s
+PWR_PKG_ENERGY:	 11151.466492	
+===============================================================
+
+PWR_PKG_ENERGY:	 11151.466492	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        47.011632 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1581.869399 GF/s
+PWR_PKG_ENERGY:	 11211.012634	
+===============================================================
+
+PWR_PKG_ENERGY:	 11211.012634	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.694765 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1592.603844 GF/s
+PWR_PKG_ENERGY:	 11163.209229	
+===============================================================
+
+PWR_PKG_ENERGY:	 11163.209229	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.793652 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1589.238256 GF/s
+PWR_PKG_ENERGY:	 11182.869385	
+===============================================================
+
+PWR_PKG_ENERGY:	 11182.869385	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.867928 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1586.719642 GF/s
+PWR_PKG_ENERGY:	 11180.581726	
+===============================================================
+
+PWR_PKG_ENERGY:	 11180.581726	
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1588.7985 GF
+Average execution time = 46.8069 s
+Average PWR_PKG_ENERGY =  11177.8278932
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx512f
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512f -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.774642 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1589.884152 GF/s
+PWR_PKG_ENERGY:	 11157.903381	
+===============================================================
+
+PWR_PKG_ENERGY:	 11157.903381	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.720706 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1591.719569 GF/s
+PWR_PKG_ENERGY:	 11167.081665	
+===============================================================
+
+PWR_PKG_ENERGY:	 11167.081665	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.829413 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1588.024648 GF/s
+PWR_PKG_ENERGY:	 11166.571472	
+===============================================================
+
+PWR_PKG_ENERGY:	 11166.571472	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.980835 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1582.906350 GF/s
+PWR_PKG_ENERGY:	 11189.820190	
+===============================================================
+
+PWR_PKG_ENERGY:	 11189.820190	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.930526 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1584.603206 GF/s
+PWR_PKG_ENERGY:	 11181.948242	
+===============================================================
+
+PWR_PKG_ENERGY:	 11181.948242	
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1587.4276 GF
+Average execution time = 46.8472 s
+Average PWR_PKG_ENERGY =  11172.66499
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx512cd
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512cd -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.777645 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1589.782089 GF/s
+PWR_PKG_ENERGY:	 11169.767456	
+===============================================================
+
+PWR_PKG_ENERGY:	 11169.767456	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        47.808838 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1555.491932 GF/s
+PWR_PKG_ENERGY:	 11339.046021	
+===============================================================
+
+PWR_PKG_ENERGY:	 11339.046021	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.922141 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1584.886381 GF/s
+PWR_PKG_ENERGY:	 11178.229248	
+===============================================================
+
+PWR_PKG_ENERGY:	 11178.229248	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.671689 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1593.391273 GF/s
+PWR_PKG_ENERGY:	 11152.591125	
+===============================================================
+
+PWR_PKG_ENERGY:	 11152.591125	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.693164 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1592.658450 GF/s
+PWR_PKG_ENERGY:	 11155.943054	
+===============================================================
+
+PWR_PKG_ENERGY:	 11155.943054	
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1583.242 GF
+Average execution time = 46.9747 s
+Average PWR_PKG_ENERGY =  11199.1153808
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx512vl
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512vl -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.890522 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1585.955089 GF/s
+PWR_PKG_ENERGY:	 11184.727600	
+===============================================================
+
+PWR_PKG_ENERGY:	 11184.727600	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.834681 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1587.846023 GF/s
+PWR_PKG_ENERGY:	 11179.954956	
+===============================================================
+
+PWR_PKG_ENERGY:	 11179.954956	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.780057 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1589.700109 GF/s
+PWR_PKG_ENERGY:	 11170.933716	
+===============================================================
+
+PWR_PKG_ENERGY:	 11170.933716	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.874437 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1586.499308 GF/s
+PWR_PKG_ENERGY:	 11190.940125	
+===============================================================
+
+PWR_PKG_ENERGY:	 11190.940125	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.615244 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1595.320659 GF/s
+PWR_PKG_ENERGY:	 11148.296692	
+===============================================================
+
+PWR_PKG_ENERGY:	 11148.296692	
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1589.0642 GF
+Average execution time = 46.799 s
+Average PWR_PKG_ENERGY =  11174.9706178
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx512bw
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512bw -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.757272 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1590.474782 GF/s
+PWR_PKG_ENERGY:	 11165.000305	
+===============================================================
+
+PWR_PKG_ENERGY:	 11165.000305	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.724971 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1591.574285 GF/s
+PWR_PKG_ENERGY:	 11155.692688	
+===============================================================
+
+PWR_PKG_ENERGY:	 11155.692688	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        47.236688 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1574.332692 GF/s
+PWR_PKG_ENERGY:	 11234.694153	
+===============================================================
+
+PWR_PKG_ENERGY:	 11234.694153	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.832793 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1587.910036 GF/s
+PWR_PKG_ENERGY:	 11172.837341	
+===============================================================
+
+PWR_PKG_ENERGY:	 11172.837341	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        47.203286 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1575.446712 GF/s
+PWR_PKG_ENERGY:	 11227.667542	
+===============================================================
+
+PWR_PKG_ENERGY:	 11227.667542	
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1583.9477 GF
+Average execution time = 46.951 s
+Average PWR_PKG_ENERGY =  11191.1784058
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx512dq
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx512dq -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.717928 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1591.814220 GF/s
+PWR_PKG_ENERGY:	 11156.217224	
+===============================================================
+
+PWR_PKG_ENERGY:	 11156.217224	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.976327 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1583.058244 GF/s
+PWR_PKG_ENERGY:	 11199.712952	
+===============================================================
+
+PWR_PKG_ENERGY:	 11199.712952	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.716360 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1591.867650 GF/s
+PWR_PKG_ENERGY:	 11159.171387	
+===============================================================
+
+PWR_PKG_ENERGY:	 11159.171387	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.694905 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1592.599063 GF/s
+PWR_PKG_ENERGY:	 11155.887817	
+===============================================================
+
+PWR_PKG_ENERGY:	 11155.887817	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        47.672122 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1559.952838 GF/s
+PWR_PKG_ENERGY:	 11314.893616	
+===============================================================
+
+PWR_PKG_ENERGY:	 11314.893616	
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1583.8584 GF
+Average execution time = 46.9555 s
+Average PWR_PKG_ENERGY =  11197.176599200002
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.665669 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1593.596827 GF/s
+PWR_PKG_ENERGY:	 11149.257446	
+===============================================================
+
+PWR_PKG_ENERGY:	 11149.257446	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        47.441219 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1567.545350 GF/s
+PWR_PKG_ENERGY:	 11286.477356	
+===============================================================
+
+PWR_PKG_ENERGY:	 11286.477356	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.837548 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1587.748829 GF/s
+PWR_PKG_ENERGY:	 11168.181213	
+===============================================================
+
+PWR_PKG_ENERGY:	 11168.181213	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.748980 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1590.756888 GF/s
+PWR_PKG_ENERGY:	 11163.164001	
+===============================================================
+
+PWR_PKG_ENERGY:	 11163.164001	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.748062 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1590.788123 GF/s
+PWR_PKG_ENERGY:	 11167.512390	
+===============================================================
+
+PWR_PKG_ENERGY:	 11167.512390	
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1586.0872 GF
+Average execution time = 46.8883 s
+Average PWR_PKG_ENERGY =  11186.918481199998
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Compiling with SIMD flag: -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq
+
+gcc -O3 -fopenmp -DUSE_MKL -DMKL_ILP64 -m64 -I/opt/intel/oneapi/mkl/2023.0.0/include -mavx -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -o dgemm dgemm.c -L/opt/intel/oneapi/mkl/2023.0.0/lib/intel64 -Wl,--no-as-needed -lmkl_intel_ilp64 -lmkl_gnu_thread -lmkl_core -lgomp -lpthread -lm -ldl 
+
+Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.871186 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1586.609350 GF/s
+PWR_PKG_ENERGY:	 11191.399658	
+===============================================================
+
+PWR_PKG_ENERGY:	 11191.399658	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.794034 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1589.225284 GF/s
+PWR_PKG_ENERGY:	 11173.458923	
+===============================================================
+
+PWR_PKG_ENERGY:	 11173.458923	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.769601 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1590.055511 GF/s
+PWR_PKG_ENERGY:	 11156.443542	
+===============================================================
+
+PWR_PKG_ENERGY:	 11156.443542	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        47.159829 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1576.898469 GF/s
+PWR_PKG_ENERGY:	 11198.549683	
+===============================================================
+
+PWR_PKG_ENERGY:	 11198.549683	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.820068 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1588.341602 GF/s
+PWR_PKG_ENERGY:	 11179.507080	
+===============================================================
+
+PWR_PKG_ENERGY:	 11179.507080	
+
+DGEMM performance
+-----------------------------------------------
+Average GFLOPS = 1586.2261 GF
+Average execution time = 46.8829 s
+Average PWR_PKG_ENERGY =  11179.8717772
+
+
+SIMD flag with maximum GFLOPS: mmx
+SIMD flag with minimum execution time: mmx
+SIMD flag with minimum energy consumption: mmx
+
