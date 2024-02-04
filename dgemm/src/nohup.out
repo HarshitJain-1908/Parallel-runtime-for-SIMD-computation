@@ -6,14 +6,14 @@ Performing multiplication...
 Calculating matrix check...
 
 ===============================================================
-Final Sum is:         9000.019608
+Final Sum is:         4122.204474
 Memory for Matrices:  1853.942871 MB
-Multiply time:        46.609381 seconds
+Multiply time:        46.850834 seconds
 
 ============================ Tabulate Statistics ============================
 FLOPs computed:       74366262000000.000000
-GFLOP/s rate:         1595.521341 GF/s
-PWR_PKG_ENERGY:	 10901.634705	
+GFLOP/s rate:         1587.298578 GF/s
+PWR_PKG_ENERGY:	 11207.936584	
 ===============================================================
 
-PWR_PKG_ENERGY:	 10901.634705	
+PWR_PKG_ENERGY:	 11207.936584	
