@@ -1,0 +1,19 @@
+Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.938777 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1584.324655 GF/s
+PWR_PKG_ENERGY:	 10960.238586	
+===============================================================
+
+PWR_PKG_ENERGY:	 10960.238586	
