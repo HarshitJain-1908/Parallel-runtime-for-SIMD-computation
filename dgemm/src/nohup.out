@@ -34,4 +34,22 @@ GFLOP/s rate:         1579.624235 GF/s
 PWR_PKG_ENERGY:	 10978.305176	
 ===============================================================
 
-PWR_PKG_ENERGY:	 10978.305176	
+PWR_PKG_ENERGY:	 10978.305176	Alpha =    1.000000
+Beta  =    1.000000
+Allocating Matrices...
+Allocation complete, populating with values...
+Performing multiplication...
+Calculating matrix check...
+
+===============================================================
+Final Sum is:         9000.019608
+Memory for Matrices:  1853.942871 MB
+Multiply time:        46.788456 seconds
+
+============================ Tabulate Statistics ============================
+FLOPs computed:       74366262000000.000000
+GFLOP/s rate:         1589.414749 GF/s
+PWR_PKG_ENERGY:	 10926.256897	
+===============================================================
+
+PWR_PKG_ENERGY:	 10926.256897	
