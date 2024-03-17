@@ -431,7 +431,7 @@ __NTH (atoi (const char *__nptr))
     14e0:	41 0f af c4          	imul   %r12d,%eax
     14e4:	85 c0                	test   %eax,%eax
     14e6:	7e 5b                	jle    1543 <main+0x203>
-    14e8:	c5 fb 10 2d 50 1d 00 	vmovsd 0x1d50(%rip),%xmm5        # 3240 <_IO_stdin_used+0x240>
+    14e8:	c5 fb 10 3d 50 1d 00 	vmovsd 0x1d50(%rip),%xmm7        # 3240 <_IO_stdin_used+0x240>
     14ef:	00 
     14f0:	c5 fb 10 35 50 1d 00 	vmovsd 0x1d50(%rip),%xmm6        # 3248 <_IO_stdin_used+0x248>
     14f7:	00 
@@ -439,7 +439,7 @@ __NTH (atoi (const char *__nptr))
     14fb:	89 5c 24 28          	mov    %ebx,0x28(%rsp)
     14ff:	4d 8d 6c c7 08       	lea    0x8(%r15,%rax,8),%r13
     1504:	4c 89 fb             	mov    %r15,%rbx
-    1507:	c5 fb 11 6c 24 18    	vmovsd %xmm5,0x18(%rsp)
+    1507:	c5 fb 11 7c 24 18    	vmovsd %xmm7,0x18(%rsp)
     150d:	c5 fb 11 74 24 20    	vmovsd %xmm6,0x20(%rsp)
     1513:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
     a[i] = ((double) rand() / (double) RAND_MAX) - 0.5;
@@ -463,15 +463,15 @@ __NTH (atoi (const char *__nptr))
     1549:	85 c0                	test   %eax,%eax
     154b:	7e 5e                	jle    15ab <main+0x26b>
     154d:	48 8b 74 24 10       	mov    0x10(%rsp),%rsi
-    1552:	c5 fb 10 2d e6 1c 00 	vmovsd 0x1ce6(%rip),%xmm5        # 3240 <_IO_stdin_used+0x240>
+    1552:	c5 fb 10 25 e6 1c 00 	vmovsd 0x1ce6(%rip),%xmm4        # 3240 <_IO_stdin_used+0x240>
     1559:	00 
     155a:	89 5c 24 28          	mov    %ebx,0x28(%rsp)
-    155e:	c5 fb 10 35 e2 1c 00 	vmovsd 0x1ce2(%rip),%xmm6        # 3248 <_IO_stdin_used+0x248>
+    155e:	c5 fb 10 3d e2 1c 00 	vmovsd 0x1ce2(%rip),%xmm7        # 3248 <_IO_stdin_used+0x248>
     1565:	00 
     1566:	4c 8d 2c c6          	lea    (%rsi,%rax,8),%r13
-    156a:	c5 fb 11 6c 24 18    	vmovsd %xmm5,0x18(%rsp)
+    156a:	c5 fb 11 64 24 18    	vmovsd %xmm4,0x18(%rsp)
     1570:	48 89 f3             	mov    %rsi,%rbx
-    1573:	c5 fb 11 74 24 20    	vmovsd %xmm6,0x20(%rsp)
+    1573:	c5 fb 11 7c 24 20    	vmovsd %xmm7,0x20(%rsp)
     1579:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
     b[i] = ((double) rand() / (double) RAND_MAX) - 0.5;
     1580:	e8 7b fd ff ff       	callq  1300 <rand@plt>
@@ -493,15 +493,15 @@ __NTH (atoi (const char *__nptr))
     15ad:	0f af c3             	imul   %ebx,%eax
     15b0:	85 c0                	test   %eax,%eax
     15b2:	7e 57                	jle    160b <main+0x2cb>
-    15b4:	c5 fb 10 25 84 1c 00 	vmovsd 0x1c84(%rip),%xmm4        # 3240 <_IO_stdin_used+0x240>
+    15b4:	c5 fb 10 2d 84 1c 00 	vmovsd 0x1c84(%rip),%xmm5        # 3240 <_IO_stdin_used+0x240>
     15bb:	00 
-    15bc:	c5 fb 10 2d 84 1c 00 	vmovsd 0x1c84(%rip),%xmm5        # 3248 <_IO_stdin_used+0x248>
+    15bc:	c5 fb 10 25 84 1c 00 	vmovsd 0x1c84(%rip),%xmm4        # 3248 <_IO_stdin_used+0x248>
     15c3:	00 
     15c4:	89 5c 24 28          	mov    %ebx,0x28(%rsp)
     15c8:	4d 8d 2c c6          	lea    (%r14,%rax,8),%r13
     15cc:	4c 89 f3             	mov    %r14,%rbx
-    15cf:	c5 fb 11 64 24 18    	vmovsd %xmm4,0x18(%rsp)
-    15d5:	c5 fb 11 6c 24 20    	vmovsd %xmm5,0x20(%rsp)
+    15cf:	c5 fb 11 6c 24 18    	vmovsd %xmm5,0x18(%rsp)
+    15d5:	c5 fb 11 64 24 20    	vmovsd %xmm4,0x20(%rsp)
     15db:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
     c[i] = ((double) rand() / (double) RAND_MAX) - 0.5;
     15e0:	e8 1b fd ff ff       	callq  1300 <rand@plt>
@@ -529,10 +529,10 @@ __NTH (atoi (const char *__nptr))
   for (i = from; i <= to; i += step) {
     1628:	8b 74 24 34          	mov    0x34(%rsp),%esi
     162c:	39 74 24 30          	cmp    %esi,0x30(%rsp)
-    1630:	0f 8f 43 02 00 00    	jg     1879 <main+0x539>
-    1636:	c5 c1 57 ff          	vxorpd %xmm7,%xmm7,%xmm7
+    1630:	0f 8f 4c 02 00 00    	jg     1882 <main+0x542>
+    1636:	c5 c9 57 f6          	vxorpd %xmm6,%xmm6,%xmm6
     163a:	48 8d 44 24 50       	lea    0x50(%rsp),%rax
-    163f:	c5 c3 2a 44 24 0c    	vcvtsi2sdl 0xc(%rsp),%xmm7,%xmm0
+    163f:	c5 cb 2a 44 24 0c    	vcvtsi2sdl 0xc(%rsp),%xmm6,%xmm0
     1645:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
     164a:	44 89 e0             	mov    %r12d,%eax
     164d:	41 89 dc             	mov    %ebx,%r12d
@@ -586,17 +586,19 @@ __NTH (atoi (const char *__nptr))
     for (j=0; j<loops; j++) {
     16bc:	8b 74 24 0c          	mov    0xc(%rsp),%esi
 	const double usec    = (double) now.tv_usec;
-    16c0:	c4 e1 db 2a 4c 24 58 	vcvtsi2sdq 0x58(%rsp),%xmm4,%xmm1
-	const double seconds = (double) now.tv_sec;
-    16c7:	c4 e1 db 2a 44 24 50 	vcvtsi2sdq 0x50(%rsp),%xmm4,%xmm0
+    16c0:	c4 e1 db 2a 44 24 58 	vcvtsi2sdq 0x58(%rsp),%xmm4,%xmm0
 	return seconds + (usec * 1.0e-6);
-    16ce:	c4 e2 f9 99 0d 61 1b 	vfmadd132sd 0x1b61(%rip),%xmm0,%xmm1        # 3238 <_IO_stdin_used+0x238>
-    16d5:	00 00 
-    16d7:	c5 fb 11 4c 24 20    	vmovsd %xmm1,0x20(%rsp)
+    16c7:	c5 fb 59 05 69 1b 00 	vmulsd 0x1b69(%rip),%xmm0,%xmm0        # 3238 <_IO_stdin_used+0x238>
+    16ce:	00 
+	const double seconds = (double) now.tv_sec;
+    16cf:	c4 e1 db 2a 4c 24 50 	vcvtsi2sdq 0x50(%rsp),%xmm4,%xmm1
+	return seconds + (usec * 1.0e-6);
+    16d6:	c5 fb 58 e9          	vaddsd %xmm1,%xmm0,%xmm5
+    16da:	c5 fb 11 6c 24 20    	vmovsd %xmm5,0x20(%rsp)
     for (j=0; j<loops; j++) {
-    16dd:	85 f6                	test   %esi,%esi
-    16df:	7e 4e                	jle    172f <main+0x3ef>
-    16e1:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    16e0:	85 f6                	test   %esi,%esi
+    16e2:	7e 4b                	jle    172f <main+0x3ef>
+    16e4:	0f 1f 40 00          	nopl   0x0(%rax)
       // printf("cblas_dgemm\n");
       cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, m, n, k, *alpha, a, lda, b, ldb, *beta, c, ldc);
     16e8:	53                   	push   %rbx
@@ -636,140 +638,143 @@ void perfcounters_stop(){
     perfcounters_read();
     173f:	31 c0                	xor    %eax,%eax
     1741:	c4 e1 e3 2a 44 24 58 	vcvtsi2sdq 0x58(%rsp),%xmm3,%xmm0
-	const double seconds = (double) now.tv_sec;
-    1748:	c4 e1 e3 2a 4c 24 50 	vcvtsi2sdq 0x50(%rsp),%xmm3,%xmm1
 	return seconds + (usec * 1.0e-6);
-    174f:	c4 e2 f9 b9 0d e0 1a 	vfmadd231sd 0x1ae0(%rip),%xmm0,%xmm1        # 3238 <_IO_stdin_used+0x238>
-    1756:	00 00 
-    1758:	c5 fb 11 4c 24 28    	vmovsd %xmm1,0x28(%rsp)
-    175e:	e8 ad 09 00 00       	callq  2110 <perfcounters_read>
+    1748:	c5 fb 59 05 e8 1a 00 	vmulsd 0x1ae8(%rip),%xmm0,%xmm0        # 3238 <_IO_stdin_used+0x238>
+    174f:	00 
+	const double seconds = (double) now.tv_sec;
+    1750:	c4 e1 e3 2a 4c 24 50 	vcvtsi2sdq 0x50(%rsp),%xmm3,%xmm1
+	return seconds + (usec * 1.0e-6);
+    1757:	c5 fb 58 c9          	vaddsd %xmm1,%xmm0,%xmm1
+    175b:	c5 fb 11 4c 24 28    	vmovsd %xmm1,0x28(%rsp)
+    1761:	e8 aa 09 00 00       	callq  2110 <perfcounters_read>
     perfcounters_stop(); 
 
 //     // timeg = time1/loops;
     fprintf(stderr,
 	    " %10.2f MFlops %10.6f sec\n",
 	    2. * (double)k * (double)m * (double)n / ((end - start) / loops) * 1.e-6, (end - start));
-    1763:	c5 e1 57 db          	vxorpd %xmm3,%xmm3,%xmm3
+    1766:	c5 e1 57 db          	vxorpd %xmm3,%xmm3,%xmm3
     fprintf(stderr,
-    1767:	c5 fb 10 4c 24 28    	vmovsd 0x28(%rsp),%xmm1
-    176d:	c5 f3 5c 4c 24 20    	vsubsd 0x20(%rsp),%xmm1,%xmm1
+    176a:	c5 fb 10 4c 24 28    	vmovsd 0x28(%rsp),%xmm1
+    1770:	c5 f3 5c 4c 24 20    	vsubsd 0x20(%rsp),%xmm1,%xmm1
 	    2. * (double)k * (double)m * (double)n / ((end - start) / loops) * 1.e-6, (end - start));
-    1773:	c5 e3 2a c5          	vcvtsi2sd %ebp,%xmm3,%xmm0
-    1777:	48 8b 3d c2 38 00 00 	mov    0x38c2(%rip),%rdi        # 5040 <stderr@@GLIBC_2.2.5>
-    177e:	48 8d 15 86 19 00 00 	lea    0x1986(%rip),%rdx        # 310b <_IO_stdin_used+0x10b>
-    1785:	be 01 00 00 00       	mov    $0x1,%esi
-    178a:	c5 e3 2a d3          	vcvtsi2sd %ebx,%xmm3,%xmm2
-    178e:	b8 02 00 00 00       	mov    $0x2,%eax
-    1793:	c5 fb 58 c0          	vaddsd %xmm0,%xmm0,%xmm0
-    1797:	c5 fb 59 d2          	vmulsd %xmm2,%xmm0,%xmm2
-    179b:	c4 c1 63 2a c4       	vcvtsi2sd %r12d,%xmm3,%xmm0
-    17a0:	c5 eb 59 c0          	vmulsd %xmm0,%xmm2,%xmm0
-    17a4:	c5 f3 5e 54 24 48    	vdivsd 0x48(%rsp),%xmm1,%xmm2
-    17aa:	c5 fb 5e c2          	vdivsd %xmm2,%xmm0,%xmm0
+    1776:	c5 e3 2a c5          	vcvtsi2sd %ebp,%xmm3,%xmm0
+    177a:	48 8b 3d bf 38 00 00 	mov    0x38bf(%rip),%rdi        # 5040 <stderr@@GLIBC_2.2.5>
+    1781:	48 8d 15 83 19 00 00 	lea    0x1983(%rip),%rdx        # 310b <_IO_stdin_used+0x10b>
+    1788:	be 01 00 00 00       	mov    $0x1,%esi
+    178d:	c5 e3 2a d3          	vcvtsi2sd %ebx,%xmm3,%xmm2
+    1791:	b8 02 00 00 00       	mov    $0x2,%eax
+    1796:	c5 fb 58 c0          	vaddsd %xmm0,%xmm0,%xmm0
+    179a:	c5 fb 59 d2          	vmulsd %xmm2,%xmm0,%xmm2
+    179e:	c4 c1 63 2a c4       	vcvtsi2sd %r12d,%xmm3,%xmm0
+    17a3:	c5 eb 59 c0          	vmulsd %xmm0,%xmm2,%xmm0
+    17a7:	c5 f3 5e 54 24 48    	vdivsd 0x48(%rsp),%xmm1,%xmm2
+    17ad:	c5 fb 5e c2          	vdivsd %xmm2,%xmm0,%xmm0
     fprintf(stderr,
-    17ae:	c5 fb 59 05 82 1a 00 	vmulsd 0x1a82(%rip),%xmm0,%xmm0        # 3238 <_IO_stdin_used+0x238>
-    17b5:	00 
-    17b6:	e8 35 fa ff ff       	callq  11f0 <__fprintf_chk@plt>
-    17bb:	48 8b 3d 86 38 00 00 	mov    0x3886(%rip),%rdi        # 5048 <stdout@@GLIBC_2.2.5>
-    17c2:	be 01 00 00 00       	mov    $0x1,%esi
-    17c7:	31 c0                	xor    %eax,%eax
-    17c9:	48 8d 15 a9 18 00 00 	lea    0x18a9(%rip),%rdx        # 3079 <_IO_stdin_used+0x79>
-    17d0:	48 8d 0d 92 18 00 00 	lea    0x1892(%rip),%rcx        # 3069 <_IO_stdin_used+0x69>
-    17d7:	e8 14 fa ff ff       	callq  11f0 <__fprintf_chk@plt>
+    17b1:	c5 fb 59 05 7f 1a 00 	vmulsd 0x1a7f(%rip),%xmm0,%xmm0        # 3238 <_IO_stdin_used+0x238>
+    17b8:	00 
+    17b9:	e8 32 fa ff ff       	callq  11f0 <__fprintf_chk@plt>
+    17be:	48 8b 3d 83 38 00 00 	mov    0x3883(%rip),%rdi        # 5048 <stdout@@GLIBC_2.2.5>
+    17c5:	be 01 00 00 00       	mov    $0x1,%esi
+    17ca:	31 c0                	xor    %eax,%eax
+    17cc:	48 8d 15 a6 18 00 00 	lea    0x18a6(%rip),%rdx        # 3079 <_IO_stdin_used+0x79>
+    17d3:	48 8d 0d 8f 18 00 00 	lea    0x188f(%rip),%rcx        # 3069 <_IO_stdin_used+0x69>
+    17da:	e8 11 fa ff ff       	callq  11f0 <__fprintf_chk@plt>
 	//fprintf(stdout,"%s\t","INST_RETIRED");
     //fprintf(stdout,"\n");
     
     //printf("power %f \n", LAST_PWR_PKG_ENERGY[0]*JOULE_UNIT);
     double res=0;
     for(i=0; i<numOfSockets; i++) {
-    17dc:	48 8b 15 35 38 00 00 	mov    0x3835(%rip),%rdx        # 5018 <numOfSockets>
+    17df:	48 8b 15 32 38 00 00 	mov    0x3832(%rip),%rdx        # 5018 <numOfSockets>
     double res=0;
-    17e3:	c5 f9 57 c0          	vxorpd %xmm0,%xmm0,%xmm0
+    17e6:	c5 f9 57 c0          	vxorpd %xmm0,%xmm0,%xmm0
     for(i=0; i<numOfSockets; i++) {
-    17e7:	48 85 d2             	test   %rdx,%rdx
-    17ea:	7e 4e                	jle    183a <main+0x4fa>
+    17ea:	48 85 d2             	test   %rdx,%rdx
+    17ed:	7e 54                	jle    1843 <main+0x503>
       res += ((double)TOTAL_PWR_PKG_ENERGY[i])*JOULE_UNIT;
-    17ec:	48 8b 05 8d 3a 00 00 	mov    0x3a8d(%rip),%rax        # 5280 <TOTAL_PWR_PKG_ENERGY>
-    17f3:	c5 fb 10 15 65 38 00 	vmovsd 0x3865(%rip),%xmm2        # 5060 <JOULE_UNIT>
-    17fa:	00 
-    17fb:	48 85 c0             	test   %rax,%rax
-    17fe:	0f 88 a4 00 00 00    	js     18a8 <main+0x568>
-    1804:	c5 d9 57 e4          	vxorpd %xmm4,%xmm4,%xmm4
-    1808:	c4 e1 db 2a c0       	vcvtsi2sd %rax,%xmm4,%xmm0
-    180d:	c5 c1 57 ff          	vxorpd %xmm7,%xmm7,%xmm7
-    1811:	c4 e2 c1 99 c2       	vfmadd132sd %xmm2,%xmm7,%xmm0
+    17ef:	48 8b 05 8a 3a 00 00 	mov    0x3a8a(%rip),%rax        # 5280 <TOTAL_PWR_PKG_ENERGY>
+    17f6:	c5 fb 10 15 62 38 00 	vmovsd 0x3862(%rip),%xmm2        # 5060 <JOULE_UNIT>
+    17fd:	00 
+    17fe:	48 85 c0             	test   %rax,%rax
+    1801:	0f 88 a9 00 00 00    	js     18b0 <main+0x570>
+    1807:	c5 d1 57 ed          	vxorpd %xmm5,%xmm5,%xmm5
+    180b:	c4 e1 d3 2a c0       	vcvtsi2sd %rax,%xmm5,%xmm0
+    1810:	c5 fb 59 c2          	vmulsd %xmm2,%xmm0,%xmm0
+    1814:	c5 d9 57 e4          	vxorpd %xmm4,%xmm4,%xmm4
+    1818:	c5 fb 58 c4          	vaddsd %xmm4,%xmm0,%xmm0
     for(i=0; i<numOfSockets; i++) {
-    1816:	48 83 fa 01          	cmp    $0x1,%rdx
-    181a:	74 1e                	je     183a <main+0x4fa>
+    181c:	48 83 fa 01          	cmp    $0x1,%rdx
+    1820:	74 21                	je     1843 <main+0x503>
       res += ((double)TOTAL_PWR_PKG_ENERGY[i])*JOULE_UNIT;
-    181c:	48 8b 05 65 3a 00 00 	mov    0x3a65(%rip),%rax        # 5288 <TOTAL_PWR_PKG_ENERGY+0x8>
-    1823:	48 85 c0             	test   %rax,%rax
-    1826:	0f 88 a4 00 00 00    	js     18d0 <main+0x590>
-    182c:	c5 d9 57 e4          	vxorpd %xmm4,%xmm4,%xmm4
-    1830:	c4 e1 db 2a c8       	vcvtsi2sd %rax,%xmm4,%xmm1
-    1835:	c4 e2 f1 b9 c2       	vfmadd231sd %xmm2,%xmm1,%xmm0
-    183a:	48 8b 3d 07 38 00 00 	mov    0x3807(%rip),%rdi        # 5048 <stdout@@GLIBC_2.2.5>
-    1841:	be 01 00 00 00       	mov    $0x1,%esi
-    1846:	b8 01 00 00 00       	mov    $0x1,%eax
-    184b:	48 8d 15 2b 18 00 00 	lea    0x182b(%rip),%rdx        # 307d <_IO_stdin_used+0x7d>
-    1852:	e8 99 f9 ff ff       	callq  11f0 <__fprintf_chk@plt>
+    1822:	48 8b 05 5f 3a 00 00 	mov    0x3a5f(%rip),%rax        # 5288 <TOTAL_PWR_PKG_ENERGY+0x8>
+    1829:	48 85 c0             	test   %rax,%rax
+    182c:	0f 88 9e 00 00 00    	js     18d0 <main+0x590>
+    1832:	c5 c1 57 ff          	vxorpd %xmm7,%xmm7,%xmm7
+    1836:	c4 e1 c3 2a c8       	vcvtsi2sd %rax,%xmm7,%xmm1
+    183b:	c5 f3 59 ca          	vmulsd %xmm2,%xmm1,%xmm1
+    183f:	c5 fb 58 c1          	vaddsd %xmm1,%xmm0,%xmm0
+    1843:	48 8b 3d fe 37 00 00 	mov    0x37fe(%rip),%rdi        # 5048 <stdout@@GLIBC_2.2.5>
+    184a:	be 01 00 00 00       	mov    $0x1,%esi
+    184f:	b8 01 00 00 00       	mov    $0x1,%eax
+    1854:	48 8d 15 22 18 00 00 	lea    0x1822(%rip),%rdx        # 307d <_IO_stdin_used+0x7d>
+    185b:	e8 90 f9 ff ff       	callq  11f0 <__fprintf_chk@plt>
 	//for(i=0;i<numOfSockets*numOfCores;i++) {
 	//	res += ((double)TOTAL_INST_RETIRED[i]);
 	//}
     //fprintf(stdout,"%f\t",res);
     //fprintf(stdout,"\n=============================================================================\n");
     fflush(stdout);
-    1857:	48 8b 3d ea 37 00 00 	mov    0x37ea(%rip),%rdi        # 5048 <stdout@@GLIBC_2.2.5>
-    185e:	e8 cd fa ff ff       	callq  1330 <fflush@plt>
+    1860:	48 8b 3d e1 37 00 00 	mov    0x37e1(%rip),%rdi        # 5048 <stdout@@GLIBC_2.2.5>
+    1867:	e8 c4 fa ff ff       	callq  1330 <fflush@plt>
   for (i = from; i <= to; i += step) {
-    1863:	8b 74 24 38          	mov    0x38(%rsp),%esi
-    1867:	01 74 24 30          	add    %esi,0x30(%rsp)
-    186b:	8b 44 24 30          	mov    0x30(%rsp),%eax
-    186f:	3b 44 24 34          	cmp    0x34(%rsp),%eax
-    1873:	0f 8e e7 fd ff ff    	jle    1660 <main+0x320>
+    186c:	8b 74 24 38          	mov    0x38(%rsp),%esi
+    1870:	01 74 24 30          	add    %esi,0x30(%rsp)
+    1874:	8b 44 24 30          	mov    0x30(%rsp),%eax
+    1878:	3b 44 24 34          	cmp    0x34(%rsp),%eax
+    187c:	0f 8e de fd ff ff    	jle    1660 <main+0x320>
     double energy = perfcounters_dump();
 //     // fprintf(stderr, "\nEnergy: %f", energy);
   }
 
   perfcounters_finalize();
-    1879:	31 c0                	xor    %eax,%eax
-    187b:	e8 60 08 00 00       	callq  20e0 <perfcounters_finalize>
+    1882:	31 c0                	xor    %eax,%eax
+    1884:	e8 57 08 00 00       	callq  20e0 <perfcounters_finalize>
 
   return 0;
 }
-    1880:	48 8b 44 24 68       	mov    0x68(%rsp),%rax
-    1885:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
-    188c:	00 00 
-    188e:	0f 85 1d 01 00 00    	jne    19b1 <main+0x671>
-    1894:	48 83 c4 78          	add    $0x78,%rsp
-    1898:	31 c0                	xor    %eax,%eax
-    189a:	5b                   	pop    %rbx
-    189b:	5d                   	pop    %rbp
-    189c:	41 5c                	pop    %r12
-    189e:	41 5d                	pop    %r13
-    18a0:	41 5e                	pop    %r14
-    18a2:	41 5f                	pop    %r15
-    18a4:	c3                   	retq   
-    18a5:	0f 1f 00             	nopl   (%rax)
+    1889:	48 8b 44 24 68       	mov    0x68(%rsp),%rax
+    188e:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+    1895:	00 00 
+    1897:	0f 85 14 01 00 00    	jne    19b1 <main+0x671>
+    189d:	48 83 c4 78          	add    $0x78,%rsp
+    18a1:	31 c0                	xor    %eax,%eax
+    18a3:	5b                   	pop    %rbx
+    18a4:	5d                   	pop    %rbp
+    18a5:	41 5c                	pop    %r12
+    18a7:	41 5d                	pop    %r13
+    18a9:	41 5e                	pop    %r14
+    18ab:	41 5f                	pop    %r15
+    18ad:	c3                   	retq   
+    18ae:	66 90                	xchg   %ax,%ax
       res += ((double)TOTAL_PWR_PKG_ENERGY[i])*JOULE_UNIT;
-    18a8:	48 89 c1             	mov    %rax,%rcx
-    18ab:	83 e0 01             	and    $0x1,%eax
-    18ae:	c5 c1 57 ff          	vxorpd %xmm7,%xmm7,%xmm7
-    18b2:	48 d1 e9             	shr    %rcx
-    18b5:	48 09 c1             	or     %rax,%rcx
-    18b8:	c4 e1 c3 2a c1       	vcvtsi2sd %rcx,%xmm7,%xmm0
-    18bd:	c5 fb 58 c0          	vaddsd %xmm0,%xmm0,%xmm0
-    18c1:	e9 47 ff ff ff       	jmpq   180d <main+0x4cd>
-    18c6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
-    18cd:	00 00 00 
+    18b0:	48 89 c1             	mov    %rax,%rcx
+    18b3:	83 e0 01             	and    $0x1,%eax
+    18b6:	c5 c9 57 f6          	vxorpd %xmm6,%xmm6,%xmm6
+    18ba:	48 d1 e9             	shr    %rcx
+    18bd:	48 09 c1             	or     %rax,%rcx
+    18c0:	c4 e1 cb 2a c1       	vcvtsi2sd %rcx,%xmm6,%xmm0
+    18c5:	c5 fb 58 c0          	vaddsd %xmm0,%xmm0,%xmm0
+    18c9:	e9 42 ff ff ff       	jmpq   1810 <main+0x4d0>
+    18ce:	66 90                	xchg   %ax,%ax
     18d0:	48 89 c2             	mov    %rax,%rdx
     18d3:	83 e0 01             	and    $0x1,%eax
-    18d6:	c5 c1 57 ff          	vxorpd %xmm7,%xmm7,%xmm7
+    18d6:	c5 d9 57 e4          	vxorpd %xmm4,%xmm4,%xmm4
     18da:	48 d1 ea             	shr    %rdx
     18dd:	48 09 c2             	or     %rax,%rdx
-    18e0:	c4 e1 c3 2a ca       	vcvtsi2sd %rdx,%xmm7,%xmm1
+    18e0:	c4 e1 db 2a ca       	vcvtsi2sd %rdx,%xmm4,%xmm1
     18e5:	c5 f3 58 c9          	vaddsd %xmm1,%xmm1,%xmm1
-    18e9:	e9 47 ff ff ff       	jmpq   1835 <main+0x4f5>
+    18e9:	e9 4d ff ff ff       	jmpq   183b <main+0x4fb>
   int has_param_m = 0;
     18ee:	c7 44 24 3c 00 00 00 	movl   $0x0,0x3c(%rsp)
     18f5:	00 
@@ -857,8 +862,8 @@ __NTH (atol (const char *__nptr))
     19ed:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
     19f1:	50                   	push   %rax
     19f2:	54                   	push   %rsp
-    19f3:	4c 8d 05 06 0a 00 00 	lea    0xa06(%rip),%r8        # 2400 <__libc_csu_fini>
-    19fa:	48 8d 0d 8f 09 00 00 	lea    0x98f(%rip),%rcx        # 2390 <__libc_csu_init>
+    19f3:	4c 8d 05 16 0a 00 00 	lea    0xa16(%rip),%r8        # 2410 <__libc_csu_fini>
+    19fa:	48 8d 0d 9f 09 00 00 	lea    0x99f(%rip),%rcx        # 23a0 <__libc_csu_init>
     1a01:	48 8d 3d 38 f9 ff ff 	lea    -0x6c8(%rip),%rdi        # 1340 <main>
     1a08:	ff 15 d2 35 00 00    	callq  *0x35d2(%rip)        # 4fe0 <__libc_start_main@GLIBC_2.2.5>
     1a0e:	f4                   	hlt    
@@ -1573,140 +1578,143 @@ double perfcounters_dump(){
     2270:	c5 f9 57 c0          	vxorpd %xmm0,%xmm0,%xmm0
     for(i=0; i<numOfSockets; i++) {
     2274:	48 85 d2             	test   %rdx,%rdx
-    2277:	7e 42                	jle    22bb <perfcounters_dump+0x7b>
+    2277:	7e 48                	jle    22c1 <perfcounters_dump+0x81>
       res += ((double)TOTAL_PWR_PKG_ENERGY[i])*JOULE_UNIT;
     2279:	48 8b 05 00 30 00 00 	mov    0x3000(%rip),%rax        # 5280 <TOTAL_PWR_PKG_ENERGY>
     2280:	c5 fb 10 15 d8 2d 00 	vmovsd 0x2dd8(%rip),%xmm2        # 5060 <JOULE_UNIT>
     2287:	00 
     2288:	c5 f0 57 c9          	vxorps %xmm1,%xmm1,%xmm1
     228c:	48 85 c0             	test   %rax,%rax
-    228f:	78 67                	js     22f8 <perfcounters_dump+0xb8>
+    228f:	78 6f                	js     2300 <perfcounters_dump+0xc0>
     2291:	c4 e1 f3 2a c0       	vcvtsi2sd %rax,%xmm1,%xmm0
-    2296:	c4 e2 e9 a9 05 91 0f 	vfmadd213sd 0xf91(%rip),%xmm2,%xmm0        # 3230 <_IO_stdin_used+0x230>
-    229d:	00 00 
+    2296:	c5 fb 59 c2          	vmulsd %xmm2,%xmm0,%xmm0
+    229a:	c5 fb 58 05 8e 0f 00 	vaddsd 0xf8e(%rip),%xmm0,%xmm0        # 3230 <_IO_stdin_used+0x230>
+    22a1:	00 
     for(i=0; i<numOfSockets; i++) {
-    229f:	48 83 fa 01          	cmp    $0x1,%rdx
-    22a3:	74 16                	je     22bb <perfcounters_dump+0x7b>
+    22a2:	48 83 fa 01          	cmp    $0x1,%rdx
+    22a6:	74 19                	je     22c1 <perfcounters_dump+0x81>
       res += ((double)TOTAL_PWR_PKG_ENERGY[i])*JOULE_UNIT;
-    22a5:	48 8b 05 dc 2f 00 00 	mov    0x2fdc(%rip),%rax        # 5288 <TOTAL_PWR_PKG_ENERGY+0x8>
-    22ac:	48 85 c0             	test   %rax,%rax
-    22af:	78 5f                	js     2310 <perfcounters_dump+0xd0>
-    22b1:	c4 e1 f3 2a c8       	vcvtsi2sd %rax,%xmm1,%xmm1
-    22b6:	c4 e2 f1 b9 c2       	vfmadd231sd %xmm2,%xmm1,%xmm0
-    22bb:	be 01 00 00 00       	mov    $0x1,%esi
-    22c0:	b8 01 00 00 00       	mov    $0x1,%eax
-    22c5:	48 8b 3d 7c 2d 00 00 	mov    0x2d7c(%rip),%rdi        # 5048 <stdout@@GLIBC_2.2.5>
-    22cc:	48 8d 15 aa 0d 00 00 	lea    0xdaa(%rip),%rdx        # 307d <_IO_stdin_used+0x7d>
-    22d3:	c5 fb 11 44 24 08    	vmovsd %xmm0,0x8(%rsp)
-    22d9:	e8 12 ef ff ff       	callq  11f0 <__fprintf_chk@plt>
+    22a8:	48 8b 05 d9 2f 00 00 	mov    0x2fd9(%rip),%rax        # 5288 <TOTAL_PWR_PKG_ENERGY+0x8>
+    22af:	48 85 c0             	test   %rax,%rax
+    22b2:	78 6c                	js     2320 <perfcounters_dump+0xe0>
+    22b4:	c4 e1 f3 2a c8       	vcvtsi2sd %rax,%xmm1,%xmm1
+    22b9:	c5 f3 59 ca          	vmulsd %xmm2,%xmm1,%xmm1
+    22bd:	c5 fb 58 c1          	vaddsd %xmm1,%xmm0,%xmm0
+    22c1:	be 01 00 00 00       	mov    $0x1,%esi
+    22c6:	b8 01 00 00 00       	mov    $0x1,%eax
+    22cb:	48 8b 3d 76 2d 00 00 	mov    0x2d76(%rip),%rdi        # 5048 <stdout@@GLIBC_2.2.5>
+    22d2:	48 8d 15 a4 0d 00 00 	lea    0xda4(%rip),%rdx        # 307d <_IO_stdin_used+0x7d>
+    22d9:	c5 fb 11 44 24 08    	vmovsd %xmm0,0x8(%rsp)
+    22df:	e8 0c ef ff ff       	callq  11f0 <__fprintf_chk@plt>
     fflush(stdout);
-    22de:	48 8b 3d 63 2d 00 00 	mov    0x2d63(%rip),%rdi        # 5048 <stdout@@GLIBC_2.2.5>
-    22e5:	e8 46 f0 ff ff       	callq  1330 <fflush@plt>
+    22e4:	48 8b 3d 5d 2d 00 00 	mov    0x2d5d(%rip),%rdi        # 5048 <stdout@@GLIBC_2.2.5>
+    22eb:	e8 40 f0 ff ff       	callq  1330 <fflush@plt>
 
   return res;
 }
-    22ea:	c5 fb 10 44 24 08    	vmovsd 0x8(%rsp),%xmm0
-    22f0:	48 83 c4 18          	add    $0x18,%rsp
-    22f4:	c3                   	retq   
-    22f5:	0f 1f 00             	nopl   (%rax)
+    22f0:	c5 fb 10 44 24 08    	vmovsd 0x8(%rsp),%xmm0
+    22f6:	48 83 c4 18          	add    $0x18,%rsp
+    22fa:	c3                   	retq   
+    22fb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
       res += ((double)TOTAL_PWR_PKG_ENERGY[i])*JOULE_UNIT;
-    22f8:	48 89 c1             	mov    %rax,%rcx
-    22fb:	83 e0 01             	and    $0x1,%eax
-    22fe:	48 d1 e9             	shr    %rcx
-    2301:	48 09 c1             	or     %rax,%rcx
-    2304:	c4 e1 f3 2a c1       	vcvtsi2sd %rcx,%xmm1,%xmm0
-    2309:	c5 fb 58 c0          	vaddsd %xmm0,%xmm0,%xmm0
-    230d:	eb 87                	jmp    2296 <perfcounters_dump+0x56>
-    230f:	90                   	nop
-    2310:	48 89 c2             	mov    %rax,%rdx
-    2313:	83 e0 01             	and    $0x1,%eax
-    2316:	48 d1 ea             	shr    %rdx
-    2319:	48 09 c2             	or     %rax,%rdx
-    231c:	c4 e1 f3 2a ca       	vcvtsi2sd %rdx,%xmm1,%xmm1
-    2321:	c5 f3 58 c9          	vaddsd %xmm1,%xmm1,%xmm1
-    2325:	eb 8f                	jmp    22b6 <perfcounters_dump+0x76>
-    2327:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
-    232e:	00 00 
+    2300:	48 89 c1             	mov    %rax,%rcx
+    2303:	83 e0 01             	and    $0x1,%eax
+    2306:	48 d1 e9             	shr    %rcx
+    2309:	48 09 c1             	or     %rax,%rcx
+    230c:	c4 e1 f3 2a c1       	vcvtsi2sd %rcx,%xmm1,%xmm0
+    2311:	c5 fb 58 c0          	vaddsd %xmm0,%xmm0,%xmm0
+    2315:	e9 7c ff ff ff       	jmpq   2296 <perfcounters_dump+0x56>
+    231a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    2320:	48 89 c2             	mov    %rax,%rdx
+    2323:	83 e0 01             	and    $0x1,%eax
+    2326:	48 d1 ea             	shr    %rdx
+    2329:	48 09 c2             	or     %rax,%rdx
+    232c:	c4 e1 f3 2a ca       	vcvtsi2sd %rdx,%xmm1,%xmm1
+    2331:	c5 f3 58 c9          	vaddsd %xmm1,%xmm1,%xmm1
+    2335:	eb 82                	jmp    22b9 <perfcounters_dump+0x79>
+    2337:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    233e:	00 00 
 
-0000000000002330 <get_seconds>:
+0000000000002340 <get_seconds>:
 double get_seconds() {
-    2330:	f3 0f 1e fa          	endbr64 
-    2334:	48 83 ec 28          	sub    $0x28,%rsp
+    2340:	f3 0f 1e fa          	endbr64 
+    2344:	48 83 ec 28          	sub    $0x28,%rsp
 	gettimeofday(&now, NULL);
-    2338:	31 f6                	xor    %esi,%esi
+    2348:	31 f6                	xor    %esi,%esi
 double get_seconds() {
-    233a:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
-    2341:	00 00 
-    2343:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
-    2348:	31 c0                	xor    %eax,%eax
+    234a:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    2351:	00 00 
+    2353:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+    2358:	31 c0                	xor    %eax,%eax
 	gettimeofday(&now, NULL);
-    234a:	48 89 e7             	mov    %rsp,%rdi
-    234d:	e8 be ee ff ff       	callq  1210 <gettimeofday@plt>
+    235a:	48 89 e7             	mov    %rsp,%rdi
+    235d:	e8 ae ee ff ff       	callq  1210 <gettimeofday@plt>
 	const double usec    = (double) now.tv_usec;
-    2352:	c5 f8 57 c0          	vxorps %xmm0,%xmm0,%xmm0
-    2356:	c4 e1 fb 2a 4c 24 08 	vcvtsi2sdq 0x8(%rsp),%xmm0,%xmm1
-	const double seconds = (double) now.tv_sec;
-    235d:	c4 e1 fb 2a 04 24    	vcvtsi2sdq (%rsp),%xmm0,%xmm0
+    2362:	c5 f0 57 c9          	vxorps %xmm1,%xmm1,%xmm1
+    2366:	c4 e1 f3 2a 44 24 08 	vcvtsi2sdq 0x8(%rsp),%xmm1,%xmm0
 	return seconds + (usec * 1.0e-6);
-    2363:	c4 e2 f1 b9 05 cc 0e 	vfmadd231sd 0xecc(%rip),%xmm1,%xmm0        # 3238 <_IO_stdin_used+0x238>
-    236a:	00 00 
+    236d:	c5 fb 59 05 c3 0e 00 	vmulsd 0xec3(%rip),%xmm0,%xmm0        # 3238 <_IO_stdin_used+0x238>
+    2374:	00 
+	const double seconds = (double) now.tv_sec;
+    2375:	c4 e1 f3 2a 0c 24    	vcvtsi2sdq (%rsp),%xmm1,%xmm1
+	return seconds + (usec * 1.0e-6);
+    237b:	c5 fb 58 c1          	vaddsd %xmm1,%xmm0,%xmm0
 }
-    236c:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
-    2371:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
-    2378:	00 00 
-    237a:	75 05                	jne    2381 <get_seconds+0x51>
-    237c:	48 83 c4 28          	add    $0x28,%rsp
-    2380:	c3                   	retq   
-    2381:	e8 2a ef ff ff       	callq  12b0 <__stack_chk_fail@plt>
-    2386:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
-    238d:	00 00 00 
+    237f:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+    2384:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+    238b:	00 00 
+    238d:	75 05                	jne    2394 <get_seconds+0x54>
+    238f:	48 83 c4 28          	add    $0x28,%rsp
+    2393:	c3                   	retq   
+    2394:	e8 17 ef ff ff       	callq  12b0 <__stack_chk_fail@plt>
+    2399:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
 
-0000000000002390 <__libc_csu_init>:
-    2390:	f3 0f 1e fa          	endbr64 
-    2394:	41 57                	push   %r15
-    2396:	4c 8d 3d 43 29 00 00 	lea    0x2943(%rip),%r15        # 4ce0 <__frame_dummy_init_array_entry>
-    239d:	41 56                	push   %r14
-    239f:	49 89 d6             	mov    %rdx,%r14
-    23a2:	41 55                	push   %r13
-    23a4:	49 89 f5             	mov    %rsi,%r13
-    23a7:	41 54                	push   %r12
-    23a9:	41 89 fc             	mov    %edi,%r12d
-    23ac:	55                   	push   %rbp
-    23ad:	48 8d 2d 34 29 00 00 	lea    0x2934(%rip),%rbp        # 4ce8 <__do_global_dtors_aux_fini_array_entry>
-    23b4:	53                   	push   %rbx
-    23b5:	4c 29 fd             	sub    %r15,%rbp
-    23b8:	48 83 ec 08          	sub    $0x8,%rsp
-    23bc:	e8 3f ec ff ff       	callq  1000 <_init>
-    23c1:	48 c1 fd 03          	sar    $0x3,%rbp
-    23c5:	74 1f                	je     23e6 <__libc_csu_init+0x56>
-    23c7:	31 db                	xor    %ebx,%ebx
-    23c9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
-    23d0:	4c 89 f2             	mov    %r14,%rdx
-    23d3:	4c 89 ee             	mov    %r13,%rsi
-    23d6:	44 89 e7             	mov    %r12d,%edi
-    23d9:	41 ff 14 df          	callq  *(%r15,%rbx,8)
-    23dd:	48 83 c3 01          	add    $0x1,%rbx
-    23e1:	48 39 dd             	cmp    %rbx,%rbp
-    23e4:	75 ea                	jne    23d0 <__libc_csu_init+0x40>
-    23e6:	48 83 c4 08          	add    $0x8,%rsp
-    23ea:	5b                   	pop    %rbx
-    23eb:	5d                   	pop    %rbp
-    23ec:	41 5c                	pop    %r12
-    23ee:	41 5d                	pop    %r13
-    23f0:	41 5e                	pop    %r14
-    23f2:	41 5f                	pop    %r15
-    23f4:	c3                   	retq   
-    23f5:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
-    23fc:	00 00 00 00 
-
-0000000000002400 <__libc_csu_fini>:
-    2400:	f3 0f 1e fa          	endbr64 
+00000000000023a0 <__libc_csu_init>:
+    23a0:	f3 0f 1e fa          	endbr64 
+    23a4:	41 57                	push   %r15
+    23a6:	4c 8d 3d 33 29 00 00 	lea    0x2933(%rip),%r15        # 4ce0 <__frame_dummy_init_array_entry>
+    23ad:	41 56                	push   %r14
+    23af:	49 89 d6             	mov    %rdx,%r14
+    23b2:	41 55                	push   %r13
+    23b4:	49 89 f5             	mov    %rsi,%r13
+    23b7:	41 54                	push   %r12
+    23b9:	41 89 fc             	mov    %edi,%r12d
+    23bc:	55                   	push   %rbp
+    23bd:	48 8d 2d 24 29 00 00 	lea    0x2924(%rip),%rbp        # 4ce8 <__do_global_dtors_aux_fini_array_entry>
+    23c4:	53                   	push   %rbx
+    23c5:	4c 29 fd             	sub    %r15,%rbp
+    23c8:	48 83 ec 08          	sub    $0x8,%rsp
+    23cc:	e8 2f ec ff ff       	callq  1000 <_init>
+    23d1:	48 c1 fd 03          	sar    $0x3,%rbp
+    23d5:	74 1f                	je     23f6 <__libc_csu_init+0x56>
+    23d7:	31 db                	xor    %ebx,%ebx
+    23d9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    23e0:	4c 89 f2             	mov    %r14,%rdx
+    23e3:	4c 89 ee             	mov    %r13,%rsi
+    23e6:	44 89 e7             	mov    %r12d,%edi
+    23e9:	41 ff 14 df          	callq  *(%r15,%rbx,8)
+    23ed:	48 83 c3 01          	add    $0x1,%rbx
+    23f1:	48 39 dd             	cmp    %rbx,%rbp
+    23f4:	75 ea                	jne    23e0 <__libc_csu_init+0x40>
+    23f6:	48 83 c4 08          	add    $0x8,%rsp
+    23fa:	5b                   	pop    %rbx
+    23fb:	5d                   	pop    %rbp
+    23fc:	41 5c                	pop    %r12
+    23fe:	41 5d                	pop    %r13
+    2400:	41 5e                	pop    %r14
+    2402:	41 5f                	pop    %r15
     2404:	c3                   	retq   
+    2405:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+    240c:	00 00 00 00 
+
+0000000000002410 <__libc_csu_fini>:
+    2410:	f3 0f 1e fa          	endbr64 
+    2414:	c3                   	retq   
 
 Disassembly of section .fini:
 
-0000000000002408 <_fini>:
-    2408:	f3 0f 1e fa          	endbr64 
-    240c:	48 83 ec 08          	sub    $0x8,%rsp
-    2410:	48 83 c4 08          	add    $0x8,%rsp
-    2414:	c3                   	retq   
+0000000000002418 <_fini>:
+    2418:	f3 0f 1e fa          	endbr64 
+    241c:	48 83 ec 08          	sub    $0x8,%rsp
+    2420:	48 83 c4 08          	add    $0x8,%rsp
+    2424:	c3                   	retq   

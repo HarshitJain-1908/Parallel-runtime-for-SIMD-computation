@@ -289,7 +289,7 @@ int main(int argc, char *argv[]){
 
   if (argc > 0) { from     = atol(*argv);		argc--; argv++;}
     1389:	83 fd 01             	cmp    $0x1,%ebp
-    138c:	0f 8f 76 03 00 00    	jg     1708 <main+0x3c8>
+    138c:	0f 8f 79 03 00 00    	jg     170b <main+0x3cb>
   int to   = 1000;
     1392:	c7 44 24 44 e8 03 00 	movl   $0x3e8,0x44(%rsp)
     1399:	00 
@@ -327,7 +327,7 @@ fprintf (FILE *__restrict __stream, const char *__restrict __fmt, ...)
     13e2:	e8 39 fe ff ff       	callq  1220 <malloc@plt>
     13e7:	49 89 c6             	mov    %rax,%r14
     13ea:	48 85 c0             	test   %rax,%rax
-    13ed:	0f 84 a9 03 00 00    	je     179c <main+0x45c>
+    13ed:	0f 84 ac 03 00 00    	je     179f <main+0x45f>
     fprintf(stderr,"Out of Memory!!\n");exit(1);
   }
 
@@ -336,7 +336,7 @@ fprintf (FILE *__restrict __stream, const char *__restrict __fmt, ...)
     13f6:	e8 25 fe ff ff       	callq  1220 <malloc@plt>
     13fb:	49 89 c7             	mov    %rax,%r15
     13fe:	48 85 c0             	test   %rax,%rax
-    1401:	0f 84 95 03 00 00    	je     179c <main+0x45c>
+    1401:	0f 84 98 03 00 00    	je     179f <main+0x45f>
     fprintf(stderr,"Out of Memory!!\n");exit(1);
   }
 
@@ -345,7 +345,7 @@ fprintf (FILE *__restrict __stream, const char *__restrict __fmt, ...)
     140a:	e8 11 fe ff ff       	callq  1220 <malloc@plt>
     140f:	49 89 c4             	mov    %rax,%r12
     1412:	48 85 c0             	test   %rax,%rax
-    1415:	0f 84 81 03 00 00    	je     179c <main+0x45c>
+    1415:	0f 84 84 03 00 00    	je     179f <main+0x45f>
     fprintf(stderr,"Out of Memory!!\n");exit(1);
   }
 
@@ -404,45 +404,47 @@ __NTH (atoi (const char *__nptr))
     148c:	48 63 44 24 0c       	movslq 0xc(%rsp),%rax
     1491:	8b 74 24 44          	mov    0x44(%rsp),%esi
 	const double usec    = (double) now.tv_usec;
-    1495:	c4 e1 cb 2a 4c 24 68 	vcvtsi2sdq 0x68(%rsp),%xmm6,%xmm1
-	const double seconds = (double) now.tv_sec;
-    149c:	c4 e1 cb 2a 44 24 60 	vcvtsi2sdq 0x60(%rsp),%xmm6,%xmm0
+    1495:	c4 e1 cb 2a 44 24 68 	vcvtsi2sdq 0x68(%rsp),%xmm6,%xmm0
 	return seconds + (usec * 1.0e-6);
-    14a3:	c4 e2 f9 99 0d 14 1d 	vfmadd132sd 0x1d14(%rip),%xmm0,%xmm1        # 31c0 <_IO_stdin_used+0x1c0>
-    14aa:	00 00 
-    14ac:	c5 fb 11 4c 24 48    	vmovsd %xmm1,0x48(%rsp)
+    149c:	c5 fb 59 05 1c 1d 00 	vmulsd 0x1d1c(%rip),%xmm0,%xmm0        # 31c0 <_IO_stdin_used+0x1c0>
+    14a3:	00 
+	const double seconds = (double) now.tv_sec;
+    14a4:	c4 e1 cb 2a 4c 24 60 	vcvtsi2sdq 0x60(%rsp),%xmm6,%xmm1
+	return seconds + (usec * 1.0e-6);
+    14ab:	c5 fb 58 f9          	vaddsd %xmm1,%xmm0,%xmm7
+    14af:	c5 fb 11 7c 24 48    	vmovsd %xmm7,0x48(%rsp)
   for(m = from; m <= to; m += step)
-    14b2:	39 f0                	cmp    %esi,%eax
-    14b4:	0f 8f 8a 01 00 00    	jg     1644 <main+0x304>
-    14ba:	48 63 74 24 40       	movslq 0x40(%rsp),%rsi
-    14bf:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
-    14c4:	4d 89 f5             	mov    %r14,%r13
-    14c7:	48 8d 84 24 80 00 00 	lea    0x80(%rsp),%rax
-    14ce:	00 
-    14cf:	48 89 44 24 38       	mov    %rax,0x38(%rsp)
-    14d4:	48 89 74 24 50       	mov    %rsi,0x50(%rsp)
+    14b5:	39 f0                	cmp    %esi,%eax
+    14b7:	0f 8f 87 01 00 00    	jg     1644 <main+0x304>
+    14bd:	48 63 74 24 40       	movslq 0x40(%rsp),%rsi
+    14c2:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+    14c7:	4d 89 f5             	mov    %r14,%r13
+    14ca:	48 8d 84 24 80 00 00 	lea    0x80(%rsp),%rax
+    14d1:	00 
+    14d2:	48 89 44 24 38       	mov    %rax,0x38(%rsp)
+    14d7:	48 89 74 24 50       	mov    %rsi,0x50(%rsp)
 
     // timeg=0;
 
     // fprintf(stderr, " %6d : ", (int)m);
 
     for (l=0; l<loops; l++)
-    14d9:	8b 44 24 24          	mov    0x24(%rsp),%eax
-    14dd:	85 c0                	test   %eax,%eax
-    14df:	0f 8e 3f 01 00 00    	jle    1624 <main+0x2e4>
-    14e5:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
-    14ea:	c7 44 24 20 00 00 00 	movl   $0x0,0x20(%rsp)
-    14f1:	00 
-    14f2:	48 c1 e0 03          	shl    $0x3,%rax
-    14f6:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
-    14fb:	8b 44 24 0c          	mov    0xc(%rsp),%eax
-    14ff:	83 e8 01             	sub    $0x1,%eax
-    1502:	48 8d 04 c5 08 00 00 	lea    0x8(,%rax,8),%rax
-    1509:	00 
-    150a:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
-    150f:	48 8d 44 24 70       	lea    0x70(%rsp),%rax
-    1514:	48 89 44 24 30       	mov    %rax,0x30(%rsp)
-    1519:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    14dc:	8b 44 24 24          	mov    0x24(%rsp),%eax
+    14e0:	85 c0                	test   %eax,%eax
+    14e2:	0f 8e 3c 01 00 00    	jle    1624 <main+0x2e4>
+    14e8:	48 8b 44 24 10       	mov    0x10(%rsp),%rax
+    14ed:	c7 44 24 20 00 00 00 	movl   $0x0,0x20(%rsp)
+    14f4:	00 
+    14f5:	48 c1 e0 03          	shl    $0x3,%rax
+    14f9:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+    14fe:	8b 44 24 0c          	mov    0xc(%rsp),%eax
+    1502:	83 e8 01             	sub    $0x1,%eax
+    1505:	48 8d 04 c5 08 00 00 	lea    0x8(,%rax,8),%rax
+    150c:	00 
+    150d:	48 89 44 24 28       	mov    %rax,0x28(%rsp)
+    1512:	48 8d 44 24 70       	lea    0x70(%rsp),%rax
+    1517:	48 89 44 24 30       	mov    %rax,0x30(%rsp)
+    151c:	0f 1f 40 00          	nopl   0x0(%rax)
     {
   
     	for(j = 0; j < m; j++){
@@ -530,7 +532,7 @@ __NTH (atoi (const char *__nptr))
     1631:	8b 44 24 0c          	mov    0xc(%rsp),%eax
     1635:	48 01 54 24 10       	add    %rdx,0x10(%rsp)
     163a:	3b 44 24 44          	cmp    0x44(%rsp),%eax
-    163e:	0f 8e 95 fe ff ff    	jle    14d9 <main+0x199>
+    163e:	0f 8e 98 fe ff ff    	jle    14dc <main+0x19c>
 	gettimeofday(&now, NULL);
     1644:	48 8b 7c 24 58       	mov    0x58(%rsp),%rdi
     1649:	31 f6                	xor    %esi,%esi
@@ -545,128 +547,129 @@ void perfcounters_stop(){
     perfcounters_read();
     1654:	31 c0                	xor    %eax,%eax
     1656:	c4 e1 d3 2a 44 24 68 	vcvtsi2sdq 0x68(%rsp),%xmm5,%xmm0
-	const double seconds = (double) now.tv_sec;
-    165d:	c4 e1 d3 2a 4c 24 60 	vcvtsi2sdq 0x60(%rsp),%xmm5,%xmm1
 	return seconds + (usec * 1.0e-6);
-    1664:	c4 e2 f9 b9 0d 53 1b 	vfmadd231sd 0x1b53(%rip),%xmm0,%xmm1        # 31c0 <_IO_stdin_used+0x1c0>
-    166b:	00 00 
-    166d:	c5 fb 11 0c 24       	vmovsd %xmm1,(%rsp)
-    1672:	e8 89 08 00 00       	callq  1f00 <perfcounters_read>
+    165d:	c5 fb 59 05 5b 1b 00 	vmulsd 0x1b5b(%rip),%xmm0,%xmm0        # 31c0 <_IO_stdin_used+0x1c0>
+    1664:	00 
+	const double seconds = (double) now.tv_sec;
+    1665:	c4 e1 d3 2a 4c 24 60 	vcvtsi2sdq 0x60(%rsp),%xmm5,%xmm1
+	return seconds + (usec * 1.0e-6);
+    166c:	c5 fb 58 c9          	vaddsd %xmm1,%xmm0,%xmm1
+    1670:	c5 fb 11 0c 24       	vmovsd %xmm1,(%rsp)
+    1675:	e8 86 08 00 00       	callq  1f00 <perfcounters_read>
   perfcounters_stop();
 
   // timeg /= loops;
   fprintf(stderr,
     " %10.2f MFlops %10.6f sec\n",
   2. * (double)m * (double)m * (double)m / ((end - start) / loops) * 1.e-6, (end - start));
-    1677:	c5 d1 57 ed          	vxorpd %xmm5,%xmm5,%xmm5
+    167a:	c5 d1 57 ed          	vxorpd %xmm5,%xmm5,%xmm5
   fprintf(stderr,
-    167b:	c5 fb 10 0c 24       	vmovsd (%rsp),%xmm1
-    1680:	c5 f3 5c 4c 24 48    	vsubsd 0x48(%rsp),%xmm1,%xmm1
+    167e:	c5 fb 10 0c 24       	vmovsd (%rsp),%xmm1
+    1683:	c5 f3 5c 4c 24 48    	vsubsd 0x48(%rsp),%xmm1,%xmm1
   2. * (double)m * (double)m * (double)m / ((end - start) / loops) * 1.e-6, (end - start));
-    1686:	c5 d3 2a 54 24 0c    	vcvtsi2sdl 0xc(%rsp),%xmm5,%xmm2
-    168c:	be 01 00 00 00       	mov    $0x1,%esi
-    1691:	b8 02 00 00 00       	mov    $0x2,%eax
-    1696:	48 8b 3d a3 39 00 00 	mov    0x39a3(%rip),%rdi        # 5040 <stderr@@GLIBC_2.2.5>
-    169d:	48 8d 15 31 1a 00 00 	lea    0x1a31(%rip),%rdx        # 30d5 <_IO_stdin_used+0xd5>
-    16a4:	c5 eb 10 da          	vmovsd %xmm2,%xmm2,%xmm3
-    16a8:	c5 eb 58 d2          	vaddsd %xmm2,%xmm2,%xmm2
-    16ac:	c5 eb 59 c3          	vmulsd %xmm3,%xmm2,%xmm0
-    16b0:	c5 fb 59 db          	vmulsd %xmm3,%xmm0,%xmm3
-    16b4:	c5 d3 2a 44 24 24    	vcvtsi2sdl 0x24(%rsp),%xmm5,%xmm0
-    16ba:	c5 f3 5e c0          	vdivsd %xmm0,%xmm1,%xmm0
-    16be:	c5 e3 5e c0          	vdivsd %xmm0,%xmm3,%xmm0
+    1689:	c5 d3 2a 54 24 0c    	vcvtsi2sdl 0xc(%rsp),%xmm5,%xmm2
+    168f:	be 01 00 00 00       	mov    $0x1,%esi
+    1694:	b8 02 00 00 00       	mov    $0x2,%eax
+    1699:	48 8b 3d a0 39 00 00 	mov    0x39a0(%rip),%rdi        # 5040 <stderr@@GLIBC_2.2.5>
+    16a0:	48 8d 15 2e 1a 00 00 	lea    0x1a2e(%rip),%rdx        # 30d5 <_IO_stdin_used+0xd5>
+    16a7:	c5 eb 10 da          	vmovsd %xmm2,%xmm2,%xmm3
+    16ab:	c5 eb 58 d2          	vaddsd %xmm2,%xmm2,%xmm2
+    16af:	c5 eb 59 c3          	vmulsd %xmm3,%xmm2,%xmm0
+    16b3:	c5 fb 59 db          	vmulsd %xmm3,%xmm0,%xmm3
+    16b7:	c5 d3 2a 44 24 24    	vcvtsi2sdl 0x24(%rsp),%xmm5,%xmm0
+    16bd:	c5 f3 5e c0          	vdivsd %xmm0,%xmm1,%xmm0
+    16c1:	c5 e3 5e c0          	vdivsd %xmm0,%xmm3,%xmm0
   fprintf(stderr,
-    16c2:	c5 fb 59 05 f6 1a 00 	vmulsd 0x1af6(%rip),%xmm0,%xmm0        # 31c0 <_IO_stdin_used+0x1c0>
-    16c9:	00 
-    16ca:	e8 21 fb ff ff       	callq  11f0 <__fprintf_chk@plt>
+    16c5:	c5 fb 59 05 f3 1a 00 	vmulsd 0x1af3(%rip),%xmm0,%xmm0        # 31c0 <_IO_stdin_used+0x1c0>
+    16cc:	00 
+    16cd:	e8 1e fb ff ff       	callq  11f0 <__fprintf_chk@plt>
 
   perfcounters_dump();
-    16cf:	31 c0                	xor    %eax,%eax
-    16d1:	e8 5a 09 00 00       	callq  2030 <perfcounters_dump>
+    16d2:	31 c0                	xor    %eax,%eax
+    16d4:	e8 57 09 00 00       	callq  2030 <perfcounters_dump>
 
   perfcounters_finalize();
-    16d6:	31 c0                	xor    %eax,%eax
-    16d8:	e8 f3 07 00 00       	callq  1ed0 <perfcounters_finalize>
+    16d9:	31 c0                	xor    %eax,%eax
+    16db:	e8 f0 07 00 00       	callq  1ed0 <perfcounters_finalize>
   return 0;
 }
-    16dd:	48 8b 84 24 98 00 00 	mov    0x98(%rsp),%rax
-    16e4:	00 
-    16e5:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
-    16ec:	00 00 
-    16ee:	0f 85 a3 00 00 00    	jne    1797 <main+0x457>
-    16f4:	48 81 c4 a8 00 00 00 	add    $0xa8,%rsp
-    16fb:	31 c0                	xor    %eax,%eax
-    16fd:	5b                   	pop    %rbx
-    16fe:	5d                   	pop    %rbp
-    16ff:	41 5c                	pop    %r12
-    1701:	41 5d                	pop    %r13
-    1703:	41 5e                	pop    %r14
-    1705:	41 5f                	pop    %r15
-    1707:	c3                   	retq   
+    16e0:	48 8b 84 24 98 00 00 	mov    0x98(%rsp),%rax
+    16e7:	00 
+    16e8:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+    16ef:	00 00 
+    16f1:	0f 85 a3 00 00 00    	jne    179a <main+0x45a>
+    16f7:	48 81 c4 a8 00 00 00 	add    $0xa8,%rsp
+    16fe:	31 c0                	xor    %eax,%eax
+    1700:	5b                   	pop    %rbx
+    1701:	5d                   	pop    %rbp
+    1702:	41 5c                	pop    %r12
+    1704:	41 5d                	pop    %r13
+    1706:	41 5e                	pop    %r14
+    1708:	41 5f                	pop    %r15
+    170a:	c3                   	retq   
 }
 __extern_inline long int
 __NTH (atol (const char *__nptr))
 {
   return strtol (__nptr, (char **) NULL, 10);
-    1708:	48 8b 7b 08          	mov    0x8(%rbx),%rdi
-    170c:	ba 0a 00 00 00       	mov    $0xa,%edx
-    1711:	31 f6                	xor    %esi,%esi
-    1713:	e8 68 fb ff ff       	callq  1280 <strtol@plt>
+    170b:	48 8b 7b 08          	mov    0x8(%rbx),%rdi
+    170f:	ba 0a 00 00 00       	mov    $0xa,%edx
+    1714:	31 f6                	xor    %esi,%esi
+    1716:	e8 65 fb ff ff       	callq  1280 <strtol@plt>
   if (argc > 0) { from     = atol(*argv);		argc--; argv++;}
-    1718:	89 44 24 0c          	mov    %eax,0xc(%rsp)
-    171c:	49 89 c4             	mov    %rax,%r12
+    171b:	89 44 24 0c          	mov    %eax,0xc(%rsp)
+    171f:	49 89 c4             	mov    %rax,%r12
   if (argc > 0) { to       = MAX(atol(*argv), from);	argc--; argv++;}
-    171f:	83 fd 02             	cmp    $0x2,%ebp
-    1722:	74 51                	je     1775 <main+0x435>
-    1724:	48 8b 7b 10          	mov    0x10(%rbx),%rdi
-    1728:	ba 0a 00 00 00       	mov    $0xa,%edx
-    172d:	31 f6                	xor    %esi,%esi
-    172f:	e8 4c fb ff ff       	callq  1280 <strtol@plt>
-    1734:	49 63 d4             	movslq %r12d,%rdx
+    1722:	83 fd 02             	cmp    $0x2,%ebp
+    1725:	74 51                	je     1778 <main+0x438>
+    1727:	48 8b 7b 10          	mov    0x10(%rbx),%rdi
+    172b:	ba 0a 00 00 00       	mov    $0xa,%edx
+    1730:	31 f6                	xor    %esi,%esi
+    1732:	e8 49 fb ff ff       	callq  1280 <strtol@plt>
+    1737:	49 63 d4             	movslq %r12d,%rdx
   if (argc > 0) { from     = atol(*argv);		argc--; argv++;}
-    1737:	44 89 64 24 44       	mov    %r12d,0x44(%rsp)
+    173a:	44 89 64 24 44       	mov    %r12d,0x44(%rsp)
   if (argc > 0) { to       = MAX(atol(*argv), from);	argc--; argv++;}
-    173c:	48 39 c2             	cmp    %rax,%rdx
-    173f:	7e 1e                	jle    175f <main+0x41f>
+    173f:	48 39 c2             	cmp    %rax,%rdx
+    1742:	7e 1e                	jle    1762 <main+0x422>
   if (argc > 0) { step     = atol(*argv);		argc--; argv++;}
-    1741:	83 fd 03             	cmp    $0x3,%ebp
-    1744:	7e 44                	jle    178a <main+0x44a>
-    1746:	48 8b 7b 18          	mov    0x18(%rbx),%rdi
-    174a:	ba 0a 00 00 00       	mov    $0xa,%edx
-    174f:	31 f6                	xor    %esi,%esi
-    1751:	e8 2a fb ff ff       	callq  1280 <strtol@plt>
-    1756:	89 44 24 40          	mov    %eax,0x40(%rsp)
-    175a:	e9 4b fc ff ff       	jmpq   13aa <main+0x6a>
-    175f:	48 8b 7b 10          	mov    0x10(%rbx),%rdi
-    1763:	ba 0a 00 00 00       	mov    $0xa,%edx
-    1768:	31 f6                	xor    %esi,%esi
-    176a:	e8 11 fb ff ff       	callq  1280 <strtol@plt>
+    1744:	83 fd 03             	cmp    $0x3,%ebp
+    1747:	7e 44                	jle    178d <main+0x44d>
+    1749:	48 8b 7b 18          	mov    0x18(%rbx),%rdi
+    174d:	ba 0a 00 00 00       	mov    $0xa,%edx
+    1752:	31 f6                	xor    %esi,%esi
+    1754:	e8 27 fb ff ff       	callq  1280 <strtol@plt>
+    1759:	89 44 24 40          	mov    %eax,0x40(%rsp)
+    175d:	e9 48 fc ff ff       	jmpq   13aa <main+0x6a>
+    1762:	48 8b 7b 10          	mov    0x10(%rbx),%rdi
+    1766:	ba 0a 00 00 00       	mov    $0xa,%edx
+    176b:	31 f6                	xor    %esi,%esi
+    176d:	e8 0e fb ff ff       	callq  1280 <strtol@plt>
   if (argc > 0) { to       = MAX(atol(*argv), from);	argc--; argv++;}
-    176f:	89 44 24 44          	mov    %eax,0x44(%rsp)
-    1773:	eb cc                	jmp    1741 <main+0x401>
+    1772:	89 44 24 44          	mov    %eax,0x44(%rsp)
+    1776:	eb cc                	jmp    1744 <main+0x404>
   int to   = 1000;
-    1775:	c7 44 24 44 e8 03 00 	movl   $0x3e8,0x44(%rsp)
-    177c:	00 
+    1778:	c7 44 24 44 e8 03 00 	movl   $0x3e8,0x44(%rsp)
+    177f:	00 
   int step =   1;
-    177d:	c7 44 24 40 01 00 00 	movl   $0x1,0x40(%rsp)
-    1784:	00 
-    1785:	e9 20 fc ff ff       	jmpq   13aa <main+0x6a>
-    178a:	c7 44 24 40 01 00 00 	movl   $0x1,0x40(%rsp)
-    1791:	00 
-    1792:	e9 13 fc ff ff       	jmpq   13aa <main+0x6a>
+    1780:	c7 44 24 40 01 00 00 	movl   $0x1,0x40(%rsp)
+    1787:	00 
+    1788:	e9 1d fc ff ff       	jmpq   13aa <main+0x6a>
+    178d:	c7 44 24 40 01 00 00 	movl   $0x1,0x40(%rsp)
+    1794:	00 
+    1795:	e9 10 fc ff ff       	jmpq   13aa <main+0x6a>
 }
-    1797:	e8 24 fb ff ff       	callq  12c0 <__stack_chk_fail@plt>
-    179c:	48 8b 0d 9d 38 00 00 	mov    0x389d(%rip),%rcx        # 5040 <stderr@@GLIBC_2.2.5>
-    17a3:	ba 10 00 00 00       	mov    $0x10,%edx
-    17a8:	be 01 00 00 00       	mov    $0x1,%esi
-    17ad:	48 8d 3d ec 18 00 00 	lea    0x18ec(%rip),%rdi        # 30a0 <_IO_stdin_used+0xa0>
-    17b4:	e8 37 fb ff ff       	callq  12f0 <fwrite@plt>
+    179a:	e8 21 fb ff ff       	callq  12c0 <__stack_chk_fail@plt>
+    179f:	48 8b 0d 9a 38 00 00 	mov    0x389a(%rip),%rcx        # 5040 <stderr@@GLIBC_2.2.5>
+    17a6:	ba 10 00 00 00       	mov    $0x10,%edx
+    17ab:	be 01 00 00 00       	mov    $0x1,%esi
+    17b0:	48 8d 3d e9 18 00 00 	lea    0x18e9(%rip),%rdi        # 30a0 <_IO_stdin_used+0xa0>
+    17b7:	e8 34 fb ff ff       	callq  12f0 <fwrite@plt>
     fprintf(stderr,"Out of Memory!!\n");exit(1);
-    17b9:	bf 01 00 00 00       	mov    $0x1,%edi
-    17be:	e8 3d fa ff ff       	callq  1200 <exit@plt>
-    17c3:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
-    17ca:	00 00 00 
-    17cd:	0f 1f 00             	nopl   (%rax)
+    17bc:	bf 01 00 00 00       	mov    $0x1,%edi
+    17c1:	e8 3a fa ff ff       	callq  1200 <exit@plt>
+    17c6:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
+    17cd:	00 00 00 
 
 00000000000017d0 <_start>:
     17d0:	f3 0f 1e fa          	endbr64 
@@ -677,8 +680,8 @@ __NTH (atol (const char *__nptr))
     17dd:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
     17e1:	50                   	push   %rax
     17e2:	54                   	push   %rsp
-    17e3:	4c 8d 05 06 0a 00 00 	lea    0xa06(%rip),%r8        # 21f0 <__libc_csu_fini>
-    17ea:	48 8d 0d 8f 09 00 00 	lea    0x98f(%rip),%rcx        # 2180 <__libc_csu_init>
+    17e3:	4c 8d 05 16 0a 00 00 	lea    0xa16(%rip),%r8        # 2200 <__libc_csu_fini>
+    17ea:	48 8d 0d 9f 09 00 00 	lea    0x99f(%rip),%rcx        # 2190 <__libc_csu_init>
     17f1:	48 8d 3d 48 fb ff ff 	lea    -0x4b8(%rip),%rdi        # 1340 <main>
     17f8:	ff 15 e2 37 00 00    	callq  *0x37e2(%rip)        # 4fe0 <__libc_start_main@GLIBC_2.2.5>
     17fe:	f4                   	hlt    
@@ -1400,145 +1403,148 @@ double perfcounters_dump(){
     2060:	c5 f9 57 c0          	vxorpd %xmm0,%xmm0,%xmm0
     for(i=0; i<numOfSockets; i++) {
     2064:	48 85 d2             	test   %rdx,%rdx
-    2067:	7e 42                	jle    20ab <perfcounters_dump+0x7b>
+    2067:	7e 48                	jle    20b1 <perfcounters_dump+0x81>
       res += ((double)TOTAL_PWR_PKG_ENERGY[i])*JOULE_UNIT;
     2069:	48 8b 05 10 32 00 00 	mov    0x3210(%rip),%rax        # 5280 <TOTAL_PWR_PKG_ENERGY>
     2070:	c5 fb 10 15 e8 2f 00 	vmovsd 0x2fe8(%rip),%xmm2        # 5060 <JOULE_UNIT>
     2077:	00 
     2078:	c5 f0 57 c9          	vxorps %xmm1,%xmm1,%xmm1
     207c:	48 85 c0             	test   %rax,%rax
-    207f:	78 67                	js     20e8 <perfcounters_dump+0xb8>
+    207f:	78 6f                	js     20f0 <perfcounters_dump+0xc0>
     2081:	c4 e1 f3 2a c0       	vcvtsi2sd %rax,%xmm1,%xmm0
-    2086:	c4 e2 e9 a9 05 29 11 	vfmadd213sd 0x1129(%rip),%xmm2,%xmm0        # 31b8 <_IO_stdin_used+0x1b8>
-    208d:	00 00 
+    2086:	c5 fb 59 c2          	vmulsd %xmm2,%xmm0,%xmm0
+    208a:	c5 fb 58 05 26 11 00 	vaddsd 0x1126(%rip),%xmm0,%xmm0        # 31b8 <_IO_stdin_used+0x1b8>
+    2091:	00 
     for(i=0; i<numOfSockets; i++) {
-    208f:	48 83 fa 01          	cmp    $0x1,%rdx
-    2093:	74 16                	je     20ab <perfcounters_dump+0x7b>
+    2092:	48 83 fa 01          	cmp    $0x1,%rdx
+    2096:	74 19                	je     20b1 <perfcounters_dump+0x81>
       res += ((double)TOTAL_PWR_PKG_ENERGY[i])*JOULE_UNIT;
-    2095:	48 8b 05 ec 31 00 00 	mov    0x31ec(%rip),%rax        # 5288 <TOTAL_PWR_PKG_ENERGY+0x8>
-    209c:	48 85 c0             	test   %rax,%rax
-    209f:	78 5f                	js     2100 <perfcounters_dump+0xd0>
-    20a1:	c4 e1 f3 2a c8       	vcvtsi2sd %rax,%xmm1,%xmm1
-    20a6:	c4 e2 f1 b9 c2       	vfmadd231sd %xmm2,%xmm1,%xmm0
-    20ab:	be 01 00 00 00       	mov    $0x1,%esi
-    20b0:	b8 01 00 00 00       	mov    $0x1,%eax
-    20b5:	48 8b 3d 8c 2f 00 00 	mov    0x2f8c(%rip),%rdi        # 5048 <stdout@@GLIBC_2.2.5>
-    20bc:	48 8d 15 ba 0f 00 00 	lea    0xfba(%rip),%rdx        # 307d <_IO_stdin_used+0x7d>
-    20c3:	c5 fb 11 44 24 08    	vmovsd %xmm0,0x8(%rsp)
-    20c9:	e8 22 f1 ff ff       	callq  11f0 <__fprintf_chk@plt>
+    2098:	48 8b 05 e9 31 00 00 	mov    0x31e9(%rip),%rax        # 5288 <TOTAL_PWR_PKG_ENERGY+0x8>
+    209f:	48 85 c0             	test   %rax,%rax
+    20a2:	78 6c                	js     2110 <perfcounters_dump+0xe0>
+    20a4:	c4 e1 f3 2a c8       	vcvtsi2sd %rax,%xmm1,%xmm1
+    20a9:	c5 f3 59 ca          	vmulsd %xmm2,%xmm1,%xmm1
+    20ad:	c5 fb 58 c1          	vaddsd %xmm1,%xmm0,%xmm0
+    20b1:	be 01 00 00 00       	mov    $0x1,%esi
+    20b6:	b8 01 00 00 00       	mov    $0x1,%eax
+    20bb:	48 8b 3d 86 2f 00 00 	mov    0x2f86(%rip),%rdi        # 5048 <stdout@@GLIBC_2.2.5>
+    20c2:	48 8d 15 b4 0f 00 00 	lea    0xfb4(%rip),%rdx        # 307d <_IO_stdin_used+0x7d>
+    20c9:	c5 fb 11 44 24 08    	vmovsd %xmm0,0x8(%rsp)
+    20cf:	e8 1c f1 ff ff       	callq  11f0 <__fprintf_chk@plt>
 	//for(i=0;i<numOfSockets*numOfCores;i++) {
 	//	res += ((double)TOTAL_INST_RETIRED[i]);
 	//}
     //fprintf(stdout,"%f\t",res);
     //fprintf(stdout,"\n=============================================================================\n");
     fflush(stdout);
-    20ce:	48 8b 3d 73 2f 00 00 	mov    0x2f73(%rip),%rdi        # 5048 <stdout@@GLIBC_2.2.5>
-    20d5:	e8 56 f2 ff ff       	callq  1330 <fflush@plt>
+    20d4:	48 8b 3d 6d 2f 00 00 	mov    0x2f6d(%rip),%rdi        # 5048 <stdout@@GLIBC_2.2.5>
+    20db:	e8 50 f2 ff ff       	callq  1330 <fflush@plt>
 
   return res;
 }
-    20da:	c5 fb 10 44 24 08    	vmovsd 0x8(%rsp),%xmm0
-    20e0:	48 83 c4 18          	add    $0x18,%rsp
-    20e4:	c3                   	retq   
-    20e5:	0f 1f 00             	nopl   (%rax)
+    20e0:	c5 fb 10 44 24 08    	vmovsd 0x8(%rsp),%xmm0
+    20e6:	48 83 c4 18          	add    $0x18,%rsp
+    20ea:	c3                   	retq   
+    20eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
       res += ((double)TOTAL_PWR_PKG_ENERGY[i])*JOULE_UNIT;
-    20e8:	48 89 c1             	mov    %rax,%rcx
-    20eb:	83 e0 01             	and    $0x1,%eax
-    20ee:	48 d1 e9             	shr    %rcx
-    20f1:	48 09 c1             	or     %rax,%rcx
-    20f4:	c4 e1 f3 2a c1       	vcvtsi2sd %rcx,%xmm1,%xmm0
-    20f9:	c5 fb 58 c0          	vaddsd %xmm0,%xmm0,%xmm0
-    20fd:	eb 87                	jmp    2086 <perfcounters_dump+0x56>
-    20ff:	90                   	nop
-    2100:	48 89 c2             	mov    %rax,%rdx
-    2103:	83 e0 01             	and    $0x1,%eax
-    2106:	48 d1 ea             	shr    %rdx
-    2109:	48 09 c2             	or     %rax,%rdx
-    210c:	c4 e1 f3 2a ca       	vcvtsi2sd %rdx,%xmm1,%xmm1
-    2111:	c5 f3 58 c9          	vaddsd %xmm1,%xmm1,%xmm1
-    2115:	eb 8f                	jmp    20a6 <perfcounters_dump+0x76>
-    2117:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
-    211e:	00 00 
+    20f0:	48 89 c1             	mov    %rax,%rcx
+    20f3:	83 e0 01             	and    $0x1,%eax
+    20f6:	48 d1 e9             	shr    %rcx
+    20f9:	48 09 c1             	or     %rax,%rcx
+    20fc:	c4 e1 f3 2a c1       	vcvtsi2sd %rcx,%xmm1,%xmm0
+    2101:	c5 fb 58 c0          	vaddsd %xmm0,%xmm0,%xmm0
+    2105:	e9 7c ff ff ff       	jmpq   2086 <perfcounters_dump+0x56>
+    210a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    2110:	48 89 c2             	mov    %rax,%rdx
+    2113:	83 e0 01             	and    $0x1,%eax
+    2116:	48 d1 ea             	shr    %rdx
+    2119:	48 09 c2             	or     %rax,%rdx
+    211c:	c4 e1 f3 2a ca       	vcvtsi2sd %rdx,%xmm1,%xmm1
+    2121:	c5 f3 58 c9          	vaddsd %xmm1,%xmm1,%xmm1
+    2125:	eb 82                	jmp    20a9 <perfcounters_dump+0x79>
+    2127:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    212e:	00 00 
 
-0000000000002120 <get_seconds>:
+0000000000002130 <get_seconds>:
 double get_seconds() {
-    2120:	f3 0f 1e fa          	endbr64 
-    2124:	48 83 ec 28          	sub    $0x28,%rsp
+    2130:	f3 0f 1e fa          	endbr64 
+    2134:	48 83 ec 28          	sub    $0x28,%rsp
 	gettimeofday(&now, NULL);
-    2128:	31 f6                	xor    %esi,%esi
+    2138:	31 f6                	xor    %esi,%esi
 double get_seconds() {
-    212a:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
-    2131:	00 00 
-    2133:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
-    2138:	31 c0                	xor    %eax,%eax
+    213a:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    2141:	00 00 
+    2143:	48 89 44 24 18       	mov    %rax,0x18(%rsp)
+    2148:	31 c0                	xor    %eax,%eax
 	gettimeofday(&now, NULL);
-    213a:	48 89 e7             	mov    %rsp,%rdi
-    213d:	e8 ce f0 ff ff       	callq  1210 <gettimeofday@plt>
+    214a:	48 89 e7             	mov    %rsp,%rdi
+    214d:	e8 be f0 ff ff       	callq  1210 <gettimeofday@plt>
 	const double usec    = (double) now.tv_usec;
-    2142:	c5 f8 57 c0          	vxorps %xmm0,%xmm0,%xmm0
-    2146:	c4 e1 fb 2a 4c 24 08 	vcvtsi2sdq 0x8(%rsp),%xmm0,%xmm1
-	const double seconds = (double) now.tv_sec;
-    214d:	c4 e1 fb 2a 04 24    	vcvtsi2sdq (%rsp),%xmm0,%xmm0
+    2152:	c5 f0 57 c9          	vxorps %xmm1,%xmm1,%xmm1
+    2156:	c4 e1 f3 2a 44 24 08 	vcvtsi2sdq 0x8(%rsp),%xmm1,%xmm0
 	return seconds + (usec * 1.0e-6);
-    2153:	c4 e2 f1 b9 05 64 10 	vfmadd231sd 0x1064(%rip),%xmm1,%xmm0        # 31c0 <_IO_stdin_used+0x1c0>
-    215a:	00 00 
+    215d:	c5 fb 59 05 5b 10 00 	vmulsd 0x105b(%rip),%xmm0,%xmm0        # 31c0 <_IO_stdin_used+0x1c0>
+    2164:	00 
+	const double seconds = (double) now.tv_sec;
+    2165:	c4 e1 f3 2a 0c 24    	vcvtsi2sdq (%rsp),%xmm1,%xmm1
+	return seconds + (usec * 1.0e-6);
+    216b:	c5 fb 58 c1          	vaddsd %xmm1,%xmm0,%xmm0
 }
-    215c:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
-    2161:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
-    2168:	00 00 
-    216a:	75 05                	jne    2171 <get_seconds+0x51>
-    216c:	48 83 c4 28          	add    $0x28,%rsp
-    2170:	c3                   	retq   
-    2171:	e8 4a f1 ff ff       	callq  12c0 <__stack_chk_fail@plt>
-    2176:	66 2e 0f 1f 84 00 00 	nopw   %cs:0x0(%rax,%rax,1)
-    217d:	00 00 00 
+    216f:	48 8b 44 24 18       	mov    0x18(%rsp),%rax
+    2174:	64 48 2b 04 25 28 00 	sub    %fs:0x28,%rax
+    217b:	00 00 
+    217d:	75 05                	jne    2184 <get_seconds+0x54>
+    217f:	48 83 c4 28          	add    $0x28,%rsp
+    2183:	c3                   	retq   
+    2184:	e8 37 f1 ff ff       	callq  12c0 <__stack_chk_fail@plt>
+    2189:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
 
-0000000000002180 <__libc_csu_init>:
-    2180:	f3 0f 1e fa          	endbr64 
-    2184:	41 57                	push   %r15
-    2186:	4c 8d 3d 53 2b 00 00 	lea    0x2b53(%rip),%r15        # 4ce0 <__frame_dummy_init_array_entry>
-    218d:	41 56                	push   %r14
-    218f:	49 89 d6             	mov    %rdx,%r14
-    2192:	41 55                	push   %r13
-    2194:	49 89 f5             	mov    %rsi,%r13
-    2197:	41 54                	push   %r12
-    2199:	41 89 fc             	mov    %edi,%r12d
-    219c:	55                   	push   %rbp
-    219d:	48 8d 2d 44 2b 00 00 	lea    0x2b44(%rip),%rbp        # 4ce8 <__do_global_dtors_aux_fini_array_entry>
-    21a4:	53                   	push   %rbx
-    21a5:	4c 29 fd             	sub    %r15,%rbp
-    21a8:	48 83 ec 08          	sub    $0x8,%rsp
-    21ac:	e8 4f ee ff ff       	callq  1000 <_init>
-    21b1:	48 c1 fd 03          	sar    $0x3,%rbp
-    21b5:	74 1f                	je     21d6 <__libc_csu_init+0x56>
-    21b7:	31 db                	xor    %ebx,%ebx
-    21b9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
-    21c0:	4c 89 f2             	mov    %r14,%rdx
-    21c3:	4c 89 ee             	mov    %r13,%rsi
-    21c6:	44 89 e7             	mov    %r12d,%edi
-    21c9:	41 ff 14 df          	callq  *(%r15,%rbx,8)
-    21cd:	48 83 c3 01          	add    $0x1,%rbx
-    21d1:	48 39 dd             	cmp    %rbx,%rbp
-    21d4:	75 ea                	jne    21c0 <__libc_csu_init+0x40>
-    21d6:	48 83 c4 08          	add    $0x8,%rsp
-    21da:	5b                   	pop    %rbx
-    21db:	5d                   	pop    %rbp
-    21dc:	41 5c                	pop    %r12
-    21de:	41 5d                	pop    %r13
-    21e0:	41 5e                	pop    %r14
-    21e2:	41 5f                	pop    %r15
-    21e4:	c3                   	retq   
-    21e5:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
-    21ec:	00 00 00 00 
-
-00000000000021f0 <__libc_csu_fini>:
-    21f0:	f3 0f 1e fa          	endbr64 
+0000000000002190 <__libc_csu_init>:
+    2190:	f3 0f 1e fa          	endbr64 
+    2194:	41 57                	push   %r15
+    2196:	4c 8d 3d 43 2b 00 00 	lea    0x2b43(%rip),%r15        # 4ce0 <__frame_dummy_init_array_entry>
+    219d:	41 56                	push   %r14
+    219f:	49 89 d6             	mov    %rdx,%r14
+    21a2:	41 55                	push   %r13
+    21a4:	49 89 f5             	mov    %rsi,%r13
+    21a7:	41 54                	push   %r12
+    21a9:	41 89 fc             	mov    %edi,%r12d
+    21ac:	55                   	push   %rbp
+    21ad:	48 8d 2d 34 2b 00 00 	lea    0x2b34(%rip),%rbp        # 4ce8 <__do_global_dtors_aux_fini_array_entry>
+    21b4:	53                   	push   %rbx
+    21b5:	4c 29 fd             	sub    %r15,%rbp
+    21b8:	48 83 ec 08          	sub    $0x8,%rsp
+    21bc:	e8 3f ee ff ff       	callq  1000 <_init>
+    21c1:	48 c1 fd 03          	sar    $0x3,%rbp
+    21c5:	74 1f                	je     21e6 <__libc_csu_init+0x56>
+    21c7:	31 db                	xor    %ebx,%ebx
+    21c9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    21d0:	4c 89 f2             	mov    %r14,%rdx
+    21d3:	4c 89 ee             	mov    %r13,%rsi
+    21d6:	44 89 e7             	mov    %r12d,%edi
+    21d9:	41 ff 14 df          	callq  *(%r15,%rbx,8)
+    21dd:	48 83 c3 01          	add    $0x1,%rbx
+    21e1:	48 39 dd             	cmp    %rbx,%rbp
+    21e4:	75 ea                	jne    21d0 <__libc_csu_init+0x40>
+    21e6:	48 83 c4 08          	add    $0x8,%rsp
+    21ea:	5b                   	pop    %rbx
+    21eb:	5d                   	pop    %rbp
+    21ec:	41 5c                	pop    %r12
+    21ee:	41 5d                	pop    %r13
+    21f0:	41 5e                	pop    %r14
+    21f2:	41 5f                	pop    %r15
     21f4:	c3                   	retq   
+    21f5:	66 66 2e 0f 1f 84 00 	data16 nopw %cs:0x0(%rax,%rax,1)
+    21fc:	00 00 00 00 
+
+0000000000002200 <__libc_csu_fini>:
+    2200:	f3 0f 1e fa          	endbr64 
+    2204:	c3                   	retq   
 
 Disassembly of section .fini:
 
-00000000000021f8 <_fini>:
-    21f8:	f3 0f 1e fa          	endbr64 
-    21fc:	48 83 ec 08          	sub    $0x8,%rsp
-    2200:	48 83 c4 08          	add    $0x8,%rsp
-    2204:	c3                   	retq   
+0000000000002208 <_fini>:
+    2208:	f3 0f 1e fa          	endbr64 
+    220c:	48 83 ec 08          	sub    $0x8,%rsp
+    2210:	48 83 c4 08          	add    $0x8,%rsp
+    2214:	c3                   	retq   
