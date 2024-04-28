@@ -1,8 +1,8 @@
 #!/bin/bash
 # List of SIMD flags to use
-SIMD_FLAGS="-mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -maes -mfma -mavx -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq"
+#SIMD_FLAGS="-mmmx -msse -msse2 -msse3 -mssse3 -msse4.1 -msse4.2 -maes -mfma -mavx -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq"
 
-# SIMD_FLAGS="-mmmx -mavx512f" 
+SIMD_FLAGS="-mmmx -mavx512f" 
 
 # Compiler
 CC=gcc

@@ -4,7 +4,7 @@
 #include <string.h>
 #include <sys/time.h>
 #include <unistd.h>
-#include "harshit-msr-cc.c"
+//#include "harshit-msr-cc.c"
 
 #ifdef USE_MKL
 #include "mkl.h"
@@ -49,10 +49,10 @@ int main(int argc, char* argv[]) {
 	// DO NOT CHANGE CODE BELOW
 	// ------------------------------------------------------- //
 	
-	perfcounters_init();
+	//perfcounters_init();
 
 	int N = 9000; //256;
-	int repeats = 51; //8;
+	int repeats = 20;//51; //8;
 
     	double alpha = 1.0;
     	double beta  = 1.0;
@@ -140,7 +140,7 @@ int main(int argc, char* argv[]) {
 
 	double sum = 0;
 
-	perfcounters_start();
+	//perfcounters_start();
 
 	// Repeat multiple times
 	for(r = 0; r < repeats; r++) {
@@ -166,7 +166,7 @@ int main(int argc, char* argv[]) {
 #endif
 	}
 
-	perfcounters_stop(); 
+	//perfcounters_stop(); 
 
 	// ------------------------------------------------------- //
 	// VENDOR NOTIFICATION: END MODIFIABLE REGION
@@ -219,8 +219,8 @@ int main(int argc, char* argv[]) {
 	printf("GFLOP/s rate:         %f GF/s\n", (flops_computed / time_taken) / 1000000000.0);
 	fprintf(fout1, "%10.4f \n", (flops_computed / time_taken) / 1000000000.0);
   	fprintf(fout2, "%10.4f \n", time_taken);
-	double energy = perfcounters_dump();
-	fprintf(fout3, "%f \n", energy);
+	//double energy = perfcounters_dump();
+	//fprintf(fout3, "%f \n", energy);
 	printf("\n===============================================================\n");
 	printf("\n");
 
@@ -232,7 +232,7 @@ int main(int argc, char* argv[]) {
 	free(matrixB);
 	free(matrixC);
 
-	perfcounters_finalize();
+	//perfcounters_finalize();
 
 	return 0;
 }
